@@ -1,0 +1,69 @@
+<template>
+    <div>
+        <header v-on:resize="getWindowWidth()">
+            <b-container fluid>
+                <b-row class="no-gutters" align-h="between" align-v="center">
+                    <b-col mg="5" v-if="this.$store.state.windowWidth >= 768">
+                        {{this.$store.state.windowWidth}}
+                    </b-col>
+                    <b-col mg="2">
+                        <div class="logo-wrapper">
+                            <img src="~@/assets/images/svg/logo.svg" alt="Logo" class="logo" />
+                        </div>
+                    </b-col>
+                    <b-col mg="5">
+                        hello
+                    </b-col>
+                </b-row>
+            </b-container>
+        </header>
+        <!-- Left-->
+        <div class="sub-menu left">
+            left
+        </div>
+        <!-- Right-->
+        <div class="sub-menu right">
+            right
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'Header'
+}
+</script>
+
+<style lang="scss">
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 67px;
+        padding: 20px 0;
+        background: $white;
+        z-index: 100;
+    }
+
+    .logo-wrapper {
+        width: 100%;
+        max-width: 25px;
+        margin: 0 auto 0 0;
+    }
+
+    .sub-menu {
+        position: fixed;
+        height: 100%;
+        width: 15px;
+        background: $yellow;
+
+        &.left {
+            left: 0;
+         }
+
+        &.right {
+            right: 0;
+         }
+    }
+</style>

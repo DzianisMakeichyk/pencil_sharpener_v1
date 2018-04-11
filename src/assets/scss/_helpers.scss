@@ -1,0 +1,23 @@
+.description {
+  font-size: 14px;
+}
+
+.small-description {
+  font-size: 12px;
+}
+
+.container-fluid,
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include breakpoint(md) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include breakpoint(xl) {
+    padding-left: 78px;
+    padding-right: 78px;
+  }
+}
