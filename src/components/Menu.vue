@@ -2,19 +2,20 @@
     <div
       class="menu-wrapper"
       @click="MenuToggle"
-      :class="{ 'is-active': this.$store.state.isOpenMenu}"
     >
         <div class="burger" :class="{ 'clicked': this.$store.state.isOpenMenu}">
             <span></span>
         </div>
-        <div class="slideout-opener">
-            {{this.$store.state.isOpenMenu}}
+        <div
+          class="slideout"
+          :class="{ 'is-active': this.$store.state.isOpenMenu}"
+        >
+            <ul class="slideout-menu">
+                <li class="one-menu-item">
+                    item
+                </li>
+            </ul>
         </div>
-        <!--<ul class="slideout-menu">-->
-            <!--<li class="one-menu-item">-->
-                <!--item-->
-            <!--</li>-->
-        <!--</ul>-->
     </div>
 </template>
 
@@ -39,7 +40,7 @@ export default {
     width: 50px;
     height: 50px;
     border-radius: 4px;
-    z-index: 10;
+    z-index: 250;
 
     span {
       position: absolute;
@@ -96,6 +97,22 @@ export default {
       outline: 1px solid transparent;
       transition-property: background-color, transform;
       transition-duration: 0.3s;
+  }
+
+  .slideout {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      background-color: #34495e;
+      transform: translateX(100%);
+      transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &.is-active {
+          transform: translateX(0);
+      }
   }
 
 </style>
