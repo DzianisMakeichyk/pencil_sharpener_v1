@@ -9,16 +9,12 @@
 
 <script>
 import Header from './components/Header'
-import store from './store'
-import router from './router/index'
 // Styles
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   name: 'app',
-  store,
-  router,
   methods: {
     handleWindowResize (event) {
       this.$store.state.windowWidth = event.currentTarget.innerWidth

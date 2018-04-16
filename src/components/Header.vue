@@ -12,7 +12,7 @@
                         </div>
                     </b-col>
                     <b-col mg="5">
-                        hello
+                        <Menu/>
                     </b-col>
                 </b-row>
             </b-container>
@@ -29,8 +29,14 @@
 </template>
 
 <script>
+import Menu from './Menu'
+
 export default {
-  name: 'Header'
+  name: 'Header',
+
+  components: {
+    Menu
+  }
 }
 </script>
 

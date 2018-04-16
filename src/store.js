@@ -5,6 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    windowWidth: window.innerWidth
+    windowWidth: window.innerWidth,
+    isOpenMenu: false
+  },
+  mutations: {
+    MenuToggle: (state) => {
+      state.isOpenMenu = !state.isOpenMenu
+    }
   }
 })
