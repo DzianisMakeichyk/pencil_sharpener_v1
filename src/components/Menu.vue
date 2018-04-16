@@ -66,7 +66,7 @@ export default {
       span {
         background-color: transparent;
 
-        &:before
+        &:before,
         &:after {
           background-color: $white;
         }
