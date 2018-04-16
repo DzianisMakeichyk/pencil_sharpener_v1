@@ -7,9 +7,9 @@
                         {{this.$store.state.windowWidth}}
                     </b-col>
                     <b-col mg="2">
-                        <div class="logo-wrapper">
+                        <a href="/" class="logo-wrapper">
                             <img src="~@/assets/images/svg/logo.svg" alt="Logo" class="logo" />
-                        </div>
+                        </a>
                     </b-col>
                     <b-col mg="5">
                         <Menu/>
@@ -53,9 +53,14 @@ export default {
     }
 
     .logo-wrapper {
+        display: block;
         width: 100%;
         max-width: 25px;
         margin: 0 auto 0 0;
+
+        @include breakpoint(medium) {
+            margin: 0 auto;
+        }
     }
 
     .sub-menu {
