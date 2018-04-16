@@ -11,9 +11,12 @@
           :class="{ 'is-active': this.$store.state.isOpenMenu}"
         >
             <ul class="slideout-menu">
-                <li class="one-menu-item">
-                    item
-                </li>
+                <router-link
+                  :to="{name: 'Portfolio'}"
+                  class="one-menu-item"
+                >
+                  item
+                </router-link>
             </ul>
         </div>
     </div>

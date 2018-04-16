@@ -1,20 +1,25 @@
 <template>
   <div id="app">
     <Header />
-    <router-view>
-
-    </router-view>
+    <Transitions>
+      <router-view></router-view>
+    </Transitions>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
+import Transitions from './components/Transitions.vue'
 // Styles
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   name: 'app',
+  components: {
+    Header,
+    Transitions
+  },
   methods: {
     handleWindowResize (event) {
       this.$store.state.windowWidth = event.currentTarget.innerWidth
@@ -25,9 +30,6 @@ export default {
   },
   mounted: function () {
     window.addEventListener('resize', this.handleWindowResize)
-  },
-  components: {
-    Header
   }
 }
 </script>

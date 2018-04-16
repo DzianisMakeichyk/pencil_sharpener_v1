@@ -7,9 +7,12 @@
                         {{this.$store.state.windowWidth}}
                     </b-col>
                     <b-col mg="2">
-                        <a href="/" class="logo-wrapper">
+                        <router-link
+                          :to="{name: 'Index'}"
+                          class="logo-wrapper"
+                        >
                             <img src="~@/assets/images/svg/logo.svg" alt="Logo" class="logo" />
-                        </a>
+                        </router-link>
                     </b-col>
                     <b-col mg="5">
                         <Menu/>
