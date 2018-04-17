@@ -3,8 +3,10 @@
         <header v-on:resize="getWindowWidth()">
             <b-container fluid>
                 <b-row class="no-gutters" align-h="between" align-v="center">
-                    <b-col mg="5" v-if="this.$store.state.windowWidth >= 768">
-                        {{this.$store.state.windowWidth}}
+                    <b-col mg="5" v-if="this.$store.state.windowWidth >= 767">
+                        <h1 class="header-name">
+                            dzianis makeichyk
+                        </h1>
                     </b-col>
                     <b-col mg="2">
                         <router-link
@@ -21,13 +23,11 @@
             </b-container>
         </header>
         <!-- Left-->
-        <div class="sub-menu left">
-            left
-        </div>
+        <div class="sub-menu left"></div>
         <!-- Right-->
-        <div class="sub-menu right">
-            right
-        </div>
+        <div class="sub-menu right"></div>
+        <!-- Bottom-->
+        <div class="sub-menu bottom"></div>
     </div>
 </template>
 
@@ -45,39 +45,60 @@ export default {
 
 <style lang="scss">
     header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 67px;
-        padding: 20px 0;
-        background: $white;
-        z-index: 100;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 67px;
+      padding: 20px 0;
+      background: $white;
+      z-index: 100;
     }
 
     .logo-wrapper {
-        display: block;
-        width: 100%;
-        max-width: 25px;
-        margin: 0 auto 0 0;
+      display: block;
+      width: 100%;
+      max-width: 25px;
+      margin: 0 auto 0 0;
 
-        @include breakpoint(medium) {
-            margin: 0 auto;
-        }
+      @include breakpoint(medium) {
+        margin: 0 auto;
+      }
     }
 
     .sub-menu {
-        position: fixed;
+      position: fixed;
+      background: $yellow;
+
+      &.left,
+      &.right {
         height: 100%;
         width: 15px;
-        background: $yellow;
+      }
 
-        &.left {
-            left: 0;
-         }
+      &.left {
+       left: 0;
+      }
 
-        &.right {
-            right: 0;
-         }
+      &.right {
+        right: 0;
+      }
+
+      &.bottom {
+        width: 100%;
+        height: 15px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .header-name {
+      text-transform: uppercase;
+      white-space: nowrap;
+      font-family: 'GT-Haptik-Thin';
+      font-size: 13px;
+      margin: 0 auto 0 0;
+      letter-spacing: 1px;
     }
 </style>
