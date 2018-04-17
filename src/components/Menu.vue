@@ -96,7 +96,7 @@ export default {
       display: block;
       width: 25px;
       height: 2px;
-      background-color: $black;
+      background-color: $gray-medium;
       outline: 1px solid transparent;
       transition-property: background-color, transform;
       transition-duration: 0.3s;

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="hero-wrapper">
+        <div class="hero-wrapper bg-gray">
             <h2 class="hero-name">
                 Pencil <span v-if="this.$store.state.windowWidth >= 767">Sharpener </span>to
                 <span class="typed-me" id="typed"></span>
@@ -35,17 +35,29 @@ export default {
 <!--scoped-->
 <style lang="scss">
   .hero-wrapper {
-      position: absolute;
-      bottom: 15%;
-      left: 5%;
-      letter-spacing: 1px;
 
       .hero-name {
+          position: absolute;
+          bottom: 25%;
+          letter-spacing: 1px;
+          left: 36px;
           display: inline;
-          width: 140px;
+          /*width: 140px;*/
           margin: 0 auto 0 0;
           font-size: 30px;
           font-family: 'GT-Haptik-Thin';
+
+          @include breakpoint(medium) {
+              left: 54px;
+          }
+
+          @include breakpoint(large) {
+              left: 93px;
+          }
+
+          @include breakpoint(extralarge) {
+              left: 118px;
+          }
       }
       .typed-me {
           color: $gray;
