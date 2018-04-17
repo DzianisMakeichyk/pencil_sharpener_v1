@@ -106,7 +106,11 @@
             </div>
         </div>
         <!-- Right-->
-        <div class="sub-menu right"></div>
+        <div class="sub-menu right">
+            <h4 class="sub-title-right">
+                creative developer
+            </h4>
+        </div>
         <!-- Bottom-->
         <div class="sub-menu bottom"></div>
     </div>
@@ -208,14 +212,18 @@ export default {
       letter-spacing: 1px;
     }
 
-    .social-menu {
+    .social-menu,
+    .sub-title-right {
         position: fixed;
-        display: flex;
-        flex-direction: column;
-        left: 7px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 200;
+    }
+
+    .social-menu {
+        display: flex;
+        flex-direction: column;
+        left: 7px;
 
         @include breakpoint(medium) {
             left: 9px;
@@ -239,6 +247,29 @@ export default {
             @include breakpoint(large) {
                 width: 16px;
             }
+        }
+    }
+
+    .sub-title-right {
+        right: -47px;
+        color: $gray;
+        font-size: 10px;
+        font-family: 'GT-Haptik-Thin';
+        text-transform: uppercase;
+        transform: rotate(90deg);
+        letter-spacing: 1px;
+
+        @include breakpoint(medium) {
+            right: -44px;
+        }
+
+        @include breakpoint(large) {
+            right: -36px;
+            font-size: 11px;
+        }
+
+        @include breakpoint(extralarge) {
+            right: -29px;
         }
     }
 </style>
