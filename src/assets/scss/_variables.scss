@@ -9,23 +9,17 @@ $font-bold:         700 !default;
 $font-extra-bold:   800 !default;
 $font-black:        900 !default;
 
-/* Colors */
-$yellow: #ffdf62;
-$yellow-light: #ffce00;
-$orange-light: #faba48;
-$orange: #f6a319;
 /* Used */
 $white: #fff;
-$black: #151515;
-$gray-medium: #898989;
-$gray: #b1b1b1;
 $gray-light: #f6f7f9;
+$gray: #b1b1b1;
+$gray-medium: #898989;
+$black: #151515;
+
+$darkviolet: #9B30FF;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|PT+Serif:400,700');
 
 /* Base */
-$base-font:               'Montserrat', sans-serif;
-$base-size:               16px;
-$base-line-height:        1.6;
-$base-weight:             $font-medium;
-$base-color:              $black;
 $selection-color:         $black;
 $selection-background:    $white;
