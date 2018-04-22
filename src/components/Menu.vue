@@ -3,7 +3,7 @@
       class="menu-wrapper"
       @click="MenuToggle"
     >
-        <div class="burger" :class="{ 'clicked': this.$store.state.isOpenMenu}">
+        <div class="burger" :class="{ 'clicked': this.$store.state.isOpenMenu}" @click="animationMenuItems">
             <span></span>
         </div>
         <div
@@ -44,7 +44,7 @@
                   class="one-menu-item"
                 >
                     <span class="menu-item">
-                        Wspólpraca
+                        Współpraca
                     </span>
                 </router-link>
                 <router-link
@@ -65,10 +65,18 @@
 </template>
 
 <script>
+import TweenMax from 'gsap'
+
 export default {
   name: 'Menu',
   methods: {
-    MenuToggle () { this.$store.commit('MenuToggle') }
+    MenuToggle () { this.$store.commit('MenuToggle') },
+    animationMenuItems () {
+      let menuItems = document.getElementsByClassName('menu-item')
+      console.log(menuItems)
+
+      TweenMax.staggerTo(menuItems, 0.4, { y: 0 }, 0.2)
+    }
   }
 }
 </script>
@@ -207,10 +215,13 @@ export default {
           color: $black;
           padding-bottom: 5px;
           letter-spacing: .5px;
+          overflow: hidden;
 
           .menu-item {
               position: relative;
               display: inline-block;
+              transform: translateY(100%);
+              transition: transform 800ms cubic-bezier(1, 0, 0, 1) 0ms;
 
               &:before {
                   content: '';
