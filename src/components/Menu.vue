@@ -73,9 +73,12 @@ export default {
     MenuToggle () { this.$store.commit('MenuToggle') },
     animationMenuItems () {
       let menuItems = document.getElementsByClassName('menu-item')
-      console.log(menuItems)
 
-      TweenMax.staggerTo(menuItems, 0.4, { y: 0 }, 0.2)
+      if (!this.$store.state.isOpenMenu) {
+        TweenMax.staggerTo(menuItems, 0.4, { y: 0 }, 0.2)
+      } else {
+        TweenMax.staggerTo(menuItems, 2, { y: 100 }, 1)
+      }
     }
   }
 }
@@ -221,7 +224,6 @@ export default {
               position: relative;
               display: inline-block;
               transform: translateY(100%);
-              transition: transform 800ms cubic-bezier(1, 0, 0, 1) 0ms;
 
               &:before {
                   content: '';
@@ -230,7 +232,7 @@ export default {
                   left: -5%;
                   right: 0;
                   top: 63%;
-                  transform: scaleX(0) translateY(-50%);
+                  transform: translateY(-50%) translateX(100%);
                   height: 9px;
                   background: $darkviolet;
                   transition: 400ms cubic-bezier(1, 0, 0, 1) 0ms;
@@ -241,7 +243,8 @@ export default {
           &.is-active {
               .menu-item {
                   &:before {
-                      transform: scaleX(1) translateY(-50%);
+                      width: 110%;
+                      transform: translateY(-50%) translateX(0);
                   }
               }
           }
@@ -249,7 +252,8 @@ export default {
           &:hover {
               .menu-item {
                   &:before {
-                      transform: scaleX(1) translateY(-50%);
+                      width: 110%;
+                      transform: translateY(-50%) translateX(0);
                   }
               }
           }
