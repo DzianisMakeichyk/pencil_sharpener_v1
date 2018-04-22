@@ -57,8 +57,16 @@
                 </router-link>
             </ul>
             <div class="menu-contact">
-                <a href="tel:+48797657075" class="menu-contact-me">+48 797657075</a>
-                <a href="mailto:dzianis@pencilsharpener.pl" class="menu-contact-me">dzianis@pencilsharpener.pl</a>
+                <a href="tel:+48797657075" class="menu-contact-me">
+                    <span class="select-text">
+                        +48 797657075
+                    </span>
+                </a>
+                <a href="mailto:dzianis@pencilsharpener.pl" class="menu-contact-me">
+                    <span class="select-text">
+                        dzianis@pencilsharpener.pl
+                    </span>
+                </a>
             </div>
         </div>
     </div>
@@ -77,7 +85,7 @@ export default {
       if (!this.$store.state.isOpenMenu) {
         TweenMax.staggerTo(menuItems, 0.4, { y: 0 }, 0.2)
       } else {
-        TweenMax.staggerTo(menuItems, 2, { y: 100 }, 1)
+        TweenMax.staggerTo(menuItems, 0.4, { y: 100 }, 0.2)
       }
     }
   }
@@ -161,6 +169,12 @@ export default {
       transform: translateX(100%);
       transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 
+      @include breakpoint(medium) {
+          width: 35%;
+          left: auto;
+          right: 0;
+      }
+
       &.is-active {
           transform: translateX(0);
       }
@@ -193,11 +207,13 @@ export default {
       .one-languages {
           position: relative;
           color: $gray;
+          transition: .3s ease;
           &:not(:last-child) {
               margin-right: 15px;
           }
 
-          &.is-active {
+          &.is-active,
+          &:hover {
               color: $black;
           }
       }
@@ -219,6 +235,22 @@ export default {
           padding-bottom: 5px;
           letter-spacing: .5px;
           overflow: hidden;
+
+          @include breakpoint(medium) {
+              font-size: 36px;
+          }
+
+          @include breakpoint(medium-lg) {
+              font-size: 40px;
+          }
+
+          @include breakpoint(large) {
+              font-size: 48px;
+          }
+
+          @include breakpoint(extralarge) {
+              font-size: 52px;
+          }
 
           .menu-item {
               position: relative;
@@ -263,13 +295,16 @@ export default {
   .menu-contact {
       position: absolute;
       bottom: 10%;
-      right: 15%;
+      right: 14%;
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
       text-align: right;
+      overflow: hidden;
+      padding: 0 8px;
 
       .menu-contact-me {
+          position: relative;
           font-family: Montserrat;
           font-weight: 300;
           font-size: 13px;
@@ -277,6 +312,11 @@ export default {
 
           &:nth-child(1) {
               padding-bottom: 5px;
+          }
+
+          &:hover {
+              color: $white;
+              text-decoration: none;
           }
       }
   }

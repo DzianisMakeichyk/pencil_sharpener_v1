@@ -32,3 +32,27 @@
   height: 100vh;
   background: $gray-light;
 }
+
+.select-text {
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 115%;
+    height: 100%;
+    left: -5%;
+    background: $darkviolet;
+    z-index: -1;
+    transition: .3s ease;
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    &:before {
+      transform: translateX(0);
+    }
+  }
+}
