@@ -81,11 +81,17 @@ export default {
     MenuToggle () { this.$store.commit('MenuToggle') },
     animationMenuItems () {
       let menuItems = document.getElementsByClassName('menu-item')
+      let menuLang = document.getElementsByClassName('one-languages')
+      let menuContact = document.getElementsByClassName('menu-contact-me')
 
       if (!this.$store.state.isOpenMenu) {
         TweenMax.staggerTo(menuItems, 0.4, { y: 0 }, 0.2)
+        TweenMax.staggerTo(menuLang, 0.4, { y: 0 }, 0.2)
+        TweenMax.staggerTo(menuContact, 0.4, { y: 0 }, 0.2)
       } else {
         TweenMax.staggerTo(menuItems, 0.4, { y: 100 }, 0.2)
+        TweenMax.staggerTo(menuLang, 0.4, { y: 100 }, 0.2)
+        TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
     }
   }
@@ -191,6 +197,7 @@ export default {
       font-weight: 800;
       padding-top: 35px;
       padding-right: 10%;
+      overflow: hidden;
 
       @include breakpoint(medium) {
           padding-top: 40px;
@@ -208,6 +215,7 @@ export default {
           position: relative;
           color: $gray;
           transition: .3s ease;
+          transform: translateY(100%);
           &:not(:last-child) {
               margin-right: 15px;
           }
@@ -309,6 +317,7 @@ export default {
           font-weight: 300;
           font-size: 13px;
           color: $gray;
+          transform: translateY(100%);
 
           &:nth-child(1) {
               padding-bottom: 5px;
