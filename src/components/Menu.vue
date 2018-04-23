@@ -72,7 +72,7 @@ export default {
 
         &:before,
         &:after {
-          background-color: $white;
+          /*background-color: $white;*/
         }
 
         &:before {
@@ -109,7 +109,7 @@ export default {
       width: 100%;
       height: 100%;
       padding: 30px;
-      background-color: #34495e;
+      background-color: $white;
       transform: translateX(100%);
       transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 
