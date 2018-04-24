@@ -35,6 +35,7 @@ export default {
 <!--scoped-->
 <style lang="scss">
   .hero-wrapper {
+      height: 100vh;
 
       .hero-name {
           position: absolute;

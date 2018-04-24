@@ -239,19 +239,21 @@ export default {
 
         .one-social-icon {
             margin-bottom: 8px;
+
+            &:hover {
+                svg {
+                    fill: $darkviolet;
+                }
+            }
         }
 
         svg {
             width: 12px;
-            fill: $gray-classic;
+            fill: $gray;
             transition: .3s ease;
 
             @include breakpoint(large) {
                 width: 16px;
-            }
-
-            &:hover {
-                fill: $purple;
             }
         }
     }
