@@ -11,8 +11,10 @@
                         <div class="partner-box" v-for="partner in partners" v-bind:key="partner">
                             <div class="partner">
                                 <img :src="partner.src" :alt="partner.alt"/>
+                                <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                             </div>
                         </div>
+                        <!-- END One partner -->
                     </div>
                 </div>
             </div>
@@ -84,6 +86,7 @@ export default {
             }
 
             .partner {
+                position: relative;
                 width: 100%;
                 max-width: 150px;
                 margin: 0 auto;
@@ -91,6 +94,23 @@ export default {
                 img {
                     display: block;
                     width: 100%;
+                }
+
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: -10%;
+                    width: 0;
+                    height: 11px;
+                    transform-origin: 0 100%;
+                    transform: translateY(0px) rotate(-5deg);
+                    transition: 0.3s ease;
+                }
+
+                &:hover {
+                    svg {
+                        width: 120%;
+                    }
                 }
             }
         }

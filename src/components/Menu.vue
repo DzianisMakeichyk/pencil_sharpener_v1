@@ -21,6 +21,7 @@
                 >
                     <span class="menu-item">
                         Portfolio
+                        <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
                 <router-link
@@ -29,6 +30,7 @@
                 >
                     <span class="menu-item">
                         O mnie
+                        <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
                 <router-link
@@ -37,6 +39,7 @@
                 >
                     <span class="menu-item">
                         Blog
+                        <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
                 <router-link
@@ -45,6 +48,7 @@
                 >
                     <span class="menu-item">
                         Współpraca
+                        <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
                 <router-link
@@ -53,6 +57,7 @@
                 >
                     <span class="menu-item">
                         Kontakt
+                        <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
             </ul>
@@ -236,12 +241,14 @@ export default {
       font-weight: 400;
 
       .one-menu-item {
+          position: relative;
           display: block;
           text-align: right;
           font-size: 30px;
           color: $black;
           padding-bottom: 5px;
           letter-spacing: .5px;
+          /* For animation */
           overflow: hidden;
 
           @include breakpoint(medium) {
@@ -260,41 +267,28 @@ export default {
               font-size: 52px;
           }
 
+          svg {
+              position: absolute;
+              top: 60%;
+              right: 0;
+              width: 0;
+              height: 11px;
+              transform-origin: 0 100%;
+              transform: translateY(0px) rotate(-5deg);
+              transition: 0.3s ease;
+              z-index: -1;
+          }
+
           .menu-item {
               position: relative;
               display: inline-block;
               transform: translateY(100%);
-
-              &:before {
-                  content: '';
-                  width: 110%;
-                  position: absolute;
-                  left: -5%;
-                  right: 0;
-                  top: 63%;
-                  transform: translateY(-50%) translateX(100%);
-                  height: 9px;
-                  background: $darkviolet;
-                  transition: 400ms cubic-bezier(1, 0, 0, 1) 0ms;
-                  z-index: -1;
-              }
           }
 
-          &.is-active {
-              .menu-item {
-                  &:before {
-                      width: 110%;
-                      transform: translateY(-50%) translateX(0);
-                  }
-              }
-          }
-
+          &.is-active,
           &:hover {
-              .menu-item {
-                  &:before {
-                      width: 110%;
-                      transform: translateY(-50%) translateX(0);
-                  }
+              svg {
+                  width: 100%;
               }
           }
       }
