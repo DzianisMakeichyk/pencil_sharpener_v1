@@ -78,8 +78,20 @@
 }
 
 .content-container {
+  @include breakpoint(large) {
+    padding-bottom: 80px;
+  }
+
   &.with-top {
    padding-top: 220px;
+
+    @include breakpoint(large) {
+      padding-top: 275px;
+    }
+
+    @include breakpoint(extralarge) {
+      padding-top: 327px;
+    }
   }
 }
 

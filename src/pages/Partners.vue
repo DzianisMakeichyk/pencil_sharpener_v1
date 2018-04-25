@@ -47,6 +47,10 @@ export default {
         @include breakpoint(medium) {
             top: -4%;
         }
+
+        @include breakpoint(medium-lg) {
+            top: -7%;
+        }
     }
 
     .partners-container {
@@ -58,6 +62,10 @@ export default {
             flex-direction: row;
         }
 
+        @include breakpoint(large) {
+            padding-left: 25%;
+        }
+
         .partner-box {
             width: 100%;
             padding: 62px 58px;
@@ -65,6 +73,10 @@ export default {
             @include breakpoint(medium) {
                 width: 50%;
                 padding: 112px 0;
+            }
+
+            @include breakpoint(medium-lg) {
+                width: 33.33%;
             }
 
             .partner {
