@@ -51,6 +51,10 @@ export default {
         @include breakpoint(medium-lg) {
             top: -7%;
         }
+
+        @include breakpoint(large) {
+            top: -8%;
+        }
     }
 
     .partners-container {
