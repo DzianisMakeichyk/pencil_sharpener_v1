@@ -271,10 +271,10 @@ export default {
               position: absolute;
               top: 60%;
               right: 0;
-              width: 0;
+              width: 100%;
               height: 11px;
               transform-origin: 0 100%;
-              transform: translateY(0px) rotate(-5deg);
+              transform: translateY(50px);
               transition: 0.3s ease;
               z-index: -1;
           }
@@ -288,7 +288,8 @@ export default {
           &.is-active,
           &:hover {
               svg {
-                  width: 100%;
+                  transform: translateY(0px);
+                  /*width: 100%;*/
               }
           }
       }
