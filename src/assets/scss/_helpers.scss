@@ -100,23 +100,29 @@
   }
 }
 
-.sub-header {
+.sub-header-wrapper {
+  overflow: hidden;
   position: absolute;
   left: 4%;
-  font-family: 'PT Serif', serif;
-  font-size: 48px;
-  text-align: left;
 
-  @include breakpoint(medium) {
-    font-size: 54px;
-  }
+  .sub-header {
+    font-family: 'PT Serif', serif;
+    font-size: 48px;
+    text-align: left;
+    transform: translateY(100%);
+    transform-origin: bottom;
 
-  @include breakpoint(large) {
-    font-size: 62px;
-  }
+    @include breakpoint(medium) {
+      font-size: 54px;
+    }
 
-  @include breakpoint(extralarge) {
-    font-size: 72px;
+    @include breakpoint(large) {
+      font-size: 62px;
+    }
+
+    @include breakpoint(extralarge) {
+      font-size: 72px;
+    }
   }
 }
 

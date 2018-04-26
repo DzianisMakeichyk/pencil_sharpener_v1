@@ -21,38 +21,31 @@ export default {
   name: 'transitionTM',
   methods: {
     enter: function enter (el, done) {
-      let firstBg = el.getElementsByClassName('reveal-me')
+      let revealMe = el.getElementsByClassName('reveal-me')
+      let subHeader = el.getElementsByClassName('sub-header')
       if (!firstEnter) {
-        TweenMax.fromTo(firstBg, 0.4, {
-          scaleX: 0
-        }, {
-          scaleX: 1,
-          onComplete: done
-        })
+        // reveal-me
+        TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, {scaleX: 1, onComplete: done})
+        TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
         firstEnter = true
       } else {
-        TweenMax.to(firstBg, 0.04, {
-          onComplete: done
-        })
+        // reveal-me
+        TweenMax.to(revealMe, 0.04, { onComplete: done })
       }
     },
     leave: function leave (el, done) {
-      let firstBg = el.getElementsByClassName('reveal-me')
-      TweenMax.fromTo(firstBg, 0.4, {
-        scaleX: 0
-      }, {
-        scaleX: 1,
-        onComplete: done
-      })
+      let revealMe = el.getElementsByClassName('reveal-me')
+      let subHeader = el.getElementsByClassName('sub-header')
+      // reveal-me
+      TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
+      TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
     },
     afterEnter: function leave (el, done) {
-      let firstBg = el.getElementsByClassName('reveal-me')
-      TweenMax.fromTo(firstBg, 0.4, {
-        scaleX: 1
-      }, {
-        scaleX: 0,
-        onComplete: done
-      })
+      let revealMe = el.getElementsByClassName('reveal-me')
+      let subHeader = el.getElementsByClassName('sub-header')
+      // reveal-me
+      TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
+      TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
     }
   }
 }

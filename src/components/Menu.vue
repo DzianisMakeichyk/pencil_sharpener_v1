@@ -274,7 +274,7 @@ export default {
               width: 100%;
               height: 11px;
               transform-origin: 0 100%;
-              transform: translateY(50px);
+              transform: translateY(50px) rotate(15deg);
               transition: 0.3s ease;
               z-index: -1;
           }

@@ -3,9 +3,11 @@
         <div class="content-container with-top">
             <div class="bg-gray relative">
                 <div class="reveal-me"></div>
-                <h2 class="sub-header">
-                    Współpraca
-                </h2>
+                <div class="sub-header-wrapper">
+                    <h2 class="sub-header">
+                        Współpraca
+                    </h2>
+                </div>
                 <div class="partners-container">
                     <!-- One partner -->
                     <div class="partner-box" v-for="partner in partners" :key="partner">
@@ -42,7 +44,7 @@ export default {
 
 <!--scoped-->
 <style lang="scss" scoped >
-    .sub-header {
+    .sub-header-wrapper {
         top: -3%;
 
         @include breakpoint(medium) {
