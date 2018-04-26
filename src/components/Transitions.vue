@@ -26,6 +26,7 @@ export default {
       if (!firstEnter) {
         // reveal-me
         TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, {scaleX: 1, onComplete: done})
+        // sub-header
         TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
         firstEnter = true
       } else {
@@ -38,6 +39,7 @@ export default {
       let subHeader = el.getElementsByClassName('sub-header')
       // reveal-me
       TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
+      // sub-header
       TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
     },
     afterEnter: function leave (el, done) {
@@ -45,6 +47,7 @@ export default {
       let subHeader = el.getElementsByClassName('sub-header')
       // reveal-me
       TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
+      // sub-header
       TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
     }
   }

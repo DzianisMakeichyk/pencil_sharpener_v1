@@ -25,7 +25,7 @@
                     </span>
                 </router-link>
                 <router-link
-                  :to="{name: 'slot'}"
+                  :to="{name: 'About'}"
                   class="one-menu-item"
                 >
                     <span class="menu-item">

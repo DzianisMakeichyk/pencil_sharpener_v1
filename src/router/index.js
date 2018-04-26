@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Index from '@/pages/Index'
 import Portfolio from '@/pages/Portfolio'
 import Partners from '@/pages/Partners'
-import slot from '@/pages/Slot'
+import About from '@/pages/About'
 
 Vue.use(Router)
 
@@ -25,9 +25,9 @@ export default new Router({
       component: Partners
     },
     {
-      path: '/slot',
-      name: 'slot',
-      component: slot
+      path: '/about',
+      name: 'About',
+      component: About
     }
   ]
 })
