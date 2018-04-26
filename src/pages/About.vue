@@ -1,12 +1,13 @@
 <template>
     <section class="container">
-        <div class="content-container with-top">
+        <div class="photo-container"></div>
+        <div class="content-container">
             <div class="bg-gray relative">
                 <div class="reveal-me"></div>
                 <div class="sub-header-wrapper">
-                    <h2 class="sub-header">
-                        O Mnie
-                    </h2>
+                    <h1 class="sub-header">
+                        Dzianis Makeichyk
+                    </h1>
                 </div>
             </div>
         </div>
@@ -22,6 +23,22 @@ export default {
 
 <!--scoped-->
 <style lang="scss" scoped >
+    .photo-container {
+      background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 320px;
+
+      @include breakpoint(medium) {
+        height: 420px;
+      }
+
+      @include breakpoint(large) {
+        height: 500px;
+      }
+    }
+
     .sub-header-wrapper {
         top: -3%;
 
