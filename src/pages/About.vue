@@ -1,13 +1,41 @@
 <template>
     <section class="container">
+        <div class="reveal-me"></div>
         <div class="photo-container"></div>
         <div class="content-container">
             <div class="bg-gray relative">
-                <div class="reveal-me"></div>
-                <div class="sub-header-wrapper">
-                    <h1 class="sub-header">
-                        Dzianis Makeichyk
-                    </h1>
+                <div class="about-me-wrapper">
+                    <div class="about-me">
+                        <div class="sub-header-wrapper">
+                            <p class="about-title">
+                                FRONTEND DEVELOPER AT CAPE MORRIS
+                            </p>
+
+                            <h1 class="sub-header">
+                                Dzianis Makeichyk
+                            </h1>
+                        </div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="about-section">
+                        <p class="about-title">
+                            O mnie
+                        </p>
+                        <p class="about-description">
+                            Hi there, I am a creative developer and designer, I enjoy building beautiful and thoughtful experiences. I like to mix code surprising visuals and pleasing interactions. I take my work seriously but not myself.
+                        </p>
+                    </div>
+                    <!-- END 1 -->
+                    <!-- 2 -->
+                    <div class="about-section">
+
+                    </div>
+                    <!-- END 2 -->
+                    <!-- 3 -->
+                    <div class="about-section">
+
+                    </div>
+                    <!-- END 3 -->
                 </div>
             </div>
         </div>
@@ -39,19 +67,29 @@ export default {
       }
     }
 
-    .sub-header-wrapper {
-        top: -3%;
+    .about-me-wrapper {
+        padding: 60px 10px;
+    }
 
-        @include breakpoint(medium) {
-            top: -4%;
-        }
+    .about-title {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        line-height: 1.67;
+        text-align: left;
+        color: $gray-medium;
+        font-family: 'Montserrat';
+        padding-bottom: 10px;
+    }
 
-        @include breakpoint(medium-lg) {
-            top: -7%;
-        }
+    .about-section {
+        padding: 50px 0 0 0;
+    }
 
-        @include breakpoint(large) {
-            top: -8%;
-        }
+    .about-description {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 1.71;
+        text-align: left;
+        color: #20252a;
     }
 </style>

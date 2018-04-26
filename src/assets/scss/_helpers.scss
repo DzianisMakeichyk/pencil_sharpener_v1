@@ -102,8 +102,11 @@
 
 .sub-header-wrapper {
   overflow: hidden;
-  position: absolute;
-  left: 4%;
+
+  &.top-position {
+    position: absolute;
+    left: 4%;
+  }
 
   .sub-header {
     font-family: 'PT Serif', serif;

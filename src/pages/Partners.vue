@@ -3,7 +3,7 @@
         <div class="content-container with-top">
             <div class="bg-gray relative">
                 <div class="reveal-me"></div>
-                <div class="sub-header-wrapper">
+                <div class="sub-header-wrapper top-position">
                     <h2 class="sub-header">
                         Współpraca
                     </h2>
