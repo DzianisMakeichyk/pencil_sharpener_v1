@@ -25,7 +25,7 @@
                     </span>
                 </router-link>
                 <router-link
-                  :to="{name: 'Portfolio'}"
+                  :to="{name: 'slot'}"
                   class="one-menu-item"
                 >
                     <span class="menu-item">
@@ -43,7 +43,7 @@
                     </span>
                 </router-link>
                 <router-link
-                  :to="{name: 'Parners'}"
+                  :to="{name: 'Partners'}"
                   class="one-menu-item"
                 >
                     <span class="menu-item">

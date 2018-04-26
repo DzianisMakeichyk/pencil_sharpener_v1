@@ -44,7 +44,7 @@ export default {
         let elTop = element.offsetTop
         let elBottom = element.offsetTop + element.scrollHeight
 
-        if(this.scrollBottom > elTop + 300 && elBottom + 300 > this.scrollTop) {
+        if (this.scrollBottom > elTop + 300 && elBottom + 300 > this.scrollTop) {
           return true
         } else {
           return false
