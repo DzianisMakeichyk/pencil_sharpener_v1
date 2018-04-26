@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="hero-wrapper bg-gray reveal-me">
+        <div class="reveal-me"></div>
+        <div class="hero-wrapper bg-gray">
             <h2 class="hero-name">
                 Pencil <span v-if="this.$store.state.windowWidth >= 767">Sharpener </span>to
                 <span class="typed-me" id="typed"></span>

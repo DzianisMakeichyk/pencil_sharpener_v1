@@ -1,7 +1,8 @@
 <template>
     <section class="container">
-        <div class="content-container with-top reveal-me">
+        <div class="content-container with-top">
             <div class="bg-gray relative">
+                <div class="reveal-me"></div>
                 <h2 class="sub-header">
                     Współpraca
                 </h2>
