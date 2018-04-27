@@ -145,6 +145,7 @@ export default {
       display: block;
       width: 100%;
       max-width: 25px;
+      /*margin: 0 auto 0 0;*/
       margin: 0 auto 0 0;
 
       @include breakpoint(medium) {
