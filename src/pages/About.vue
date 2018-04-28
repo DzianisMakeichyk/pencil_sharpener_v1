@@ -18,40 +18,40 @@
                     </div>
                     <!-- 1 -->
                     <div class="about-section-wrapper">
-                        <div class="about-section">
-                        <div class="about-left">
-                            <p class="about-title">
-                                O mnie
-                            </p>
-                            <p class="about-description">
-                                Hi there, I am a creative developer and designer, I enjoy building beautiful and thoughtful experiences. I like to mix code surprising visuals and pleasing interactions. I take my work seriously but not myself.
-                            </p>
-                        </div>
-                        <div class="about-right">
-                            <div class="about-technologies">
-                                <div class="one-techno-row">
-                                    <p class="about-title">
-                                        Technologie
-                                    </p>
-                                    <ul class="techno-list">
-                                       <li class="one-tech" v-for="skill in skills" :key="skill">{{skill.name}}</li>
-                                    </ul>
-                                </div>
-                                <div class="one-techno-row">
-                                    <p class="about-title">
-                                        Umiejętności
-                                    </p>
-                                    <ul class="techno-list">
-                                        <li class="one-tech" v-for="ability in abilities" :key="ability">{{ability.name}}</li>
-                                    </ul>
+                        <div class="about-section about-top">
+                            <div class="about-left">
+                                <p class="about-title">
+                                    O mnie
+                                </p>
+                                <p class="about-description">
+                                    Nazywam się <b>Dzianis Makeichyk</b> i jestem <b>Front-End Developerem</b>. Zajmuję się tworzeniem stron internetowych, blogów, od responsywnego mailingu, banera, do layout wykonany na podstawie <b>ReactJS</b> i <b>VueJs</b>.
+                                </p>
+                            </div>
+                            <div class="about-right">
+                                <div class="about-technologies">
+                                    <div class="one-techno-row">
+                                        <p class="about-title">
+                                            Technologie
+                                        </p>
+                                        <ul class="techno-list">
+                                           <li class="one-tech" v-for="skill in skills" :key="skill">{{skill.name}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="one-techno-row">
+                                        <p class="about-title">
+                                            Umiejętności
+                                        </p>
+                                        <ul class="techno-list">
+                                            <li class="one-tech" v-for="ability in abilities" :key="ability">{{ability.name}}</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
                     <!-- END 1 -->
                     <!-- 2 -->
-                    <div class="about-section">
+                    <div class="about-section about-description-me">
                         <div class="about-left">
                             <p class="about-quotation">
                                 What we
@@ -64,14 +64,14 @@
                         <div class="about-right">
                             <div class="about-me-text-wrapper">
                                 <h6 class="about-me-text">
-                                    Nazywam się <b>Dzianis Makeichyk</b> i jestem <b>Front-End Developerem</b>. Zajmuję się tworzeniem stron internetowych, blogów, od responsywnego mailingu, banera, do layout wykonany na podstawie <b>ReactJS i VueJs</b>. Zawsze dążę do tego, żeby każdy zbudowany przez mnie projekt był całkowicie optymalny od strony użytkowej oraz graficznej. Dzięki latom doświadczenia przy tworzeniu projektów internetowych oraz graficznych przyjąłem i trzymam się politykę, że właściwa, intuicyjna nawigacja, inteligentna i przejrzysta grafika, sprawne działanie wszystkich elementów strony pomoga w maksynalnym dotarciu do potrzebnych informacji. Wszystkie te elementy dobrze zgrane sprawią, że odbiorcy szybciej dokonają zakupu, zamówią usługę, dopiszą się do newslettera czy wypełnią formularz kontaktowy. Dzięki temu strona skutecznie zareklamuje się jako godnego zaufania, wydajnego przedsiębiorcę i zwiększy Twoje zyski.
+                                    Zawsze dążę do tego, żeby każdy zbudowany przez mnie projekt był całkowicie optymalny od strony użytkowej oraz graficznej. Dzięki latom doświadczenia przy tworzeniu projektów internetowych oraz graficznych przyjąłem i trzymam się politykę, że właściwa, intuicyjna nawigacja, inteligentna i przejrzysta grafika, sprawne działanie wszystkich elementów strony pomoga w maksynalnym dotarciu do potrzebnych informacji. Wszystkie te elementy dobrze zgrane sprawią, że odbiorcy szybciej dokonają zakupu, zamówią usługę, dopiszą się do newslettera czy wypełnią formularz kontaktowy. Dzięki temu strona skutecznie zareklamuje się jako godnego zaufania, wydajnego przedsiębiorcę i zwiększy Twoje zyski.
                                 </h6>
                             </div>
                         </div>
                     </div>
                     <!-- END 2 -->
                     <!-- 3 -->
-                    <div class="about-section">
+                    <div class="about-section available">
                         <p class="about-quotation">
                             Available for freelance
                             <br/>
@@ -88,6 +88,7 @@
 
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
+//import TimelineMax from 'gsap'
 
 export default {
   name: 'About',
@@ -111,6 +112,9 @@ export default {
         { name: 'User Experience' }
       ]
     }
+  },
+  methods: {
+
   }
 }
 </script>
@@ -135,11 +139,27 @@ export default {
 
     .about-me-wrapper {
         padding: 60px 0 0;
+
+        @include breakpoint(medium) {
+            padding: 80px 0 70px;
+        }
+
+        @include breakpoint(medium-lg) {
+            padding: 100px 0 75px;
+        }
+
+        @include breakpoint(large) {
+            padding: 140px 0 108px;
+        }
     }
 
     .about-me,
     .about-section-wrapper {
         padding: 0 10px;
+
+        @include breakpoint(medium) {
+            padding: 0 25px;
+        }
     }
 
     .about-title {
@@ -151,10 +171,46 @@ export default {
         font-family: 'Montserrat';
         padding-bottom: 15px;
         text-transform: uppercase;
+
+        @include breakpoint(medium-lg) {
+            font-size: 12px;
+        }
+    }
+
+    .sub-header-wrapper {
+        @include breakpoint(medium) {
+            position: absolute;
+            top: -70px;
+            left: 3%;
+        }
     }
 
     .about-section {
         padding: 50px 0 10px 0;
+
+        @include breakpoint(medium) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @include breakpoint(large) {
+            padding: 70px 0 10px 0;
+        }
+
+        .about-left,
+        .about-right {
+            padding-bottom: 40px;
+
+            @include breakpoint(medium) {
+                width: 50%;
+                flex: 1 1 50%;
+            }
+        }
+
+        &.about-top {
+            align-items: flex-start;
+        }
     }
 
     .about-description {
@@ -163,11 +219,16 @@ export default {
         line-height: 1.71;
         text-align: left;
         color: #20252a;
-    }
 
-    .about-left,
-    .about-right {
-        padding-bottom: 40px;
+        @include breakpoint(medium-lg) {
+            font-size: 15px;
+            padding-right: 25px;
+        }
+
+        @include breakpoint(large) {
+            width: 100%;
+            max-width: 480px;
+        }
     }
 
     .about-technologies {
@@ -192,7 +253,33 @@ export default {
             font-size: 12px;
             padding: 0 0 7px 5px;
             color: $black;
+
+            @include breakpoint(medium) {
+                padding: 0 0 7px 0;
+            }
+
+            @include breakpoint(medium-lg) {
+                font-size: 13px;
+            }
         }
+    }
+    .about-description-me {
+      .about-quotation {
+        @include breakpoint(medium) {
+          padding: 0 0 0 20%;
+        }
+      }
+    }
+
+    .available {
+      .about-quotation {
+        @include breakpoint(medium) {
+          padding: 0;
+          margin: 0 auto;
+          text-align: center;
+          line-height: 1;
+        }
+      }
     }
 
     .about-quotation {
@@ -230,6 +317,18 @@ export default {
         background: $blue-sea;
         padding: 40px 30px;
 
+        @include breakpoint(medium) {
+            padding: 50px;
+        }
+
+        @include breakpoint(medium-lg) {
+            padding: 60px;
+        }
+
+        @include breakpoint(large) {
+            padding: 70px;
+        }
+
         .about-me-text {
             color: $gray-hard;
             font-family: 'Montserrat';
@@ -237,6 +336,10 @@ export default {
             text-align: left;
             font-weight: 400;
             line-height: 1.5;
+
+            @include breakpoint(medium-lg) {
+                line-height: 1.7;
+            }
         }
     }
 

@@ -46,12 +46,53 @@ export default {
     .drop-me-a-line-wrapper {
         background: $white;
         padding: 60px 0 40px;
+
+        @include breakpoint(medium) {
+          padding: 60px 0 70px;
+        }
+        @include breakpoint(medium-lg) {
+          /*padding: 80px 0 90px;*/
+        }
+        @include breakpoint(large) {
+          /*padding: 100px 0 110px;*/
+            padding: 80px 0 15px;
+        }
     }
 
     .drop-me-a-line {
         display: flex;
         flex-direction: column;
-    }
+
+        @include breakpoint(medium) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        @include breakpoint(medium-lg) {
+            width: 100%;
+            /*max-width: 90%;*/
+            margin: 0 auto;
+        }
+
+        .drop-me-one {
+          &:nth-child(1) {
+            @include breakpoint(medium) {
+              order: 2;
+            }
+          }
+          &:nth-child(2) {
+            @include breakpoint(medium) {
+              order: 1;
+            }
+          }
+          &:nth-child(3) {
+            @include breakpoint(medium) {
+              order: 3;
+            }
+          }
+        }
+      }
 
     .drop-me-one {
         width: 100%;
@@ -59,6 +100,10 @@ export default {
 
     .button.primary {
         margin: 0 auto 50px;
+
+        @include breakpoint(medium) {
+            margin: 0 auto;
+        }
     }
 
     .drop-me-one-contact {
@@ -72,8 +117,12 @@ export default {
         /*overflow: hidden;*/
         /*transform: translateY(100%);*/
 
+        @include breakpoint(medium) {
+          padding: 0;
+        }
+
         a {
-            color: $gray-medium-1;
+          color: $gray-medium-1;
         }
 
         .drop-contact-me {
@@ -98,5 +147,10 @@ export default {
         font-size: 10px;
         padding-left: 7px;
         color: $gray-medium-1;
+
+        @include breakpoint(medium) {
+          text-align: right;
+          font-size: 12px;
+        }
     }
 </style>

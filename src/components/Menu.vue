@@ -117,6 +117,10 @@ export default {
     border-radius: 4px;
     z-index: 250;
 
+      @include breakpoint(medium) {
+          right: 25px;
+      }
+
     span {
       position: absolute;
       left: 50%;
