@@ -88,7 +88,7 @@
 
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
-import TweenLite from 'gsap'
+import { TimelineMax, TweenLite } from 'gsap'
 
 export default {
   name: 'About',
@@ -131,66 +131,98 @@ export default {
     }
   },
   methods: {
-    init: function (options) {
-      var _this = this
-      this.element = document.querySelector(options.element)
-      this.elementName = options.element
-      // Resize
-      this.resizeListener()
-      // Clone first element
-      var ul = this.element.querySelector('.one-tech')
-      var firstLiClone = ul.children[0].cloneNode(true)
-      var lastLiClone = ul.children[ul.children.length - 1].cloneNode(true)
-      ul.appendChild(firstLiClone)
-      ul.insertBefore(lastLiClone, ul.children[0])
-      this.currentPos -= this.viewWidth
-      this.startPos = this.currentPos
-      TweenLite.to(ul, 0, {
-        x: _this.currentPos
-      })
-      this.settings.element = options.element
-      this.settings.elementName = options.element
-      if (options.autoplay) {
-        var timer = this.defaultOptions.timer
-        if (options.timer) {
-          timer = options.timer
-        }
-        this.settings.timer = timer
-        this.settings.autoplay = true
-        this.setLoop()
-      }
-      window.addEventListener('resize', function () {
-        _this.resizeListener()
-      }, true)
-    },
-    setLoop: function () {
-      var _this = this
-      this.loop = setInterval(function () {
-        _this.nextSlide()
-      }, _this.settings.timer * 1000)
-    },
-    removeLoop: function () {
-      clearInterval(this.loop)
-    },
-    resizeListener: function () {
-      this.viewWidth = parseInt(window.getComputedStyle(this.element).width.slice(0, -2))
-      this.viewHeight = parseInt(window.getComputedStyle(this.element).height.slice(0, -2))
-      // Set ul width
-      var ul = document.querySelector(this.elementName + ' ul')
-      var ulWidth = 0
-      for (var i = 0; i < ul.children.length; i++) {
-        ul.children[i].style.width = this.viewWidth + 'px'
-        ulWidth += parseInt(this.viewWidth)
-      }
-      ul.style.width = ulWidth + 'px'
-    }
+  //
   },
   mounted () {
-    Slider.init({
-      element: '.slideshow',
-      timer: 3,
-      autoplay: true
-    })
+    let $intro = document.querySelector('.one-techno-row')
+    let $slider = document.querySelectorAll('.techno-list')
+    let $slides = $slider.find('.one-tech')
+    let slidesNum = $slides.length
+    let prevSlideID = null
+    let currentSlideID = 0
+    let isAnimating = false
+    let tlMax = new TimelineMax({ onComplete: startAutoPlay })
+
+    tlMax
+      .to($intro, 0.5, { delay: 1, autoAlpha: 0 })
+
+    function init () {
+      TweenLite.set($slides, {
+        left: '-100%'
+      })
+      gotoSlide(0, 0)
+    }
+
+    function gotoNextSlide () {
+      let slideToGo = currentSlideID + 1
+      if (slideToGo >= slidesNum) {
+        slideToGo = 0
+      }
+      stopAutoPlay()
+      gotoSlide(slideToGo, 1, 'next')
+    }
+
+    function gotoSlide (slideID, _time, _direction) {
+      if (!isAnimating) {
+        isAnimating = true
+        prevSlideID = currentSlideID
+        currentSlideID = slideID
+        let $prevSlide = $slides.eq(prevSlideID)
+        let $currentSlide = $slides.eq(currentSlideID)
+        let time = 1
+        if (_time !== null) {
+          time = _time
+        }
+        let direction = 'next'
+        if (_direction != null) {
+          direction = _direction
+        }
+        if (direction === 'next') {
+          TweenLite.to($prevSlide, time, {
+            left: '-100%'
+          })
+          TweenLite.fromTo($currentSlide, time, {
+            left: '100%'
+          }, {
+            left: '0'
+          })
+        } else {
+          TweenLite.to($prevSlide, time, {
+            left: '100%'
+          })
+          TweenLite.fromTo($currentSlide, time, {
+            left: '-100%'
+          }, {
+            left: '0'
+          })
+        }
+        TweenLite.delayedCall(time, function () {
+          isAnimating = false
+        })
+      }
+    }
+
+    function play () {
+      gotoNextSlide()
+      TweenLite.delayedCall(4, play)
+    }
+
+    function startAutoPlay (immediate) {
+      if (immediate != null) {
+        immediate = false
+      }
+
+      if (immediate) {
+        gotoNextSlide()
+      }
+      TweenLite.delayedCall(4, play)
+    }
+
+    function stopAutoPlay () {
+      this.isAutoPlay = false
+      TweenLite.killDelayedCallsTo(play)
+    }
+    init()
   }
 }
 </script>
