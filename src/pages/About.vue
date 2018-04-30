@@ -88,7 +88,7 @@
 
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
-//import TimelineMax from 'gsap'
+import TweenLite from 'gsap'
 
 export default {
   name: 'About',
@@ -110,11 +110,87 @@ export default {
         { name: 'Frontend Development' },
         { name: 'Interaction Design' },
         { name: 'User Experience' }
-      ]
+      ],
+      Slider: [
+        {
+          elementName: null,
+          element: null,
+          viewWidth: 0,
+          viewHeight: 0,
+          currentPos: 0,
+          startPos: 0,
+          loopInterval: null,
+          defaultOptions: {
+            autoplay: false,
+            timer: 10
+          },
+          settings: {},
+          currentSlide: 0,
+          loop: null
+        }]
     }
   },
   methods: {
-
+    init: function (options) {
+      var _this = this
+      this.element = document.querySelector(options.element)
+      this.elementName = options.element
+      // Resize
+      this.resizeListener()
+      // Clone first element
+      var ul = this.element.querySelector('.one-tech')
+      var firstLiClone = ul.children[0].cloneNode(true)
+      var lastLiClone = ul.children[ul.children.length - 1].cloneNode(true)
+      ul.appendChild(firstLiClone)
+      ul.insertBefore(lastLiClone, ul.children[0])
+      this.currentPos -= this.viewWidth
+      this.startPos = this.currentPos
+      TweenLite.to(ul, 0, {
+        x: _this.currentPos
+      })
+      this.settings.element = options.element
+      this.settings.elementName = options.element
+      if (options.autoplay) {
+        var timer = this.defaultOptions.timer
+        if (options.timer) {
+          timer = options.timer
+        }
+        this.settings.timer = timer
+        this.settings.autoplay = true
+        this.setLoop()
+      }
+      window.addEventListener('resize', function () {
+        _this.resizeListener()
+      }, true)
+    },
+    setLoop: function () {
+      var _this = this
+      this.loop = setInterval(function () {
+        _this.nextSlide()
+      }, _this.settings.timer * 1000)
+    },
+    removeLoop: function () {
+      clearInterval(this.loop)
+    },
+    resizeListener: function () {
+      this.viewWidth = parseInt(window.getComputedStyle(this.element).width.slice(0, -2))
+      this.viewHeight = parseInt(window.getComputedStyle(this.element).height.slice(0, -2))
+      // Set ul width
+      var ul = document.querySelector(this.elementName + ' ul')
+      var ulWidth = 0
+      for (var i = 0; i < ul.children.length; i++) {
+        ul.children[i].style.width = this.viewWidth + 'px'
+        ulWidth += parseInt(this.viewWidth)
+      }
+      ul.style.width = ulWidth + 'px'
+    }
+  },
+  mounted () {
+    Slider.init({
+      element: '.slideshow',
+      timer: 3,
+      autoplay: true
+    })
   }
 }
 </script>
