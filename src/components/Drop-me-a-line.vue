@@ -98,45 +98,21 @@ export default {
         width: 100%;
     }
 
+    .drop-contact-me {
+        display: inline-flex;
+        overflow-x: hidden;
+        padding: 0 7px;
+
+        &:nth-child(1) {
+            padding-bottom: 5px;
+        }
+    }
+
     .button.primary {
         margin: 0 auto 50px;
 
         @include breakpoint(medium) {
             margin: 0 auto;
-        }
-    }
-
-    .drop-me-one-contact {
-        position: relative;
-        font-family: 'Montserrat';
-        font-weight: 500;
-        letter-spacing: 0.3px;
-        font-size: 13px;
-        color: $gray;
-        padding-bottom: 40px;
-        /*overflow: hidden;*/
-        /*transform: translateY(100%);*/
-
-        @include breakpoint(medium) {
-          padding: 0;
-        }
-
-        a {
-          color: $gray-medium-1;
-        }
-
-        .drop-contact-me {
-            display: inline-flex;
-            overflow-x: hidden;
-            padding: 0 7px;
-
-            &:nth-child(1) {
-                padding-bottom: 5px;
-            }
-            &:hover {
-                color: $white;
-                text-decoration: none;
-            }
         }
     }
 

@@ -141,3 +141,50 @@
   z-index: 120;
   transform-origin: right;
 }
+
+.partners-container,
+.contact-container {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(medium) {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  @include breakpoint(large) {
+    padding-left: 25%;
+  }
+}
+
+.drop-me-one-contact {
+  position: relative;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  font-size: 13px;
+  color: $gray;
+  padding-bottom: 40px;
+  /*overflow: hidden;*/
+  /*transform: translateY(100%);*/
+
+  @include breakpoint(medium) {
+    padding: 0;
+  }
+
+  a {
+    color: $gray-medium-1;
+
+    &.drop-contact-me {
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .drop-contact-me {
+    display: inline-flex;
+    overflow-x: hidden;
+  }
+}

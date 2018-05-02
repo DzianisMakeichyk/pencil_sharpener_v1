@@ -4,6 +4,7 @@ import Index from '@/pages/Index'
 import Portfolio from '@/pages/Portfolio'
 import Partners from '@/pages/Partners'
 import About from '@/pages/About'
+import Contact from '@/pages/Contact'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
     }
   ]
 })

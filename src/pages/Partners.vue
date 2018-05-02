@@ -59,20 +59,7 @@ export default {
             top: -8%;
         }
     }
-
     .partners-container {
-        display: flex;
-        flex-direction: column;
-
-        @include breakpoint(medium) {
-            flex-wrap: wrap;
-            flex-direction: row;
-        }
-
-        @include breakpoint(large) {
-            padding-left: 25%;
-        }
-
         .partner-box {
             width: 100%;
             padding: 62px 58px;

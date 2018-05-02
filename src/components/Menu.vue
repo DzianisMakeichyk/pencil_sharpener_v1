@@ -52,7 +52,7 @@
                     </span>
                 </router-link>
                 <router-link
-                  :to="{name: 'Portfolio'}"
+                  :to="{name: 'Contact'}"
                   class="one-menu-item"
                 >
                     <span class="menu-item">
