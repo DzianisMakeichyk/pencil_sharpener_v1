@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <DropMeALine/>
+                    <DropMeALine section="second"/>
                 </div>
             </div>
         </div>
@@ -74,27 +74,16 @@ export default {
 
 <!--scoped-->
 <style lang="scss" scoped>
-    .sub-header-wrapper {
-        top: -6%;
-
-        @include breakpoint(medium) {
-            top: -4%;
-        }
-
-        @include breakpoint(medium-lg) {
-            top: -7%;
-        }
-
-        @include breakpoint(large) {
-            top: -8%;
-        }
-    }
-
     .contact-box-wrapper {
         padding: 45px 0 25px;
 
         .contact-box {
             padding: 30px 25px;
+
+            @media only screen and (min-width: 380px) {
+                max-width: 250px;
+                margin: 0 auto;
+            }
 
             @include breakpoint(medium) {
                 padding: 50px 25px;
@@ -110,15 +99,19 @@ export default {
         }
 
         .contact-title {
+            padding-bottom: 10px;
             font-family: 'Montserrat';
             font-weight: 500;
             font-size: 13px;
             line-height: 1.71;
             letter-spacing: .8px;
             text-transform: uppercase;
-            text-align: left;
             color: #a7a7a7;
-            padding-bottom: 10px;
+            text-align: center;
+
+            @include breakpoint(medium) {
+                text-align: left;
+            }
         }
 
         .drop-contact-me {

@@ -165,11 +165,13 @@
   font-size: 13px;
   color: $gray;
   padding-bottom: 40px;
+  text-align: center;
   /*overflow: hidden;*/
   /*transform: translateY(100%);*/
 
   @include breakpoint(medium) {
     padding: 0;
+    text-align: left;
   }
 
   a {
@@ -186,5 +188,21 @@
   .drop-contact-me {
     display: inline-flex;
     overflow-x: hidden;
+  }
+}
+
+.sub-header-wrapper {
+  top: -3%;
+
+  @include breakpoint(medium) {
+    top: -4%;
+  }
+
+  @include breakpoint(medium-lg) {
+    top: -7%;
+  }
+
+  @include breakpoint(large) {
+    top: -8%;
   }
 }

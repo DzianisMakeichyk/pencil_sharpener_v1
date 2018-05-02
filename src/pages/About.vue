@@ -80,7 +80,7 @@
                     </div>
                     <!-- END 3 -->
                 </div>
-                <DropMeALine/>
+                <DropMeALine section="first"/>
             </div>
         </div>
     </section>
@@ -391,12 +391,17 @@ export default {
     }
 
     .about-quotation {
-        padding: 0 0 40px 30px;
+        padding: 0 0 40px 0;
         line-height: 1.2;
         font-size: 40px;
-        text-align: left;
+        text-align: center;
         font-family: 'PT Serif', serif;
         overflow: hidden;
+
+        @include breakpoint(medium) {
+            padding: 0 0 40px 30px;
+            text-align: left;
+        }
 
         span {
             display: inline-flex;

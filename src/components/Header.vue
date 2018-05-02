@@ -156,7 +156,7 @@ export default {
     .sub-menu {
       position: fixed;
       background: $white;
-      z-index: 100;
+      z-index: 250;
 
       &.left,
       &.right {

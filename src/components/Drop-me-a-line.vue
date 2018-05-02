@@ -9,7 +9,7 @@
                        </span>
                    </a>
                </div>
-               <div class="drop-me-one">
+               <div class="drop-me-one" v-if="this.$props.section === 'first'">
                    <div class="drop-me-one-contact">
                        <p class="drop-contact-me">Polska, Warszawa</p>
                        <br/>
@@ -26,6 +26,18 @@
                        </a>
                    </div>
                </div>
+
+               <div class="drop-me-one" v-if="this.$props.section === 'second'">
+                   <div class="drop-me-one-contact">
+                       <p class="drop-contact-me">
+                           If you want to start a new project
+                           <br/>
+                           or just say hello feel free to
+                           <br/>
+                           contact me.
+                       </p>
+                   </div>
+               </div>
                <div class="drop-me-one">
                    <p class="sing">
                      ©pencilsharpener
@@ -38,7 +50,8 @@
 
 <script>
 export default {
-  name: 'Drop-me-a-line'
+  name: 'Drop-me-a-line',
+  props: ['section']
 }
 </script>
 
@@ -123,6 +136,7 @@ export default {
         font-size: 10px;
         padding-left: 7px;
         color: $gray-medium-1;
+        text-align: center;
 
         @include breakpoint(medium) {
           text-align: right;
