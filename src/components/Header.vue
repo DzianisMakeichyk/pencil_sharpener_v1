@@ -137,7 +137,7 @@ export default {
       height: 67px;
       padding: 20px 0;
       background: $white;
-      z-index: 250;
+      z-index: 350;
       color: $gray-medium;
     }
 

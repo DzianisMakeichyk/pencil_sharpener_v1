@@ -142,8 +142,7 @@
   transform-origin: right;
 }
 
-.partners-container,
-.contact-container {
+.partners-container {
   display: flex;
   flex-direction: column;
 
@@ -191,18 +190,31 @@
   }
 }
 
-.sub-header-wrapper {
-  top: -3%;
-
+.full-height {
   @include breakpoint(medium) {
-    top: -4%;
+    height: 100vh;
   }
 
-  @include breakpoint(medium-lg) {
-    top: -7%;
+  .with-top {
+    @include breakpoint(medium) {
+      padding-top: 0;
+    }
   }
+}
 
-  @include breakpoint(large) {
-    top: -8%;
+.full-height-content {
+  @include breakpoint(medium) {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.full-height-footer {
+  @include breakpoint(medium) {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
   }
 }

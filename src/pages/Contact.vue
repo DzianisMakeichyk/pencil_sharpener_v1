@@ -1,6 +1,7 @@
 <template>
     <section class="container">
-        <div class="content-container with-top">
+        <div class="full-height">
+            <div class="content-container with-top">
             <div class="bg-gray relative">
                 <div class="reveal-me"></div>
                 <div class="sub-header-wrapper top-position">
@@ -9,7 +10,8 @@
                     </h2>
                 </div>
                 <div class="contact-container">
-                    <div class="contact-box-wrapper">
+                    <div class="full-height-content">
+                        <div class="contact-box-wrapper">
                         <div class="contact-box">
                             <p class="contact-title">
                                 Masz pytania?
@@ -54,9 +56,13 @@
                             </div>
                         </div>
                     </div>
-                    <DropMeALine section="second"/>
+                    </div>
+                    <div class="full-height-footer">
+                        <DropMeALine section="second"/>
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 </template>
@@ -74,8 +80,31 @@ export default {
 
 <!--scoped-->
 <style lang="scss" scoped>
+    .sub-header-wrapper {
+        top: -3%;
+
+        @include breakpoint(medium) {
+            top: -8%;
+        }
+    }
     .contact-box-wrapper {
+        display: flex;
+        flex-direction: column;
         padding: 45px 0 25px;
+
+        @include breakpoint(medium) {
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        @include breakpoint(medium-lg) {
+            padding: 45px 0;
+        }
+
+        @include breakpoint(large) {
+            padding-left: 25%;
+        }
 
         .contact-box {
             padding: 30px 25px;
@@ -86,15 +115,52 @@ export default {
             }
 
             @include breakpoint(medium) {
+                max-width: 100%;
                 padding: 50px 25px;
             }
 
             @include breakpoint(medium-lg) {
-                padding: 65px 25px;
+                padding: 60px 25px;
+                margin: 0 0 0 auto;
             }
 
             @include breakpoint(large) {
+                padding: 65px 25px;
+            }
+
+            @include breakpoint(extralarge) {
                 padding: 80px 25px;
+            }
+            &:nth-child(1) {
+                @include breakpoint(medium) {
+                    width: 33.33%;
+                    flex: 1 1 33.33%;
+                }
+                @include breakpoint(medium-lg) {
+                    width: 50%;
+                    flex: 1 1 50%;
+                    padding-left: 25%;
+                }
+            }
+            &:nth-child(2) {
+                @include breakpoint(medium) {
+                    width: 33.33%;
+                    flex: 1 1 33.33%;
+                }
+                @include breakpoint(medium-lg) {
+                    width: 25%;
+                    flex: 1 1 25%;
+                }
+            }
+            &:nth-child(3) {
+                @include breakpoint(medium) {
+                    width: 33.33%;
+                    flex: 1 1 33.33%;
+                }
+                @include breakpoint(medium-lg) {
+                    width: 25%;
+                    flex: 1 1 25%;
+                }
             }
         }
 

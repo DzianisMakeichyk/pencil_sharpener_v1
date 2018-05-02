@@ -44,6 +44,21 @@ export default {
 
 <!--scoped-->
 <style lang="scss" scoped >
+    .sub-header-wrapper {
+        top: -3%;
+
+        @include breakpoint(medium) {
+            top: -4%;
+        }
+
+        @include breakpoint(medium-lg) {
+            top: -7%;
+        }
+
+        @include breakpoint(large) {
+            top: -8%;
+        }
+    }
     .partners-container {
         .partner-box {
             width: 100%;
