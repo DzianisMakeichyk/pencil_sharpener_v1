@@ -195,6 +195,12 @@
     height: 100vh;
   }
 
+  .content-container {
+    @include breakpoint(medium) {
+      height: 100%;
+    }
+  }
+
   .with-top {
     @include breakpoint(medium) {
       padding-top: 0;
@@ -204,8 +210,6 @@
 
 .full-height-content {
   @include breakpoint(medium) {
-    position: absolute;
-    width: 100%;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -213,8 +217,36 @@
 
 .full-height-footer {
   @include breakpoint(medium) {
+    bottom: 30px;
+  }
+
+  @include breakpoint(large) {
+    bottom: 55px;
+  }
+
+  @include breakpoint(extralarge) {
+    bottom: 70px;
+  }
+}
+
+.full-height-footer,
+.full-height-footer {
+  @include breakpoint(medium) {
     position: absolute;
-    width: 100%;
-    bottom: 0;
+    left: 30px;
+    right: 30px;
+    width: calc(100% - 60px);
+  }
+
+  @include breakpoint(large) {
+    left: 55px;
+    right: 55px;
+    width: calc(100% - 110px);
+  }
+
+  @include breakpoint(extralarge) {
+    left: 70px;
+    right: 70px;
+    width: calc(100% - 140px);
   }
 }

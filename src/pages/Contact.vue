@@ -2,16 +2,14 @@
     <section class="container">
         <div class="full-height">
             <div class="content-container with-top">
-            <div class="bg-gray relative">
                 <div class="reveal-me"></div>
-                <div class="sub-header-wrapper top-position">
-                    <h2 class="sub-header">
-                        Kontakt
-                    </h2>
-                </div>
-                <div class="contact-container">
-                    <div class="full-height-content">
-                        <div class="contact-box-wrapper">
+                <div class="full-height-content relative">
+                    <div class="sub-header-wrapper top-position">
+                        <h2 class="sub-header">
+                            Kontakt
+                        </h2>
+                    </div>
+                    <div class="contact-box-wrapper bg-gray">
                         <div class="contact-box">
                             <p class="contact-title">
                                 Masz pytania?
@@ -31,19 +29,19 @@
                             </p>
                         </div>
                         <div class="contact-box">
-                            <p class="contact-title">
-                                Adres
+                        <p class="contact-title">
+                            Adres
+                        </p>
+                        <div class="drop-me-one-contact">
+                            <p class="drop-contact-me">
+                                Ul.Kolejowa 47c
                             </p>
-                            <div class="drop-me-one-contact">
-                                <p class="drop-contact-me">
-                                    Ul.Kolejowa 47c
-                                </p>
-                                <br/>
-                                <p class="drop-contact-me">
-                                    01-210 Warszawa, Polska
-                                </p>
-                            </div>
+                            <br/>
+                            <p class="drop-contact-me">
+                                01-210 Warszawa, Polska
+                            </p>
                         </div>
+                    </div>
                         <div class="contact-box">
                             <div class="drop-me-one-contact">
                                 <p class="drop-contact-me">
@@ -56,13 +54,11 @@
                             </div>
                         </div>
                     </div>
-                    </div>
-                    <div class="full-height-footer">
-                        <DropMeALine section="second"/>
-                    </div>
+                </div>
+                <div class="full-height-footer">
+                    <DropMeALine section="second"/>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 </template>
@@ -81,10 +77,10 @@ export default {
 <!--scoped-->
 <style lang="scss" scoped>
     .sub-header-wrapper {
-        top: -3%;
+        top: -6%;
 
         @include breakpoint(medium) {
-            top: -8%;
+            top: -15%;
         }
     }
     .contact-box-wrapper {
@@ -183,6 +179,12 @@ export default {
         .drop-contact-me {
             padding: 0 0 1px 0;
             color: #4e4e4e;
+        }
+    }
+
+    .bg-gray {
+        @include breakpoint(medium) {
+            /*height: 250px;*/
         }
     }
 </style>

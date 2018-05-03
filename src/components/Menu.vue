@@ -185,9 +185,13 @@ export default {
       transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 
       @include breakpoint(medium) {
-          width: 35%;
+          width: 42%;
           left: auto;
           right: 0;
+      }
+
+      @include breakpoint(large) {
+          width: 35%;
       }
 
       &.is-active {
