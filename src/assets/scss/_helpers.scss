@@ -208,13 +208,6 @@
   }
 }
 
-.full-height-content {
-  @include breakpoint(medium) {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
 .full-height-footer {
   @include breakpoint(medium) {
     bottom: 30px;
@@ -229,7 +222,6 @@
   }
 }
 
-.full-height-footer,
 .full-height-footer {
   @include breakpoint(medium) {
     position: absolute;

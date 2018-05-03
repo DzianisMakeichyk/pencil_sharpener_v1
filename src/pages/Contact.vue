@@ -83,6 +83,14 @@ export default {
             top: -15%;
         }
     }
+
+    .full-height-content {
+        @include breakpoint(medium) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
     .contact-box-wrapper {
         display: flex;
         flex-direction: column;
