@@ -64,7 +64,7 @@ export default {
         }
 
         @include breakpoint(extralarge) {
-            top: -7%;
+            top: -13%;
         }
     }
 
