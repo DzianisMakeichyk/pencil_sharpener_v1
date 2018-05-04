@@ -106,33 +106,6 @@ export default {
         font-family: 'Montserrat';
     }
 
-    .one-project-bg {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 360px;
-        margin-bottom: 25px;
-
-        @include breakpoint(medium) {
-            height: 420px;
-        }
-
-        @include breakpoint(medium-lg) {
-            height: 460px;
-            margin-bottom: 35px;
-        }
-
-        @include breakpoint(large) {
-            height: 500px;
-            margin-bottom: 40px;
-        }
-
-        &.first-project {
-            background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
-        }
-    }
-
     .projects {
         @include breakpoint(medium) {
             display: flex;
@@ -199,7 +172,58 @@ export default {
                 margin-top: -35%;
             }
         }
+
+        &:hover {
+            .one-project-bg {
+                &:before {
+                    height: 100%;
+                    transform: translateY(0) rotate(0);
+                }
+            }
+        }
     }
+    .one-project-bg {
+         position: relative;
+         width: 100%;
+         height: 360px;
+         margin-bottom: 25px;
+         background-position: center;
+         background-size: cover;
+         background-repeat: no-repeat;
+        overflow: hidden;
+
+         @include breakpoint(medium) {
+             height: 420px;
+         }
+
+         @include breakpoint(medium-lg) {
+             height: 460px;
+             margin-bottom: 35px;
+         }
+
+         @include breakpoint(large) {
+             height: 500px;
+             margin-bottom: 40px;
+         }
+
+         &.first-project {
+             background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
+         }
+
+         &:before {
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: -25px;
+             width: 120%;
+             /*height: 100%;*/
+             height: 0;
+             background-color: $darkviolet;
+             opacity: .7;
+             transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+             transform: translateY(100px) rotate(15deg);
+         }
+     }
 
     .one-project-body {
         text-align: center;
