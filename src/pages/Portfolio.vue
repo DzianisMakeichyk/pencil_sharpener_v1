@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="full-height">
+        <div class="full-height portfolio-page">
             <div class="content-container">
                 <div class="reveal-me"></div>
                 <div class="full-height-content relative">
@@ -35,9 +35,7 @@
                         <!-- END Projects -->
                     </div>
                 </div>
-                <div class="full-height-footer">
-                    <DropMeALine section="second"/>
-                </div>
+                <DropMeALine section="second"/>
             </div>
         </div>
     </div>
@@ -73,16 +71,19 @@ export default {
         text-align: center;
 
         @include breakpoint(medium) {
+            width: 100%;
+            max-width: 320px;
+            margin-left: 52%;
             padding: 275px 0 120px;
             text-align: left;
         }
 
         @include breakpoint(large) {
-            padding: 275px 0 150px;
+            padding: 250px 0 100px;
         }
 
         @include breakpoint(extralarge) {
-            padding: 327px 0 200px;
+            padding: 300px 0 200px;
         }
     }
 
@@ -132,20 +133,71 @@ export default {
         }
     }
 
+    .projects {
+        @include breakpoint(medium) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(large) {
+            max-width: 1050px;
+        }
+    }
+
     .project-shot {
         padding-bottom: 25px;
         margin-bottom: 25px;
 
         @include breakpoint(medium) {
             padding-bottom: 75px;
+            width: 40%;
+            max-width: 480px;
+            flex: 1 1 40%;
         }
 
         @include breakpoint(medium-lg) {
-            padding-bottom: 100px;
+            /*padding-bottom: 100px;*/
         }
 
         @include breakpoint(large) {
-            padding-bottom: 140px;
+            /*padding-bottom: 140px;*/
+        }
+
+        &:nth-child(odd) {
+            @include breakpoint(medium) {
+                margin-right: 25px;
+            }
+            @include breakpoint(medium-lg) {
+                margin-right: 45px;
+            }
+            @include breakpoint(large) {
+                margin-right: 60px;
+            }
+        }
+
+        &:nth-child(2) {
+            @include breakpoint(medium) {
+                margin-top: 50%;
+            }
+
+            @include breakpoint(large) {
+                margin-top: 35%;
+            }
+        }
+
+        &:nth-child(3),
+        &:nth-child(5) {
+            @include breakpoint(medium) {
+                margin-top: -50%;
+            }
+
+            @include breakpoint(large) {
+                margin-top: -35%;
+            }
         }
     }
 

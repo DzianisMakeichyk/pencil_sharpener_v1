@@ -72,6 +72,14 @@ export default {
         }
     }
 
+    .portfolio-page {
+        .drop-me-a-line-wrapper {
+            @include breakpoint(large) {
+                padding: 100px 0 90px;
+            }
+        }
+    }
+
     .drop-me-a-line {
         display: flex;
         flex-direction: column;
