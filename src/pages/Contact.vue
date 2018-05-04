@@ -77,10 +77,16 @@ export default {
 <!--scoped-->
 <style lang="scss" scoped>
     .sub-header-wrapper {
-        top: -6%;
+        &.top-position {
+            top: -6%;
 
-        @include breakpoint(medium) {
-            top: -15%;
+            @include breakpoint(medium) {
+                top: -12%;
+            }
+
+            @include breakpoint(medium-lg) {
+                top: -15%;
+            }
         }
     }
 
@@ -120,11 +126,11 @@ export default {
 
             @include breakpoint(medium) {
                 max-width: 100%;
-                padding: 50px 25px;
+                padding: 30px;
             }
 
             @include breakpoint(medium-lg) {
-                padding: 60px 25px;
+                padding: 60px 30px;
                 margin: 0 0 0 auto;
             }
 
@@ -137,8 +143,8 @@ export default {
             }
             &:nth-child(1) {
                 @include breakpoint(medium) {
-                    width: 33.33%;
-                    flex: 1 1 33.33%;
+                    width: 100%;
+                    flex: 1 1 100%;
                 }
                 @include breakpoint(medium-lg) {
                     width: 50%;
@@ -148,8 +154,8 @@ export default {
             }
             &:nth-child(2) {
                 @include breakpoint(medium) {
-                    width: 33.33%;
-                    flex: 1 1 33.33%;
+                    width: 50%;
+                    flex: 1 1 50%;
                 }
                 @include breakpoint(medium-lg) {
                     width: 25%;
@@ -158,8 +164,8 @@ export default {
             }
             &:nth-child(3) {
                 @include breakpoint(medium) {
-                    width: 33.33%;
-                    flex: 1 1 33.33%;
+                    width: 50%;
+                    flex: 1 1 50%;
                 }
                 @include breakpoint(medium-lg) {
                     width: 25%;
