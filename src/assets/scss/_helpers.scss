@@ -242,3 +242,17 @@
     width: calc(100% - 140px);
   }
 }
+
+.heading-text {
+  font-family: 'PT Serif', serif;
+  font-size: 28px;
+  color: $black;
+
+  @include breakpoint(large) {
+    font-size: 30px;
+  }
+
+  @include breakpoint(extralarge) {
+    font-size: 38px;
+  }
+}
