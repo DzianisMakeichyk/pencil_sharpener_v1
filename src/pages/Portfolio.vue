@@ -124,6 +124,7 @@ export default {
     .project-shot {
         padding-bottom: 25px;
         margin-bottom: 25px;
+        cursor: pointer;
 
         @include breakpoint(medium) {
             padding-bottom: 75px;
