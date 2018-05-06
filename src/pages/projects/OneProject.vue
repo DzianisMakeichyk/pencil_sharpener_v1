@@ -8,7 +8,7 @@
                     <div class="project-me">
                         <div class="sub-header-wrapper">
                             <h1 class="sub-header">
-                                {{ stypendium_z_wyboru[0].name }}
+                                {{ currentProject.name }}
                             </h1>
                         </div>
                     </div>
@@ -19,12 +19,12 @@
                                     opis
                                 </p>
                                 <p class="project-description">
-                                    {{ stypendium_z_wyboru[0].description }}
+                                    {{ currentProject.description }}
                                 </p>
 
                                 <div class="project-buttons">
                                     <div class="drop-me-one">
-                                        <a :href="stypendium_z_wyboru[0].see_project" class="button-wrapper" target="_blank">
+                                        <a :href="currentProject.see_project" class="button-wrapper" target="_blank">
                                            <span class="button primary">
                                                Zobacz projekt
                                            </span>
@@ -32,7 +32,7 @@
                                     </div>
 
                                     <div class="drop-me-one">
-                                        <a :href="stypendium_z_wyboru[0].repo_project" class="button-wrapper" target="_blank">
+                                        <a :href="currentProject.repo_project" class="button-wrapper" target="_blank">
                                            <span class="button primary">
                                                Zobacz repozytorium
                                            </span>
@@ -47,7 +47,7 @@
                                             Technologie
                                         </p>
                                         <ul class="techno-list">
-                                            <li class="one-tech" v-for="technology in stypendium_z_wyboru[0].technologies" :key="technology">{{technology.name}}</li>
+                                            <li class="one-tech" v-for="technology in currentProject.technologies" :key="technology">{{technology.name}}</li>
                                         </ul>
                                     </div>
                                     <div class="one-techno-row">
@@ -55,7 +55,7 @@
                                             klient
                                         </p>
                                         <ul class="techno-list">
-                                            <li class="one-tech">{{ stypendium_z_wyboru[0].client }}</li>
+                                            <li class="one-tech">{{ currentProject.client }}</li>
                                         </ul>
                                     </div>
                                     <div class="one-techno-row">
@@ -63,7 +63,7 @@
                                             rok
                                         </p>
                                         <ul class="techno-list">
-                                            <li class="one-tech">{{ stypendium_z_wyboru[0].year }}</li>
+                                            <li class="one-tech">{{ currentProject.year }}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -77,14 +77,36 @@
 </template>
 
 <script>
+import find from 'lodash/find'
 export default {
   name: 'OneProject',
   data () {
     return {
-      stypendium_z_wyboru: [
+      dates: [
         {
           slug: 'stypendium-z-wyboru',
           name: 'Stypendium z wyboru',
+          image: 'image',
+          description: 'description',
+          technologies: [
+            {name: 'HTML/Jade'},
+            {name: 'SCSS/SASS'},
+            {name: 'Handlebars'},
+            {name: 'JavaScript/ES6'},
+            {name: 'VueJS/VUEX'},
+            {name: 'ReactJs'},
+            {name: 'WordPress'}
+          ],
+          year: '2015',
+          client: 'Absolvent.pl',
+          see_project: 'see_project',
+          repo_project: 'repo_project',
+          prev: 'prev',
+          next: 'next'
+        },
+        {
+          slug: 'stypendium-z-wyboru2',
+          name: 'Stypendium z wyboru2',
           image: 'image',
           description: 'description',
           technologies: [
@@ -106,9 +128,12 @@ export default {
       ]
     }
   },
-  mounted () {
-    let slug = this.$route.params.slug
-    console.log(slug)
+  computed: {
+    currentProject: function () {
+      return find(this.dates, (project) => (
+        project.slug === this.$route.params.slug
+      ))
+    }
   }
 }
 </script>
