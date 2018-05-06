@@ -22,6 +22,11 @@ export default new Router({
       component: Portfolio
     },
     {
+      path: '/portfolio/:slug',
+      name: 'OneProject',
+      component: OneProject
+    },
+    {
       path: '/partners',
       name: 'Partners',
       component: Partners
@@ -35,11 +40,6 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
-    },
-    {
-      path: '/OneProject',
-      name: 'OneProject',
-      component: OneProject
     }
   ]
 })

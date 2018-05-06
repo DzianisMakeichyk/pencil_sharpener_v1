@@ -20,15 +20,23 @@
                         <div class="projects-wrapper">
                             <div class="projects">
                                 <div class="project-shot" v-for="project in projects" :key="project">
-                                    <div class="one-project-bg" v-bind:class="project.classImage"></div>
-                                    <div class="one-project-body">
-                                        <h4 class="one-project-title">
-                                            {{project.name}}
-                                        </h4>
-                                        <h5 class="one-project-description description">
-                                            {{project.description}}
-                                        </h5>
-                                    </div>
+                                    <router-link
+                                            :to="{
+                                                  name: 'OneProject',
+                                                  params: {
+                                                    slug: project.url
+                                                  }
+                                                }">
+                                        <div class="one-project-bg" v-bind:class="project.classImage"></div>
+                                        <div class="one-project-body">
+                                            <h4 class="one-project-title">
+                                                {{project.name}}
+                                            </h4>
+                                            <h5 class="one-project-description description">
+                                                {{project.description}}
+                                            </h5>
+                                        </div>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +60,7 @@ export default {
   data () {
     return {
       projects: [
-        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
+        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'stypendium-z-wyboru'},
         {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
         {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
         {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
