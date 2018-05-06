@@ -1,9 +1,9 @@
 <template>
     <section class="container">
+        <div class="reveal-me"></div>
         <div class="photo-container"></div>
         <div class="content-container">
             <div class="bg-gray relative">
-                <div class="reveal-me"></div>
                 <div class="about-me-wrapper">
                     <div class="about-me">
                         <div class="sub-header-wrapper">
@@ -263,7 +263,7 @@ export default {
 
     .about-me,
     .about-section-wrapper {
-        padding: 0 10px;
+        padding: 0 15px;
 
         @include breakpoint(medium) {
             padding: 0 25px;

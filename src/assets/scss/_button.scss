@@ -13,13 +13,13 @@
   overflow: hidden;
   z-index: 100;
   outline: hidden;
-  border: none;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1px;
   font-family: 'Montserrat';
   color: $white;
   background: $darkviolet;
+  border: 1px solid $darkviolet;
 
   &::before,
   &::after {

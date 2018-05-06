@@ -5,6 +5,7 @@ import Portfolio from '@/pages/Portfolio'
 import Partners from '@/pages/Partners'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
+import OneProject from '@/pages/projects/OneProject'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/OneProject',
+      name: 'OneProject',
+      component: OneProject
     }
   ]
 })
