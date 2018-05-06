@@ -73,6 +73,42 @@
                 </div>
             </div>
         </div>
+        <!-- Arrows -->
+
+        <!-- Left-->
+        <div class="sub-menu left">
+            <router-link
+                class="sub-title-left"
+                :to="{
+                      name: 'OneProject',
+                      params: {
+                        slug: currentProject.next
+                      }
+                    }"
+            >
+                Następny projekt
+            </router-link>
+        </div>
+        <!-- Right-->
+        <div class="sub-menu right">
+            <router-link
+                class="sub-title-right"
+                :to="{
+                  name: 'OneProject',
+                  params: {
+                    slug: currentProject.prev
+                  }
+                }"
+            >
+                Poprzedni project
+            </router-link>
+        </div>
+        <!-- Bottom-->
+        <!--<div class="sub-menu bottom">-->
+            <!--<div class="sub-title-right">-->
+                <!--Hello-->
+            <!--</div>-->
+        <!--</div>-->
     </section>
 </template>
 
@@ -98,8 +134,8 @@ export default {
           client: 'Absolvent.pl',
           see_project: 'https://stypendiumzwyboru.pl/',
           repo_project: '',
-          prev: 'prev',
-          next: 'next'
+          prev: 'makabra',
+          next: 'nova-dolna'
         },
         {
           slug: 'makabra',
@@ -117,8 +153,8 @@ export default {
           client: 'Open Gate',
           see_project: 'http://www.festmakabra.pl/',
           repo_project: 'https://github.com/DzianisMakeichyk/film',
-          prev: 'prev',
-          next: 'next'
+          prev: 'cateringoo',
+          next: 'stypendium-z-wyboru'
         },
         {
           slug: 'cateringoo',
@@ -137,8 +173,8 @@ export default {
           client: 'Still secret ;)',
           see_project: 'https://www.cateringoo.pl/',
           repo_project: '',
-          prev: 'prev',
-          next: 'next'
+          prev: 'telegram',
+          next: 'makabra'
         },
         {
           slug: 'nova-dolna',
@@ -156,8 +192,8 @@ export default {
           client: 'Cape Morris',
           see_project: 'http://novadolna.pl/',
           repo_project: '',
-          prev: 'prev',
-          next: 'next'
+          prev: 'stypendium-z-wyboru',
+          next: 'vg-capital'
         },
         {
           slug: 'vg-capital',
@@ -175,8 +211,8 @@ export default {
           client: 'Cape Morris',
           see_project: 'http://vgcapital.pl/',
           repo_project: '',
-          prev: 'prev',
-          next: 'next'
+          prev: 'nova-dolna',
+          next: 'telegram'
         },
         {
           slug: 'telegram',
@@ -191,8 +227,8 @@ export default {
           client: 'Pencil Sharpener',
           see_project: 'https://t.me/caniusecombot',
           repo_project: 'https://medium.com/@dzianismakeichyk/telegram-bot-can-i-use-2fcda4610897',
-          prev: 'prev',
-          next: 'next'
+          prev: 'vg-capital',
+          next: 'cateringoo'
         }
       ]
     }
@@ -209,6 +245,111 @@ export default {
 
 <!--scoped-->
 <style lang="scss" scoped >
+    .sub-menu {
+        position: fixed;
+        background: $white;
+        z-index: 350;
+        top: 0;
+
+        &.left,
+        &.right {
+            height: 100%;
+            width: 25px;
+            background-color: $white;
+
+            @include breakpoint(medium) {
+                width: 30px;
+            }
+
+            @include breakpoint(large) {
+                width: 55px;
+            }
+
+            @include breakpoint(extralarge) {
+                width: 70px;
+            }
+        }
+
+        &.left {
+            left: 0;
+        }
+
+        &.right {
+            right: 0;
+        }
+
+        &.bottom {
+            width: 100%;
+            height: 25px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            @include breakpoint(medium) {
+                height: 30px;
+            }
+
+            @include breakpoint(large) {
+                height: 55px;
+            }
+
+            @include breakpoint(extralarge) {
+                height: 70px;
+            }
+        }
+
+        .sub-title-left {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            z-index: 200;
+            color: #b1b1b1;
+            font-size: 10px;
+            font-family: 'GT-Haptik-Thin';
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            left: -44px;
+
+            @include breakpoint(medium) {
+                left: -40px;
+            }
+
+            @include breakpoint(large) {
+                left: -33px;
+                font-size: 11px;
+            }
+
+            @include breakpoint(extralarge) {
+                left: -25px;
+            }
+        }
+
+        .sub-title-right {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            z-index: 200;
+            color: #b1b1b1;
+            font-size: 10px;
+            font-family: 'GT-Haptik-Thin';
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            right: -44px;
+
+            @include breakpoint(medium) {
+                right: -43px;
+            }
+
+            @include breakpoint(large) {
+                right: -36px;
+                font-size: 11px;
+            }
+
+            @include breakpoint(extralarge) {
+                right: -25px;
+            }
+        }
+    }
     .photo-container {
         background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
         background-size: cover;
@@ -470,11 +611,11 @@ export default {
 
             @include breakpoint(medium) {
                 width: 230px;
-                margin: 0 auto 0 0;
             }
 
             @include breakpoint(large) {
                 width: 225px;
+                margin: 0 auto 0 0;
             }
         }
     }
