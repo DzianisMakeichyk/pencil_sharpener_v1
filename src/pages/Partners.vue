@@ -34,12 +34,12 @@ export default {
   data () {
     return {
       partners: [
-        {src: require('../assets/images/partners/google.png'), alt: 'google'},
-        {src: require('../assets/images/partners/google.png'), alt: 'google'},
-        {src: require('../assets/images/partners/google.png'), alt: 'google'},
-        {src: require('../assets/images/partners/google.png'), alt: 'google'},
-        {src: require('../assets/images/partners/google.png'), alt: 'google'},
-        {src: require('../assets/images/partners/google.png'), alt: 'google'}
+        {src: require('../assets/images/partners/capemorris.png'), alt: 'capemorris'},
+        {src: require('../assets/images/partners/code&pepper.png'), alt: 'code&pepper'},
+        {src: require('../assets/images/partners/softlike.png'), alt: 'softlike'},
+        {src: require('../assets/images/partners/absolvent.png'), alt: 'absolvent'},
+        {src: require('../assets/images/partners/idealia.png'), alt: 'idealia'},
+        {src: require('../assets/images/partners/kino-w-trampkach.png'), alt: 'kino-w-trampkach'}
       ]
     }
   }
@@ -108,8 +108,12 @@ export default {
         .partner {
             position: relative;
             width: 100%;
+            height: 100%;
             max-width: 150px;
             margin: 0 auto;
+            display: flex;
+            justify-content: center; /* align horizontal */
+            align-items: center;
 
             img {
                 display: block;
@@ -118,7 +122,8 @@ export default {
 
             svg {
                 position: absolute;
-                top: 50%;
+                /*top: 50%;*/
+                top: 60%;
                 left: -10%;
                 width: 0;
                 height: 11px;

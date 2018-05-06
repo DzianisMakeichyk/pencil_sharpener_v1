@@ -84,7 +84,7 @@ import TweenMax from 'gsap'
 export default {
   name: 'Menu',
   methods: {
-    MenuToggle () { this.$store.commit('MenuToggle')},
+    MenuToggle () { this.$store.commit('MenuToggle') },
     animationMenuItems () {
       let menuItems = document.getElementsByClassName('menu-item')
       let menuLang = document.getElementsByClassName('one-languages')
