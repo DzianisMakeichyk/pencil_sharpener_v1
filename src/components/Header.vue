@@ -5,7 +5,11 @@
                 <b-row class="no-gutters" align-h="between" align-v="center">
                     <b-col mg="5" v-if="this.$store.state.windowWidth >= 767">
                         <h1 class="header-name">
-                            dzianis makeichyk
+                            <router-link
+                                :to="{name: 'Index'}"
+                            >
+                                dzianis makeichyk
+                            </router-link>
                         </h1>
                     </b-col>
                     <b-col mg="2">
@@ -212,6 +216,9 @@ export default {
       font-size: 13px;
       margin: 0 auto 0 0;
       letter-spacing: 1px;
+        a {
+            color: #898989;
+        }
     }
 
     .social-menu,
