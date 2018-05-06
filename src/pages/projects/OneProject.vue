@@ -470,6 +470,7 @@ export default {
 
             @include breakpoint(medium) {
                 width: 230px;
+                margin: 0 auto 0 0;
             }
 
             @include breakpoint(large) {

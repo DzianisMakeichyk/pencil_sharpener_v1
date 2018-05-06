@@ -27,7 +27,7 @@
             <div class="social-menu">
                 <!-- In -->
                 <div class="one-social-icon">
-                    <a href="#" target="_blank">
+                    <a href="https://www.linkedin.com/in/dzianis-makeichyk-81664a127/" target="_blank">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="0 0 430.117 430.117" style="enable-background:new 0 0 430.117 430.117;"
                              xml:space="preserve">
@@ -44,7 +44,7 @@
                 </div>
                 <!-- Fb -->
                 <div class="one-social-icon">
-                    <a href="#" target="_blank">
+                    <a href="https://www.facebook.com/dzianismakeichyk" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"  viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;" xml:space="preserve">
                             <g>
                                 <path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803   c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654   c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246   c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/>
@@ -54,7 +54,7 @@
                 </div>
                 <!-- Vk -->
                 <div class="one-social-icon">
-                    <a href="#" target="_blank">
+                    <a href="https://vk.com/road66" target="_blank">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 304.36 304.36" style="enable-background:new 0 0 304.36 304.36;" xml:space="preserve">
                             <g id="XMLID_1_">
                                 <path id="XMLID_807_" style="fill-rule:evenodd;clip-rule:evenodd;" d="M261.945,175.576c10.096,9.857,20.752,19.131,29.807,29.982
@@ -76,7 +76,7 @@
                 </div>
                 <!-- Git -->
                 <div class="one-social-icon">
-                    <a href="#" target="_blank">
+                    <a href="https://github.com/DzianisMakeichyk" target="_blank">
                         <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 438.549 438.549" style="enable-background:new 0 0 438.549 438.549;" xml:space="preserve">
                             <g>
                                 <path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365
