@@ -31,7 +31,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="drop-me-one">
+                                    <div class="drop-me-one" v-if="currentProject.repo_project">
                                         <a :href="currentProject.repo_project" class="button-wrapper" target="_blank">
                                            <span class="button primary">
                                                Zobacz repozytorium
@@ -87,41 +87,110 @@ export default {
           slug: 'stypendium-z-wyboru',
           name: 'Stypendium z wyboru',
           image: 'image',
-          description: 'description',
+          description: 'Projekt firmy Absolvent.pl. Stypendium z Wyboru to ogólnopolski program stypendialny stworzony po to, by pomagać zdolnym, kreatywnym i ambitnym studentom i młodym absolwentom w realizowaniu swoich marzeń edukacyjnych i zawodowych.',
           technologies: [
-            {name: 'HTML/Jade'},
-            {name: 'SCSS/SASS'},
-            {name: 'Handlebars'},
-            {name: 'JavaScript/ES6'},
-            {name: 'VueJS/VUEX'},
             {name: 'ReactJs'},
-            {name: 'WordPress'}
+            {name: 'JavaScript/ES6'},
+            {name: 'SCSS/SASS'},
+            {name: 'GSAP'}
           ],
           year: '2015',
           client: 'Absolvent.pl',
-          see_project: 'see_project',
-          repo_project: 'repo_project',
+          see_project: 'https://stypendiumzwyboru.pl/',
+          repo_project: '',
           prev: 'prev',
           next: 'next'
         },
         {
-          slug: 'stypendium-z-wyboru2',
-          name: 'Stypendium z wyboru2',
+          slug: 'makabra',
+          name: 'Fest Makabra',
           image: 'image',
-          description: 'description',
+          description: 'FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii. Większość filmów z programu zostanie wyświetlona w Polsce premierowo i będzie to jedyna okazja do obejrzenia ich na wielkim ekranie. Pierwsza edycja przeglądu filmowego FEST MAKABRA odbędzie się w kinach studyjnych i niezależnych w całej Polsce w lutym i marcu 2017 roku. Organizatorem wydarzenia jest dystrybutor filmów Kino Świat.',
           technologies: [
-            {name: 'HTML/Jade'},
+            {name: 'HTML'},
+            {name: 'SCSS/SASS'},
+            {name: 'Handlebars'},
+            {name: 'JavaScript'},
+            {name: 'JQuery'}
+          ],
+          year: '2015',
+          client: 'Open Gate',
+          see_project: 'http://www.festmakabra.pl/',
+          repo_project: 'https://github.com/DzianisMakeichyk/film',
+          prev: 'prev',
+          next: 'next'
+        },
+        {
+          slug: 'cateringoo',
+          name: 'Cateringoo',
+          image: 'image',
+          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem. ',
+          technologies: [
+            {name: 'HTML'},
             {name: 'SCSS/SASS'},
             {name: 'Handlebars'},
             {name: 'JavaScript/ES6'},
-            {name: 'VueJS/VUEX'},
-            {name: 'ReactJs'},
+            {name: 'GSAP'},
+            {name: 'Laravel'}
+          ],
+          year: '2018',
+          client: 'Still secret ;)',
+          see_project: 'https://www.cateringoo.pl/',
+          repo_project: '',
+          prev: 'prev',
+          next: 'next'
+        },
+        {
+          slug: 'nova-dolna',
+          name: 'Nova Dolna',
+          image: 'image',
+          description: 'Nova Dolna to inwestycja w dolnej części Mokotowa. W sąsiedztwie z Parkiem Promenada oraz Morskim Okiem. Dobra lokalizacja dla ludzi ceniących sobie spokój, ale pragnących mieszkać w centrum miasta.',
+          technologies: [
+            {name: 'HTML'},
+            {name: 'SCSS/SASS'},
+            {name: 'JavaScript/ES6'},
+            {name: 'GSAP'},
             {name: 'WordPress'}
           ],
-          year: '2015',
-          client: 'Absolvent.pl',
-          see_project: 'see_project',
-          repo_project: 'repo_project',
+          year: '2017',
+          client: 'Cape Morris',
+          see_project: 'http://novadolna.pl/',
+          repo_project: '',
+          prev: 'prev',
+          next: 'next'
+        },
+        {
+          slug: 'vg-capital',
+          name: 'VG Capital',
+          image: 'image',
+          description: 'VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski. Kluczowym aspektem naszych projektów jest ich dopasowanie do oczekiwań i możliwości naszych Klientów.',
+          technologies: [
+            {name: 'HTML'},
+            {name: 'SCSS/SASS'},
+            {name: 'JavaScript/ES6'},
+            {name: 'GSAP'},
+            {name: 'WordPress'}
+          ],
+          year: '2017',
+          client: 'Cape Morris',
+          see_project: 'http://vgcapital.pl/',
+          repo_project: '',
+          prev: 'prev',
+          next: 'next'
+        },
+        {
+          slug: 'telegram',
+          name: 'Can I Use',
+          image: 'image',
+          description: 'As we know telegram can give us almost full feeds what we will need during a day. News channels, education channels, wether bots, google bots, cat gif channels, chatting with friends and etc. And as I’am front end developer I often must checking supporting new technologies or suport old technologies for older browsers as IE10(yes, somebody still use it) for current project. As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this.',
+          technologies: [
+            {name: 'REST API'},
+            {name: 'Node Js'}
+          ],
+          year: '2017',
+          client: 'Pencil Sharpener',
+          see_project: 'https://t.me/caniusecombot',
+          repo_project: 'https://medium.com/@dzianismakeichyk/telegram-bot-can-i-use-2fcda4610897',
           prev: 'prev',
           next: 'next'
         }
@@ -196,6 +265,7 @@ export default {
         font-family: 'Montserrat';
         padding-bottom: 15px;
         text-transform: uppercase;
+        font-weight: 500;
 
         @include breakpoint(medium-lg) {
             font-size: 12px;

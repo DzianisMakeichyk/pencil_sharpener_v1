@@ -21,12 +21,13 @@
                             <div class="projects">
                                 <div class="project-shot" v-for="project in projects" :key="project">
                                     <router-link
-                                            :to="{
-                                                  name: 'OneProject',
-                                                  params: {
-                                                    slug: project.url
-                                                  }
-                                                }">
+                                        :to="{
+                                              name: 'OneProject',
+                                              params: {
+                                                slug: project.url
+                                              }
+                                            }"
+                                    >
                                         <div class="one-project-bg" v-bind:class="project.classImage"></div>
                                         <div class="one-project-body">
                                             <h4 class="one-project-title">
@@ -60,12 +61,12 @@ export default {
   data () {
     return {
       projects: [
-        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'stypendium-z-wyboru'},
-        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
-        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
-        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
-        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'},
-        {name: 'Stypendium z wyboru', description: 'Development, Branding, Product, Marketing', classImage: 'first-project', url: 'url'}
+        {name: 'Stypendium z wyboru', description: 'Projekt firmy Absolvent.pl', classImage: 'first-project', url: 'stypendium-z-wyboru'},
+        {name: 'Nova Dolna', description: 'Nova Dolna to inwestycja w dolnej części Mokotowa', classImage: 'first-project', url: 'nova-dolna'},
+        {name: 'VG Capital', description: 'VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski.', classImage: 'first-project', url: 'vg-capital'},
+        {name: 'Telegram Bot', description: ' As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this', classImage: 'first-project', url: 'telegram'},
+        {name: 'Cateringoo', description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce.', classImage: 'first-project', url: 'cateringoo'},
+        {name: 'Fest Makabra', description: 'FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii.', classImage: 'first-project', url: 'makabra'}
       ]
     }
   }
