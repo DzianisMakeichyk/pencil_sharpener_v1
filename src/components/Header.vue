@@ -117,22 +117,90 @@
         </div>
         <!-- Bottom-->
         <div class="sub-menu bottom"></div>
+        <cookie-law>
+            <div slot="message">
+                Nasza strona internetowa używa plików cookies (tzw. ciasteczka) w celach statystycznych, reklamowych oraz funkcjonalnych. Dzięki nim możemy indywidualnie dostosować stronę do twoich potrzeb. Każdy może zaakceptować pliki cookies albo ma możliwość wyłączenia ich w przeglądarce, dzięki czemu nie będą zbierane żadne informacje.<a href="https://pl.wikipedia.org/wiki/HTTP_cookienotes" target="_blank"> Dowiedz się więcej jak je wyłączyć.</a>
+            </div>
+        </cookie-law>
     </div>
 </template>
 
 <script>
 import Menu from './Menu'
+import CookieLaw from 'vue-cookie-law'
 
 export default {
   name: 'Header',
 
   components: {
-    Menu
+    Menu,
+    CookieLaw
   }
 }
 </script>
 
 <style lang="scss">
+    .Cookie.Cookie--base {
+        background: $white;
+        padding: 10px 25px;
+        .Cookie__content {
+            font-size: 9px;
+            color: $gray-medium;
+            font-family: 'Montserrat';
+        }
+        .Cookie__button {
+            position: relative;
+            display: inline-block;
+            align-items: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 100;
+            outline: hidden;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-family: 'Montserrat';
+            color: $white;
+            background: $darkviolet;
+            border: 1px solid $darkviolet;
+            margin: 0 auto;
+            padding: 15px 35px;
+            color: $white;
+            text-align: center;
+            white-space: nowrap;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+            }
+
+            &::after {
+                height: 100%;
+                right: -55%;
+                top: 0;
+                width: 0;
+                transform: skew(0deg);
+                transition: all 0.3s;
+                transition-duration: 0.6s;
+                transform-origin: top left;
+                background-color: $white;
+            }
+
+            &:hover {
+                color: $darkviolet;
+                background-color: $white;
+
+                &::after {
+                    width: 165%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
     header {
       position: fixed;
       top: 0;

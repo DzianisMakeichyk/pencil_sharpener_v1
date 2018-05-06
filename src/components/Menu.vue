@@ -100,9 +100,6 @@ export default {
         TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
     }
-  },
-  mounted () {
-    console.log(this.$route.path == '/portfolio')
   }
 }
 </script>
@@ -210,7 +207,7 @@ export default {
       justify-content: flex-end;
       text-transform: uppercase;
       font-size: 14px;
-      font-family: Montserrat;
+      font-family: 'Montserrat';
       font-weight: 800;
       padding-top: 35px;
       padding-right: 10%;
@@ -320,7 +317,7 @@ export default {
 
       .menu-contact-me {
           position: relative;
-          font-family: Montserrat;
+          font-family: 'Montserrat';
           font-weight: 300;
           font-size: 13px;
           color: $gray;
