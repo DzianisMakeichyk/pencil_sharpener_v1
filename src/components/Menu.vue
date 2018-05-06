@@ -17,7 +17,8 @@
             <ul class="slideout-menu">
                 <router-link
                   :to="{name: 'Portfolio'}"
-                  class="one-menu-item is-active"
+                  class="one-menu-item"
+                  :class="{'is-active': this.$route.path == '/portfolio'}"
                 >
                     <span class="menu-item">
                         Portfolio
@@ -27,24 +28,23 @@
                 <router-link
                   :to="{name: 'About'}"
                   class="one-menu-item"
+                  :class="{'is-active': this.$route.path == '/about'}"
                 >
                     <span class="menu-item">
                         O mnie
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
-                <router-link
-                  :to="{name: 'Portfolio'}"
-                  class="one-menu-item"
-                >
+                <a href="https://medium.com/@dzianismakeichyk" target="_blank" class="one-menu-item">
                     <span class="menu-item">
                         Blog
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
-                </router-link>
+                </a>
                 <router-link
                   :to="{name: 'Partners'}"
                   class="one-menu-item"
+                  :class="{'is-active': this.$route.path == '/partners'}"
                 >
                     <span class="menu-item">
                         Współpraca
@@ -54,6 +54,7 @@
                 <router-link
                   :to="{name: 'Contact'}"
                   class="one-menu-item"
+                  :class="{'is-active': this.$route.path == '/contact'}"
                 >
                     <span class="menu-item">
                         Kontakt
@@ -83,7 +84,7 @@ import TweenMax from 'gsap'
 export default {
   name: 'Menu',
   methods: {
-    MenuToggle () { this.$store.commit('MenuToggle') },
+    MenuToggle () { this.$store.commit('MenuToggle')},
     animationMenuItems () {
       let menuItems = document.getElementsByClassName('menu-item')
       let menuLang = document.getElementsByClassName('one-languages')
@@ -99,6 +100,9 @@ export default {
         TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
     }
+  },
+  mounted () {
+    console.log(this.$route.path == '/portfolio')
   }
 }
 </script>
