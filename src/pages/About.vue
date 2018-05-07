@@ -232,12 +232,13 @@ export default {
     .photo-container {
       background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: 87% 50%;
       background-repeat: no-repeat;
       height: 320px;
 
       @include breakpoint(medium) {
         height: 420px;
+        background-position: center;
       }
 
       @include breakpoint(large) {

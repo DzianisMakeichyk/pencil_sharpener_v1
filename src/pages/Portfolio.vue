@@ -19,7 +19,7 @@
                         <!-- Projects -->
                         <div class="projects-wrapper">
                             <div class="projects">
-                                <div class="project-shot" v-for="project in projects" :key="project">
+                                <div class="project-shot" v-for="project in projects" :key="project" v-smooth-scroll="{ duration: 1000, offset: -50 }">
                                     <router-link
                                         :to="{
                                               name: 'OneProject',
