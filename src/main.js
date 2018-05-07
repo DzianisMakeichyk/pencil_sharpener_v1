@@ -5,10 +5,8 @@ import App from './App'
 import store from './store'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'
-import vueSmoothScroll from 'vue-smooth-scroll'
 
 Vue.config.productionTip = false
-Vue.use(vueSmoothScroll)
 Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */
