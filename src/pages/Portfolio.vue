@@ -20,6 +20,7 @@
                         <div class="projects-wrapper">
                             <div class="projects">
                                 <div class="project-shot" v-for="project in projects" :key="project">
+                                    <div class="project-link">
                                     <router-link
                                         :to="{
                                               name: 'OneProject',
@@ -38,6 +39,7 @@
                                             </h5>
                                         </div>
                                     </router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -52,6 +54,11 @@
 
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
+import $ from 'jquery'
+import { TweenMax, Power0 } from 'gsap'
+import ScrollMagic from 'scrollmagic'
+import 'animation.gsap'
+import 'debug.addIndicators'
 
 export default {
   name: 'Portfolio',
@@ -69,6 +76,24 @@ export default {
         {name: 'Fest Makabra', description: 'FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii.', classImage: 'six-project', url: 'makabra'}
       ]
     }
+  },
+  mounted () {
+    let controller = new ScrollMagic.Controller()
+    $('.project-shot').each(function () {
+      let bg = $(this).find('.project-link')
+      let parallax = TweenMax.from(bg, 1, {
+        y: '40%',
+        ease: Power0.easeNone
+      })
+      new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 1,
+        duration: '100%'
+      })
+        .setTween(parallax)
+        .addTo(controller)
+      console.log(controller)
+    })
   }
 }
 </script>
