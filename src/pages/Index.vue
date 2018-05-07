@@ -17,7 +17,7 @@ export default {
   name: 'Index',
   data () {
     return {
-      typedOptions: ['World', 'Mundo', 'Mondo', 'Svět', 'Wellt']
+      typedOptions: ['Rock', 'Happy if you scroll down and explore their work', 'More Work', 'Think Big', 'Hard', 'Fun']
     }
   },
   mounted () {
@@ -43,6 +43,7 @@ export default {
           bottom: 25%;
           letter-spacing: 1px;
           left: 36px;
+          right: 36px;
           display: inline;
           /*width: 140px;*/
           margin: 0 auto 0 0;
@@ -51,14 +52,17 @@ export default {
 
           @include breakpoint(medium) {
               left: 54px;
+              right: 54px;
           }
 
           @include breakpoint(large) {
               left: 93px;
+              right: 93px;
           }
 
           @include breakpoint(extralarge) {
               left: 118px;
+              right: 118px;
           }
       }
       .typed-me {

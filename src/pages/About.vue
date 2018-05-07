@@ -260,6 +260,18 @@ export default {
         @include breakpoint(large) {
             padding: 140px 0 108px;
         }
+
+        .sub-header-wrapper {
+            .sub-header {
+                @include breakpoint(medium-lg) {
+                    font-size: 50px;
+                }
+
+                @include breakpoint(large) {
+                    font-size: 52px;
+                }
+            }
+        }
     }
 
     .about-me,
