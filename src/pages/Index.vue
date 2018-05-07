@@ -15,6 +15,9 @@ import Typed from 'typed.js'
 
 export default {
   name: 'Index',
+  metaInfo: {
+    title: 'Dzianis Makeichyk | Pencil Sharpener'
+  },
   data () {
     return {
       typedOptions: ['Rock', 'Happy if you scroll down and explore their work', 'More Work', 'Think Big', 'Hard', 'Fun']

@@ -5,9 +5,11 @@ import App from './App'
 import store from './store'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'
+import Meta from 'vue-meta'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
+Vue.use(Meta)
 
 /* eslint-disable no-new */
 new Vue({

@@ -31,6 +31,9 @@
 
 export default {
   name: 'Partners',
+  metaInfo: {
+    title: 'Współpraca | Dzianis Makeichyk'
+  },
   data () {
     return {
       partners: [

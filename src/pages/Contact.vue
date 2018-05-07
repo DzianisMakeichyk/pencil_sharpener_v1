@@ -68,6 +68,9 @@ import DropMeALine from '../components/Drop-me-a-line'
 
 export default {
   name: 'Contact',
+  metaInfo: {
+    title: 'Kontakt | Dzianis Makeichyk'
+  },
   components: {
     DropMeALine
   }

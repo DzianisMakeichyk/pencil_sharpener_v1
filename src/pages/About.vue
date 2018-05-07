@@ -92,6 +92,9 @@ import { TimelineMax, TweenLite } from 'gsap'
 
 export default {
   name: 'About',
+  metaInfo: {
+    title: 'O mnie | Dzianis Makeichyk'
+  },
   components: {
     DropMeALine
   },
@@ -104,6 +107,7 @@ export default {
         { name: 'JavaScript/ES6' },
         { name: 'VueJS/VUEX' },
         { name: 'ReactJs' },
+        { name: 'PWA' },
         { name: 'WordPress' }
       ],
       abilities: [

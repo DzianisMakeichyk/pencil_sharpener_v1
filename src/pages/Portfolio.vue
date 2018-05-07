@@ -63,6 +63,9 @@ import 'debug.addIndicators'
 
 export default {
   name: 'Portfolio',
+  metaInfo: {
+    title: 'Portfolio | Dzianis Makeichyk'
+  },
   components: {
     DropMeALine
   },

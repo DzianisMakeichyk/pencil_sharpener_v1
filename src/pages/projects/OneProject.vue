@@ -46,8 +46,12 @@
                                         <p class="project-title">
                                             Technologie
                                         </p>
-                                        <ul class="techno-list">
-                                            <li class="one-tech" v-for="technology in currentProject.technologies" :key="technology">{{technology.name}}</li>
+                                        <ul class="techno-list techno-box">
+                                            <li class="one-tech" v-for="technology in currentProject.technologies" :key="technology">
+                                                <span class="select-text">
+                                                    {{technology.name}}
+                                                </span>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="one-techno-row">
@@ -116,6 +120,9 @@
 import find from 'lodash/find'
 export default {
   name: 'OneProject',
+  metaInfo: {
+    title: 'Portfolio | Dzianis Makeichyk'
+  },
   data () {
     return {
       dates: [
@@ -540,6 +547,10 @@ export default {
         margin-left: 0;
         padding-left: 0;
 
+        &.techno-box {
+            margin-left: -5px;
+        }
+
         .one-tech {
             font-size: 11px;
             padding: 0 0 7px 5px;
@@ -551,6 +562,15 @@ export default {
 
             @include breakpoint(medium-lg) {
                 font-size: 13px;
+            }
+
+            .select-text {
+                overflow: hidden;
+                padding: 1px 5px;
+
+                &:hover {
+                    color: $white;
+                }
             }
         }
     }
