@@ -62,11 +62,11 @@ export default {
     return {
       projects: [
         {name: 'Stypendium z wyboru', description: 'Projekt firmy Absolvent.pl', classImage: 'first-project', url: 'stypendium-z-wyboru'},
-        {name: 'Nova Dolna', description: 'Nova Dolna to inwestycja w dolnej części Mokotowa', classImage: 'first-project', url: 'nova-dolna'},
-        {name: 'VG Capital', description: 'VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski.', classImage: 'first-project', url: 'vg-capital'},
-        {name: 'Telegram Bot', description: ' As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this', classImage: 'first-project', url: 'telegram'},
-        {name: 'Cateringoo', description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce.', classImage: 'first-project', url: 'cateringoo'},
-        {name: 'Fest Makabra', description: 'FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii.', classImage: 'first-project', url: 'makabra'}
+        {name: 'Nova Dolna', description: 'Nova Dolna to inwestycja w dolnej części Mokotowa', classImage: 'second-project', url: 'nova-dolna'},
+        {name: 'VG Capital', description: 'VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski.', classImage: 'third-project', url: 'vg-capital'},
+        {name: 'Can I Use Bot', description: ' As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this', classImage: 'four-project', url: 'telegram'},
+        {name: 'Cateringoo', description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce.', classImage: 'five-project', url: 'cateringoo'},
+        {name: 'Fest Makabra', description: 'FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii.', classImage: 'six-project', url: 'makabra'}
       ]
     }
   }
@@ -197,8 +197,10 @@ export default {
          width: 100%;
          height: 360px;
          margin-bottom: 25px;
-         background-position: center;
-         background-size: cover;
+         /*background-position: center;*/
+         background-position: 32%;
+         /*background-size: cover;*/
+         background-size: inherit;
          background-repeat: no-repeat;
         overflow: hidden;
 
@@ -217,7 +219,27 @@ export default {
          }
 
          &.first-project {
-             background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
+             background-image: url('~@/assets/images/portfolio/mobile/stypendium-z-wyboru_01.jpg');
+         }
+
+         &.second-project {
+             background-image: url('~@/assets/images/portfolio/mobile/novadolna_01.jpg');
+         }
+
+         &.third-project {
+             background-image: url('~@/assets/images/portfolio/mobile/vgcapital_01.jpg');
+         }
+
+         &.four-project {
+             background-image: url('~@/assets/images/portfolio/mobile/telegram_01.jpg');
+         }
+
+         &.five-project {
+             background-image: url('~@/assets/images/portfolio/mobile/cateringoo_01.jpg');
+         }
+
+         &.six-project {
+             background-image: url('~@/assets/images/portfolio/mobile/fest-makabra_01.jpg');
          }
 
          &:before {
