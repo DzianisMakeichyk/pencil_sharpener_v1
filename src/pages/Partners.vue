@@ -15,7 +15,7 @@
                             <div class="partner-box" v-for="partner in partners" :key="partner">
                                 <div class="partner">
                                     <img :src="partner.src" :alt="partner.alt" />
-                                    <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
+                                    <!--<svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>-->
                                 </div>
                             </div>
                             <!-- END One partner -->
@@ -103,6 +103,50 @@ export default {
             @include breakpoint(extralarge) {
                 padding: 112px 0;
             }
+
+            &:nth-child(1) {
+                .partner {
+                    &:before {
+                        content: '5';
+                    }
+                }
+            }
+            &:nth-child(2) {
+                .partner {
+                    &:before {
+                        content: '3';
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .partner {
+                    &:before {
+                        content: '3';
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .partner {
+                    &:before {
+                        content: '3';
+                    }
+                }
+            }
+            &:nth-child(5) {
+                .partner {
+                    &:before {
+                        content: '3';
+                    }
+                }
+            }
+            &:nth-child(6) {
+                .partner {
+                    &:before {
+                        content: '1';
+                        padding: 2px 0 0 8px;
+                    }
+                }
+            }
         }
 
         .partner {
@@ -120,9 +164,38 @@ export default {
                 width: 100%;
             }
 
-            svg {
+            &:before {
                 position: absolute;
-                /*top: 50%;*/
+                top: -18px;
+                right: -20px;
+                width: 20px;
+                height: 20px;
+                padding: 2px 0 0 7px;
+                font-family: 'Montserrat';
+                color: $white;
+                background-color: $darkviolet;
+                border-radius: 50%;
+                font-size: 11px;
+                font-weight: 500;
+                transition: .3s ease;
+                transform: scale(0);
+
+                @include breakpoint(medium-lg) {
+                    top: -6px;
+                }
+            }
+
+            &:hover {
+                &:before {
+                    transform: scale(1);
+                }
+                /*svg {
+                    width: 120%;
+                }*/
+            }
+
+            /*svg {
+                position: absolute;
                 top: 60%;
                 left: -10%;
                 width: 0;
@@ -130,13 +203,7 @@ export default {
                 transform-origin: 0 100%;
                 transform: translateY(0px) rotate(-5deg);
                 transition: 0.3s ease;
-            }
-
-            &:hover {
-                svg {
-                    width: 120%;
-                }
-            }
+            } */
         }
     }
 
