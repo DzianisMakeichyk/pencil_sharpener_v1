@@ -86,11 +86,11 @@
                 :to="{
                       name: 'OneProject',
                       params: {
-                        slug: currentProject.next
+                        slug: currentProject.prev
                       }
                     }"
             >
-                Następny projekt
+                Poprzedni project
             </router-link>
         </div>
         <!-- Right-->
@@ -100,11 +100,11 @@
                 :to="{
                   name: 'OneProject',
                   params: {
-                    slug: currentProject.prev
+                    slug: currentProject.next
                   }
                 }"
             >
-                Poprzedni project
+                Następny projekt
             </router-link>
         </div>
         <!-- Bottom-->
@@ -321,10 +321,10 @@ export default {
             font-family: 'GT-Haptik-Thin';
             text-transform: uppercase;
             letter-spacing: 1px;
-            left: -44px;
+            left: -45px;
 
             @include breakpoint(medium) {
-                left: -40px;
+                left: -43px;
             }
 
             @include breakpoint(large) {
@@ -350,11 +350,11 @@ export default {
             right: -44px;
 
             @include breakpoint(medium) {
-                right: -43px;
+                right: -42px;
             }
 
             @include breakpoint(large) {
-                right: -36px;
+                right: -33px;
                 font-size: 11px;
             }
 
