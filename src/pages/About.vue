@@ -290,6 +290,34 @@ export default {
             position: absolute;
             top: -70px;
             left: 3%;
+            padding: 0 35px 7px 30px;
+            box-shadow: 0 2px 16px 0 rgba(20, 20, 20, 0.5);
+        }
+
+        .sub-header,
+        .about-title {
+            @include breakpoint(medium) {
+                color: $white;
+                position: relative;
+            }
+        }
+
+        .about-title {
+            @include breakpoint(medium) {
+                padding: 12px 0 5px;
+            }
+        }
+
+        &:before {
+            @include breakpoint(medium) {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $darkviolet;
+            }
         }
     }
 

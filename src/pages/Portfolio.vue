@@ -199,10 +199,10 @@ export default {
          margin-bottom: 25px;
          /*background-position: center;*/
          background-position: 32%;
-         /*background-size: cover;*/
-         background-size: inherit;
+         background-size: cover;
+         /*background-size: inherit;*/
          background-repeat: no-repeat;
-        overflow: hidden;
+         overflow: hidden;
 
          @include breakpoint(medium) {
              height: 420px;
@@ -251,7 +251,7 @@ export default {
              /*height: 100%;*/
              height: 0;
              background-color: $darkviolet;
-             opacity: .7;
+             opacity: .4;
              transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
              transform: translateY(100px) rotate(15deg);
          }

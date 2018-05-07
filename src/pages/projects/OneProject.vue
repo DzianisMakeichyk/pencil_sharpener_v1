@@ -1,7 +1,7 @@
 <template>
     <section class="container">
         <div class="reveal-me"></div>
-        <div class="photo-container"></div>
+        <div class="photo-container" v-bind:class="currentProject.classImage"></div>
         <div class="content-container">
             <div class="bg-gray relative">
                 <div class="project-me-wrapper">
@@ -133,6 +133,7 @@ export default {
           year: '2015',
           client: 'Absolvent.pl',
           see_project: 'https://stypendiumzwyboru.pl/',
+          classImage: 'first-project',
           repo_project: '',
           prev: 'makabra',
           next: 'nova-dolna'
@@ -153,6 +154,7 @@ export default {
           client: 'Open Gate',
           see_project: 'http://www.festmakabra.pl/',
           repo_project: 'https://github.com/DzianisMakeichyk/film',
+          classImage: 'six-project',
           prev: 'cateringoo',
           next: 'stypendium-z-wyboru'
         },
@@ -173,6 +175,7 @@ export default {
           client: 'Still secret ;)',
           see_project: 'https://www.cateringoo.pl/',
           repo_project: '',
+          classImage: 'five-project',
           prev: 'telegram',
           next: 'makabra'
         },
@@ -192,6 +195,7 @@ export default {
           client: 'Cape Morris',
           see_project: 'http://novadolna.pl/',
           repo_project: '',
+          classImage: 'second-project',
           prev: 'stypendium-z-wyboru',
           next: 'vg-capital'
         },
@@ -211,6 +215,7 @@ export default {
           client: 'Cape Morris',
           see_project: 'http://vgcapital.pl/',
           repo_project: '',
+          classImage: 'third-project',
           prev: 'nova-dolna',
           next: 'telegram'
         },
@@ -228,6 +233,7 @@ export default {
           see_project: 'https://t.me/caniusecombot',
           repo_project: 'https://medium.com/@dzianismakeichyk/telegram-bot-can-i-use-2fcda4610897',
           prev: 'vg-capital',
+          classImage: 'four-project',
           next: 'cateringoo'
         }
       ]
@@ -351,7 +357,6 @@ export default {
         }
     }
     .photo-container {
-        background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -363,6 +368,30 @@ export default {
 
         @include breakpoint(large) {
             height: 500px;
+        }
+
+        &.first-project {
+            background-image: url('~@/assets/images/portfolio/desktop/stypendium-z-wyboru_01.png');
+        }
+
+        &.second-project {
+            background-image: url('~@/assets/images/portfolio/desktop/novadolna_01.png');
+        }
+
+        &.third-project {
+            background-image: url('~@/assets/images/portfolio/desktop/vgcapital_01.png');
+        }
+
+        &.four-project {
+            background-image: url('~@/assets/images/portfolio/desktop/telegram_01.png');
+        }
+
+        &.five-project {
+            background-image: url('~@/assets/images/portfolio/desktop/cateringoo_01.png');
+        }
+
+        &.six-project {
+            background-image: url('~@/assets/images/portfolio/desktop/fest-makabra_01.png');
         }
     }
 
@@ -418,6 +447,26 @@ export default {
             position: absolute;
             top: -40px;
             left: 3%;
+            padding: 0 35px 5px;
+            box-shadow: 0 2px 16px 0 rgba(20, 20, 20, 0.5);
+        }
+
+        .sub-header {
+            @include breakpoint(medium) {
+                color: $white;
+            }
+        }
+
+        &:before {
+            @include breakpoint(medium) {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $darkviolet;
+            }
         }
     }
 
