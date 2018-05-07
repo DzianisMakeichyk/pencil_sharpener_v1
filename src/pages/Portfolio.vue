@@ -21,24 +21,25 @@
                             <div class="projects">
                                 <div class="project-shot" v-for="project in projects" :key="project">
                                     <div class="project-link">
-                                    <router-link
-                                        :to="{
-                                              name: 'OneProject',
-                                              params: {
-                                                slug: project.url
-                                              }
-                                            }"
-                                    >
-                                        <div class="one-project-bg" v-bind:class="project.classImage"></div>
-                                        <div class="one-project-body">
-                                            <h4 class="one-project-title">
-                                                {{project.name}}
-                                            </h4>
-                                            <h5 class="one-project-description description">
-                                                {{project.description}}
-                                            </h5>
-                                        </div>
-                                    </router-link>
+                                        <div class="reveal-me-small"></div>
+                                        <router-link
+                                            :to="{
+                                                  name: 'OneProject',
+                                                  params: {
+                                                    slug: project.url
+                                                  }
+                                                }"
+                                        >
+                                            <div class="one-project-bg" v-bind:class="project.classImage"></div>
+                                            <div class="one-project-body">
+                                                <h4 class="one-project-title">
+                                                    {{project.name}}
+                                                </h4>
+                                                <h5 class="one-project-description description">
+                                                    {{project.description}}
+                                                </h5>
+                                            </div>
+                                        </router-link>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +83,7 @@ export default {
     $('.project-shot').each(function () {
       let bg = $(this).find('.project-link')
       let parallax = TweenMax.from(bg, 1, {
-        y: '40%',
+        y: '50%',
         ease: Power0.easeNone
       })
       new ScrollMagic.Scene({
@@ -92,7 +93,15 @@ export default {
       })
         .setTween(parallax)
         .addTo(controller)
-      console.log(controller)
+    })
+    $('.project-shot').each(function () {
+      let revealMe = $(this).find('.reveal-me-small')
+      let enterReveal = TweenMax.fromTo(revealMe, 0.45, { scaleX: 1 }, {scaleX: 0})
+      new ScrollMagic.Scene({
+        triggerElement: this
+      })
+        .setTween(enterReveal)
+        .addTo(controller)
     })
   }
 }
