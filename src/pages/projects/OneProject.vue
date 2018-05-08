@@ -1,5 +1,7 @@
 <template>
-    <section class="container">
+    <div>
+    <transition name="fade">
+    <section class="container" v-bind:class="currentProject.classImage">
         <div class="reveal-me"></div>
         <div class="photo-container" v-bind:class="currentProject.classImage"></div>
         <div class="content-container">
@@ -114,10 +116,15 @@
             <!--</div>-->
         <!--</div>-->
     </section>
+    </transition>
+    </div>
 </template>
 
 <script>
 import find from 'lodash/find'
+import TweenMax from 'gsap'
+let firstEnter = false
+
 export default {
   name: 'OneProject',
   metaInfo: {
@@ -169,7 +176,7 @@ export default {
           slug: 'cateringoo',
           name: 'Cateringoo',
           image: 'image',
-          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem. ',
+          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem. (W REALIZACJI)',
           technologies: [
             {name: 'HTML'},
             {name: 'SCSS/SASS'},
@@ -251,6 +258,38 @@ export default {
       return find(this.dates, (project) => (
         project.slug === this.$route.params.slug
       ))
+    }
+  },
+  methods: {
+    enter: function enter (el, done) {
+      let revealMe = el.getElementsByClassName('reveal-me')
+      let subHeader = el.getElementsByClassName('sub-header')
+      if (!firstEnter) {
+        // reveal-me
+        TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, {scaleX: 1, onComplete: done})
+        // sub-header
+        TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
+        firstEnter = true
+      } else {
+        // reveal-me
+        TweenMax.to(revealMe, 0.04, { onComplete: done })
+      }
+    },
+    leave: function leave (el, done) {
+      let revealMe = el.getElementsByClassName('reveal-me')
+      let subHeader = el.getElementsByClassName('sub-header')
+      // reveal-me
+      TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
+      // sub-header
+      TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
+    },
+    afterEnter: function leave (el, done) {
+      let revealMe = el.getElementsByClassName('reveal-me')
+      let subHeader = el.getElementsByClassName('sub-header')
+      // reveal-me
+      TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
+      // sub-header
+      TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
     }
   }
 }
@@ -553,11 +592,13 @@ export default {
 
         .one-tech {
             font-size: 11px;
-            padding: 0 0 7px 5px;
+            /*padding: 0 0 7px 5px;*/
+            padding: 0 0 0 5px;
             color: $black;
 
             @include breakpoint(medium) {
-                padding: 0 0 7px 0;
+                /*padding: 0 0 7px 0;*/
+                padding: 0;
             }
 
             @include breakpoint(medium-lg) {

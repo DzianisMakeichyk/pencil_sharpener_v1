@@ -7,7 +7,7 @@
 
 <script>
 import Header from './components/Header'
-import Transitions from './components/Transitions.vue'
+import Transitions from './components/Transitions'
 // Styles
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
