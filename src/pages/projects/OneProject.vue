@@ -1,15 +1,16 @@
 <template>
     <div>
-        <transition
-                v-on:enter="enter"
-                v-on:leave="leave"
-                v-on:after-enter="afterEnter"
-                v-bind:css="false"
-                mode="out-in"
+        <!--<transition-->
+                <!--v-on:enter="enter"-->
+                <!--v-on:leave="leave"-->
+                <!--v-on:after-enter="afterEnter"-->
+                <!--v-bind:css="false"-->
+                <!--mode="out-in"-->
 
-                appear
-        >
-        <section class="container" v-show="this.$store.state.isProjectLoad">
+                <!--appear-->
+        <!--&gt;-->
+        <!--<section class="container" v-show="this.$store.state.isProjectLoad">-->
+        <section class="container">
             <div class="reveal-me"></div>
             <div class="photo-container" :class="currentProject.classImage"></div>
             <div class="content-container">
@@ -28,8 +29,7 @@
                                     <p class="project-title">
                                         opis
                                     </p>
-                                    <p class="project-description">
-                                        {{ currentProject.description }}
+                                    <p class="project-description" v-html="currentProject.description">
                                     </p>
 
                                     <div class="project-buttons">
@@ -90,7 +90,8 @@
             <!-- Arrows -->
 
             <!-- Left-->
-            <div class="sub-menu left" @click="isProject">
+            <!--<div class="sub-menu left" @click="isProject">-->
+            <div class="sub-menu left">
                 <router-link
                     class="sub-title-left"
                     :to="{
@@ -104,7 +105,8 @@
                 </router-link>
             </div>
             <!-- Right-->
-            <div class="sub-menu right" @click="isProject">
+            <!--<div class="sub-menu right" @click="isProject">-->
+            <div class="sub-menu right">
                 <router-link
                     class="sub-title-right"
                     :to="{
@@ -124,14 +126,14 @@
                 <!--</div>-->
             <!--</div>-->
         </section>
-</transition>
+<!--</transition>-->
     </div>
 </template>
 
 <script>
 import find from 'lodash/find'
-import TweenMax from 'gsap'
-let firstEnter = false
+// import TweenMax from 'gsap'
+// let firstEnter = false
 
 export default {
   name: 'OneProject',
@@ -146,7 +148,7 @@ export default {
           slug: 'stypendium-z-wyboru',
           name: 'Stypendium z wyboru',
           image: 'image',
-          description: 'Projekt firmy Absolvent.pl. Stypendium z Wyboru to ogólnopolski program stypendialny stworzony po to, by pomagać zdolnym, kreatywnym i ambitnym studentom i młodym absolwentom w realizowaniu swoich marzeń edukacyjnych i zawodowych.',
+          description: 'Projekt firmy <b>Absolvent.pl</b>. <b>Stypendium z Wyboru</b> to ogólnopolski program stypendialny stworzony po to, by pomagać zdolnym, kreatywnym i ambitnym studentom i młodym absolwentom w realizowaniu swoich marzeń edukacyjnych i zawodowych.',
           technologies: [
             {name: 'ReactJs'},
             {name: 'JavaScript/ES6'},
@@ -165,7 +167,7 @@ export default {
           slug: 'makabra',
           name: 'Fest Makabra',
           image: 'image',
-          description: 'FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii. Większość filmów z programu zostanie wyświetlona w Polsce premierowo i będzie to jedyna okazja do obejrzenia ich na wielkim ekranie. Pierwsza edycja przeglądu filmowego FEST MAKABRA odbędzie się w kinach studyjnych i niezależnych w całej Polsce w lutym i marcu 2017 roku. Organizatorem wydarzenia jest dystrybutor filmów Kino Świat.',
+          description: '<b>FEST MAKABRA</b> to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii. Większość filmów z programu zostanie wyświetlona w Polsce premierowo i będzie to jedyna okazja do obejrzenia ich na wielkim ekranie. Pierwsza edycja przeglądu filmowego <b>FEST MAKABRA</b> odbędzie się w kinach studyjnych i niezależnych w całej Polsce w lutym i marcu 2017 roku. Organizatorem wydarzenia jest dystrybutor filmów Kino Świat.',
           technologies: [
             {name: 'HTML'},
             {name: 'SCSS/SASS'},
@@ -185,7 +187,7 @@ export default {
           slug: 'cateringoo',
           name: 'Cateringoo',
           image: 'image',
-          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem. (W REALIZACJI)',
+          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem. <br/>(<b>W REALIZACJI</b>)',
           technologies: [
             {name: 'HTML'},
             {name: 'SCSS/SASS'},
@@ -206,7 +208,7 @@ export default {
           slug: 'nova-dolna',
           name: 'Nova Dolna',
           image: 'image',
-          description: 'Nova Dolna to inwestycja w dolnej części Mokotowa. W sąsiedztwie z Parkiem Promenada oraz Morskim Okiem. Dobra lokalizacja dla ludzi ceniących sobie spokój, ale pragnących mieszkać w centrum miasta.',
+          description: '<b>Nova Dolna</b> to inwestycja w dolnej części Mokotowa. W sąsiedztwie z Parkiem Promenada oraz Morskim Okiem. Dobra lokalizacja dla ludzi ceniących sobie spokój, ale pragnących mieszkać w centrum miasta.',
           technologies: [
             {name: 'HTML'},
             {name: 'SCSS/SASS'},
@@ -226,7 +228,7 @@ export default {
           slug: 'vg-capital',
           name: 'VG Capital',
           image: 'image',
-          description: 'VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski. Kluczowym aspektem naszych projektów jest ich dopasowanie do oczekiwań i możliwości naszych Klientów.',
+          description: '<b>VG Capital</b> od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski. Kluczowym aspektem naszych projektów jest ich dopasowanie do oczekiwań i możliwości naszych Klientów.',
           technologies: [
             {name: 'HTML'},
             {name: 'SCSS/SASS'},
@@ -246,7 +248,7 @@ export default {
           slug: 'telegram',
           name: 'Can I Use',
           image: 'image',
-          description: 'As we know telegram can give us almost full feeds what we will need during a day. News channels, education channels, wether bots, google bots, cat gif channels, chatting with friends and etc. And as I’am front end developer I often must checking supporting new technologies or suport old technologies for older browsers as IE10(yes, somebody still use it) for current project. As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this.',
+          description: 'As we know telegram can give us almost full feeds what we will need during a day. News channels, education channels, wether bots, google bots, cat gif channels, chatting with friends and etc. And as I’am front end developer I often must checking supporting new technologies or suport old technologies for older browsers as IE10(yes, somebody still use it) for current project. As I using telegram for every day I thought to my self what I should code a <b>Telegram bot</b> that can help me shorten the path to do this.',
           technologies: [
             {name: 'REST API'},
             {name: 'Node Js'}
@@ -268,41 +270,41 @@ export default {
         project.slug === this.$route.params.slug
       ))
     }
-  },
-  methods: {
-    isProject () { this.$store.commit('isProjectLoad') },
-    enter: function enter (el, done) {
-      let revealMe = el.getElementsByClassName('reveal-me')
-      let subHeader = el.getElementsByClassName('sub-header')
-      if (!firstEnter) {
-        // reveal-me
-        TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, {scaleX: 1, onComplete: done})
-        // sub-header
-        TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
-        firstEnter = true
-      } else {
-        // reveal-me
-        TweenMax.to(revealMe, 0.04, { onComplete: done })
-      }
-    },
-    leave: function leave (el, done) {
-      let revealMe = el.getElementsByClassName('reveal-me')
-      let subHeader = el.getElementsByClassName('sub-header')
-      // reveal-me
-      TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
-      // sub-header
-      TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
-    },
-    afterEnter: function leave (el, done) {
-      console.log(el)
-      let revealMe = el.getElementsByClassName('reveal-me')
-      let subHeader = el.getElementsByClassName('sub-header')
-      // reveal-me
-      TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
-      // sub-header
-      TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
-    }
   }
+//  methods: {
+//    isProject () { this.$store.commit('isProjectLoad') },
+//    enter: function enter (el, done) {
+//      let revealMe = el.getElementsByClassName('reveal-me')
+//      let subHeader = el.getElementsByClassName('sub-header')
+//      if (!firstEnter) {
+//        // reveal-me
+//        TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, {scaleX: 1, onComplete: done})
+//        // sub-header
+//        TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
+//        firstEnter = true
+//      } else {
+//        // reveal-me
+//        TweenMax.to(revealMe, 0.04, { onComplete: done })
+//      }
+//    },
+//    leave: function leave (el, done) {
+//      let revealMe = el.getElementsByClassName('reveal-me')
+//      let subHeader = el.getElementsByClassName('sub-header')
+//      // reveal-me
+//      TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
+//      // sub-header
+//      TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
+//    },
+//    afterEnter: function leave (el, done) {
+//      console.log(el)
+//      let revealMe = el.getElementsByClassName('reveal-me')
+//      let subHeader = el.getElementsByClassName('sub-header')
+//      // reveal-me
+//      TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
+//      // sub-header
+//      TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
+//    }
+//  }
 }
 </script>
 
