@@ -173,7 +173,7 @@ export default {
             {name: 'JavaScript'},
             {name: 'JQuery'}
           ],
-          year: '2015',
+          year: '2017',
           client: 'Open Gate',
           see_project: 'http://www.festmakabra.pl/',
           repo_project: 'https://github.com/DzianisMakeichyk/film',
@@ -294,6 +294,7 @@ export default {
       TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
     },
     afterEnter: function leave (el, done) {
+      console.log(el)
       let revealMe = el.getElementsByClassName('reveal-me')
       let subHeader = el.getElementsByClassName('sub-header')
       // reveal-me
