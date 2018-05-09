@@ -11,8 +11,8 @@
           :class="{ 'is-active': this.$store.state.isOpenMenu}"
         >
             <div class="change-languages">
-                <div class="one-languages is-active">en.</div>
-                <div class="one-languages">pl</div>
+                <!--<div class="one-languages">en.</div>-->
+                <div class="one-languages is-active">pl</div>
             </div>
             <ul class="slideout-menu">
                 <router-link

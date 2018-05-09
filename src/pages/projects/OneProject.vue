@@ -1,76 +1,85 @@
 <template>
     <div>
-    <transition name="fade">
-    <section class="container" v-bind:class="currentProject.classImage">
-        <div class="reveal-me"></div>
-        <div class="photo-container" v-bind:class="currentProject.classImage"></div>
-        <div class="content-container">
-            <div class="bg-gray relative">
-                <div class="project-me-wrapper">
-                    <div class="project-me">
-                        <div class="sub-header-wrapper">
-                            <h1 class="sub-header">
-                                {{ currentProject.name }}
-                            </h1>
+        <transition
+                v-on:enter="enter"
+                v-on:leave="leave"
+                v-on:after-enter="afterEnter"
+                v-bind:css="false"
+                mode="out-in"
+
+                appear
+        >
+        <section class="container" v-show="this.$store.state.isProjectLoad">
+            <div class="reveal-me"></div>
+            <div class="photo-container" :class="currentProject.classImage"></div>
+            <div class="content-container">
+                <div class="bg-gray relative">
+                    <div class="project-me-wrapper">
+                        <div class="project-me">
+                            <div class="sub-header-wrapper">
+                                <h1 class="sub-header">
+                                    {{ currentProject.name }}
+                                </h1>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-section-wrapper">
-                        <div class="project-section project-top">
-                            <div class="project-left">
-                                <p class="project-title">
-                                    opis
-                                </p>
-                                <p class="project-description">
-                                    {{ currentProject.description }}
-                                </p>
+                        <div class="project-section-wrapper">
+                            <div class="project-section project-top">
+                                <div class="project-left">
+                                    <p class="project-title">
+                                        opis
+                                    </p>
+                                    <p class="project-description">
+                                        {{ currentProject.description }}
+                                    </p>
 
-                                <div class="project-buttons">
-                                    <div class="drop-me-one">
-                                        <a :href="currentProject.see_project" class="button-wrapper" target="_blank">
-                                           <span class="button primary">
-                                               Zobacz projekt
-                                           </span>
-                                        </a>
-                                    </div>
+                                    <div class="project-buttons">
+                                        <div class="drop-me-one">
+                                            <a :href="currentProject.see_project" class="button-wrapper" target="_blank">
+                                               <span class="button primary">
+                                                   Zobacz projekt
+                                               </span>
+                                            </a>
+                                        </div>
 
-                                    <div class="drop-me-one" v-if="currentProject.repo_project">
-                                        <a :href="currentProject.repo_project" class="button-wrapper" target="_blank">
-                                           <span class="button primary">
-                                               Zobacz repozytorium
-                                           </span>
-                                        </a>
+                                        <div class="drop-me-one" v-if="currentProject.repo_project">
+                                            <a :href="currentProject.repo_project" class="button-wrapper" target="_blank">
+                                               <span class="button primary">
+                                                   Zobacz repozytorium
+                                               </span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="project-right">
-                                <div class="project-technologies">
-                                    <div class="one-techno-row">
-                                        <p class="project-title">
-                                            Technologie
-                                        </p>
-                                        <ul class="techno-list techno-box">
-                                            <li class="one-tech" v-for="technology in currentProject.technologies" :key="technology">
-                                                <span class="select-text">
-                                                    {{technology.name}}
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="one-techno-row">
-                                        <p class="project-title">
-                                            klient
-                                        </p>
-                                        <ul class="techno-list">
-                                            <li class="one-tech">{{ currentProject.client }}</li>
-                                        </ul>
-                                    </div>
-                                    <div class="one-techno-row">
-                                        <p class="project-title">
-                                            rok
-                                        </p>
-                                        <ul class="techno-list">
-                                            <li class="one-tech">{{ currentProject.year }}</li>
-                                        </ul>
+                                <div class="project-right">
+                                    <div class="project-technologies">
+                                        <div class="one-techno-row">
+                                            <p class="project-title">
+                                                Technologie
+                                            </p>
+                                            <ul class="techno-list techno-box">
+                                                <li class="one-tech" v-for="technology in currentProject.technologies" :key="technology">
+                                                    <span class="select-text">
+                                                        {{technology.name}}
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="one-techno-row">
+                                            <p class="project-title">
+                                                klient
+                                            </p>
+                                            <ul class="techno-list">
+                                                <li class="one-tech">{{ currentProject.client }}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="one-techno-row">
+                                            <p class="project-title">
+                                                rok
+                                            </p>
+                                            <ul class="techno-list">
+                                                <li class="one-tech">{{ currentProject.year }}</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -78,45 +87,44 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Arrows -->
+            <!-- Arrows -->
 
-        <!-- Left-->
-        <div class="sub-menu left">
-            <router-link
-                class="sub-title-left"
-                :to="{
+            <!-- Left-->
+            <div class="sub-menu left" @click="isProject">
+                <router-link
+                    class="sub-title-left"
+                    :to="{
+                          name: 'OneProject',
+                          params: {
+                            slug: currentProject.prev
+                          }
+                        }"
+                >
+                    Poprzedni project
+                </router-link>
+            </div>
+            <!-- Right-->
+            <div class="sub-menu right" @click="isProject">
+                <router-link
+                    class="sub-title-right"
+                    :to="{
                       name: 'OneProject',
                       params: {
-                        slug: currentProject.prev
+                        slug: currentProject.next
                       }
                     }"
-            >
-                Poprzedni project
-            </router-link>
-        </div>
-        <!-- Right-->
-        <div class="sub-menu right">
-            <router-link
-                class="sub-title-right"
-                :to="{
-                  name: 'OneProject',
-                  params: {
-                    slug: currentProject.next
-                  }
-                }"
-            >
-                Następny projekt
-            </router-link>
-        </div>
-        <!-- Bottom-->
-        <!--<div class="sub-menu bottom">-->
-            <!--<div class="sub-title-right">-->
-                <!--Hello-->
+                >
+                    Następny projekt
+                </router-link>
+            </div>
+            <!-- Bottom-->
+            <!--<div class="sub-menu bottom">-->
+                <!--<div class="sub-title-right">-->
+                    <!--Hello-->
+                <!--</div>-->
             <!--</div>-->
-        <!--</div>-->
-    </section>
-    </transition>
+        </section>
+</transition>
     </div>
 </template>
 
@@ -132,6 +140,7 @@ export default {
   },
   data () {
     return {
+      loading: false,
       dates: [
         {
           slug: 'stypendium-z-wyboru',
@@ -261,6 +270,7 @@ export default {
     }
   },
   methods: {
+    isProject () { this.$store.commit('isProjectLoad') },
     enter: function enter (el, done) {
       let revealMe = el.getElementsByClassName('reveal-me')
       let subHeader = el.getElementsByClassName('sub-header')
@@ -546,7 +556,8 @@ export default {
 
     .project-description {
         font-family: 'Montserrat';
-        font-size: 14px;
+        /*font-size: 14px;*/
+        font-size: 13px;
         line-height: 1.71;
         text-align: left;
         color: #20252a;
@@ -557,7 +568,7 @@ export default {
         }
 
         @include breakpoint(medium-lg) {
-            font-size: 15px;
+            /*font-size: 15px;*/
             padding-right: 25px;
         }
 
