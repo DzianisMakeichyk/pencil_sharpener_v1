@@ -7,6 +7,7 @@ import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import NotFound from '@/pages/NotFound'
 import OneProject from '@/pages/projects/OneProject'
+import OneProjectWrapper from '@/pages/projects/OneProjectWrapper'
 
 Vue.use(Router)
 
@@ -24,8 +25,14 @@ export default new Router({
     },
     {
       path: '/portfolio/:slug',
-      name: 'OneProject',
-      component: OneProject
+      component: OneProjectWrapper,
+      children: [
+        {
+          component: OneProject,
+          name: 'OneProject',
+          path: ''
+        }
+      ]
     },
     {
       path: '/partners',
