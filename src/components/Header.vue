@@ -146,7 +146,7 @@ export default {
         .Cookie__content {
             font-size: 9px;
             color: $gray-medium;
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
         }
         .Cookie__button {
             position: relative;
@@ -160,7 +160,7 @@ export default {
             font-size: 12px;
             font-weight: 500;
             letter-spacing: 1px;
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
             color: $white;
             background: $darkviolet;
             border: 1px solid $darkviolet;

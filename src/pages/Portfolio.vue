@@ -149,7 +149,7 @@ export default {
     .portfolio-desc {
         color: $gray-black;
         line-height: 1.71;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
     }
 
     .projects {
@@ -323,7 +323,7 @@ export default {
         .one-project-description {
             color: $gray-black;
             line-height: 1.71;
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
         }
     }
 </style>

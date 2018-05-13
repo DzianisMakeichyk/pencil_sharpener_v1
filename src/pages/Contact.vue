@@ -179,7 +179,7 @@ export default {
 
         .contact-title {
             padding-bottom: 10px;
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             font-size: 13px;
             line-height: 1.71;

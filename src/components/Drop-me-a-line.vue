@@ -138,7 +138,7 @@ export default {
     }
 
     .sing {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         letter-spacing: 0.3px;
         font-size: 10px;

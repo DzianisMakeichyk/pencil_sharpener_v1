@@ -443,7 +443,7 @@ export default {
         line-height: 1.67;
         text-align: left;
         color: $gray-medium;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         padding-bottom: 15px;
         text-transform: uppercase;
         font-weight: 500;
@@ -510,7 +510,7 @@ export default {
     }
 
     .project-description {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         /*font-size: 14px;*/
         font-size: 13px;
         line-height: 1.71;
@@ -629,7 +629,7 @@ export default {
         }
 
         .project-quotation-small {
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             text-align: left;
         }
@@ -654,7 +654,7 @@ export default {
 
         .project-me-text {
             color: $gray-hard;
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             text-align: left;
             font-weight: 400;

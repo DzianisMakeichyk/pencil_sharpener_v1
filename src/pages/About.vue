@@ -34,7 +34,9 @@
                                             Technologie
                                         </p>
                                         <ul class="techno-list">
-                                           <li class="one-tech" v-for="skill in skills" :key="skill">{{skill.name}}</li>
+                                           <li class="one-tech" v-for="skill in skills" :key="skill">
+                                               {{skill.name}}
+                                           </li>
                                         </ul>
                                     </div>
                                     <div class="one-techno-row">
@@ -42,7 +44,9 @@
                                             Umiejętności
                                         </p>
                                         <ul class="techno-list">
-                                            <li class="one-tech" v-for="ability in abilities" :key="ability">{{ability.name}}</li>
+                                            <li class="one-tech" v-for="ability in abilities" :key="ability">
+                                                {{ability.name}}
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -88,7 +92,7 @@
 
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
-import { TimelineMax, TweenLite } from 'gsap'
+import $ from 'jquery'
 
 export default {
   name: 'About',
@@ -105,7 +109,7 @@ export default {
         { name: 'SCSS/SASS' },
         { name: 'Handlebars' },
         { name: 'JavaScript/ES6' },
-        { name: 'VueJS/VUEX' },
+        { name: 'VueJS/Vuex' },
         { name: 'ReactJs' },
         { name: 'PWA' },
         { name: 'WordPress' }
@@ -138,95 +142,35 @@ export default {
   //
   },
   mounted () {
-    let $intro = document.querySelector('.one-techno-row')
-    let $slider = document.querySelectorAll('.techno-list')
-    let $slides = $slider.find('.one-tech')
-    let slidesNum = $slides.length
-    let prevSlideID = null
-    let currentSlideID = 0
-    let isAnimating = false
-    let tlMax = new TimelineMax({ onComplete: startAutoPlay })
+    let slide = $('.one-techno-row')
+    let slideUl = slide.find('.techno-list')
+    let slideUlLi = slideUl.find('.one-tech')
+    let slideTime = 2000
 
-    tlMax
-      .to($intro, 0.5, { delay: 1, autoAlpha: 0 })
-
-    function init () {
-      TweenLite.set($slides, {
-        left: '-100%'
-      })
-      gotoSlide(0, 0)
-    }
-
-    function gotoNextSlide () {
-      let slideToGo = currentSlideID + 1
-      if (slideToGo >= slidesNum) {
-        slideToGo = 0
-      }
-      stopAutoPlay()
-      gotoSlide(slideToGo, 1, 'next')
-    }
-
-    function gotoSlide (slideID, _time, _direction) {
-      if (!isAnimating) {
-        isAnimating = true
-        prevSlideID = currentSlideID
-        currentSlideID = slideID
-        let $prevSlide = $slides.eq(prevSlideID)
-        let $currentSlide = $slides.eq(currentSlideID)
-        let time = 1
-        if (_time !== null) {
-          time = _time
-        }
-        let direction = 'next'
-        if (_direction != null) {
-          direction = _direction
-        }
-        if (direction === 'next') {
-          TweenLite.to($prevSlide, time, {
-            left: '-100%'
-          })
-          TweenLite.fromTo($currentSlide, time, {
-            left: '100%'
-          }, {
-            left: '0'
-          })
-        } else {
-          TweenLite.to($prevSlide, time, {
-            left: '100%'
-          })
-          TweenLite.fromTo($currentSlide, time, {
-            left: '-100%'
-          }, {
-            left: '0'
-          })
-        }
-        TweenLite.delayedCall(time, function () {
-          isAnimating = false
-        })
+    function runSlide () {
+      if (slideUlLi.hasClass('slide-active')) {
+        $('.slide-active').slideDown().siblings().slideUp()
       }
     }
 
-    function play () {
-      gotoNextSlide()
-      TweenLite.delayedCall(4, play)
+    function startSlide () {
+      slideUlLi.first().addClass('slide-active').siblings().removeClass('slide-active')
+      runSlide()
     }
+    startSlide()
 
-    function startAutoPlay (immediate) {
-      if (immediate != null) {
-        immediate = false
+    function autoSlide () {
+      if ($('.slide-active').is(':last-of-type')) {
+        setTimeout(startSlide, slideTime / 100)
+      } else {
+        $('.slide-active').next().addClass('slide-active').siblings().removeClass('slide-active')
+        runSlide()
       }
-
-      if (immediate) {
-        gotoNextSlide()
-      }
-      TweenLite.delayedCall(4, play)
     }
-
-    function stopAutoPlay () {
-      this.isAutoPlay = false
-      TweenLite.killDelayedCallsTo(play)
-    }
-    init()
+    slideUlLi.each(function () {
+      runSlide()
+    })
+    setInterval(autoSlide, slideTime)
   }
 }
 </script>
@@ -293,7 +237,7 @@ export default {
         line-height: 1.67;
         text-align: left;
         color: $gray-medium;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         padding-bottom: 15px;
         text-transform: uppercase;
 
@@ -367,7 +311,7 @@ export default {
     }
 
     .about-description {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-size: 14px;
         line-height: 1.71;
         text-align: left;
@@ -464,7 +408,7 @@ export default {
         }
 
         .about-quotation-small {
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             text-align: left;
         }
@@ -489,7 +433,7 @@ export default {
 
         .about-me-text {
             color: $gray-hard;
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             text-align: left;
             font-weight: 400;

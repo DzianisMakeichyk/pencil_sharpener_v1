@@ -207,7 +207,7 @@ export default {
       justify-content: flex-end;
       text-transform: uppercase;
       font-size: 14px;
-      font-family: 'Montserrat';
+      font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       padding-top: 35px;
       padding-right: 10%;
@@ -317,7 +317,7 @@ export default {
 
       .menu-contact-me {
           position: relative;
-          font-family: 'Montserrat';
+          font-family: 'Montserrat', sans-serif;
           font-weight: 300;
           font-size: 13px;
           color: $gray;
