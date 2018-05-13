@@ -1,15 +1,5 @@
 <template>
     <div>
-        <!--<transition-->
-                <!--v-on:enter="enter"-->
-                <!--v-on:leave="leave"-->
-                <!--v-on:after-enter="afterEnter"-->
-                <!--v-bind:css="false"-->
-                <!--mode="out-in"-->
-
-                <!--appear-->
-        <!--&gt;-->
-        <!--<section class="container" v-show="this.$store.state.isProjectLoad">-->
         <section class="container">
             <div class="reveal-me"></div>
             <div class="photo-container" :class="currentProject.classImage"></div>
@@ -126,15 +116,11 @@
                 <!--</div>-->
             <!--</div>-->
         </section>
-<!--</transition>-->
     </div>
 </template>
 
 <script>
 import find from 'lodash/find'
-import '../../assets/js/anime.min'
-import '../../assets/js/charming.min'
-import '../../assets/js/imagesloaded.pkgd.min'
 
 export default {
   name: 'OneProject',
@@ -143,7 +129,6 @@ export default {
   },
   data () {
     return {
-      loading: false,
       dates: [
         {
           slug: 'stypendium-z-wyboru',
@@ -272,40 +257,6 @@ export default {
       ))
     }
   }
-//  methods: {
-//    isProject () { this.$store.commit('isProjectLoad') },
-//    enter: function enter (el, done) {
-//      let revealMe = el.getElementsByClassName('reveal-me')
-//      let subHeader = el.getElementsByClassName('sub-header')
-//      if (!firstEnter) {
-//        // reveal-me
-//        TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, {scaleX: 1, onComplete: done})
-//        // sub-header
-//        TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
-//        firstEnter = true
-//      } else {
-//        // reveal-me
-//        TweenMax.to(revealMe, 0.04, { onComplete: done })
-//      }
-//    },
-//    leave: function leave (el, done) {
-//      let revealMe = el.getElementsByClassName('reveal-me')
-//      let subHeader = el.getElementsByClassName('sub-header')
-//      // reveal-me
-//      TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
-//      // sub-header
-//      TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
-//    },
-//    afterEnter: function leave (el, done) {
-//      console.log(el)
-//      let revealMe = el.getElementsByClassName('reveal-me')
-//      let subHeader = el.getElementsByClassName('sub-header')
-//      // reveal-me
-//      TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
-//      // sub-header
-//      TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
-//    }
-//  }
 }
 </script>
 

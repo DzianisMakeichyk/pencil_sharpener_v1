@@ -12,12 +12,6 @@ export default new Vuex.Store({
   mutations: {
     MenuToggle: (state) => {
       state.isOpenMenu = !state.isOpenMenu
-    },
-    isProjectLoad: (state) => {
-      state.isProjectLoad = !state.isProjectLoad
-      setTimeout(function () {
-        state.isProjectLoad = !state.isProjectLoad
-      }, 500)
     }
   }
 })
