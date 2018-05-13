@@ -132,8 +132,9 @@
 
 <script>
 import find from 'lodash/find'
-// import TweenMax from 'gsap'
-// let firstEnter = false
+import '../../assets/js/anime.min'
+import '../../assets/js/charming.min'
+import '../../assets/js/imagesloaded.pkgd.min'
 
 export default {
   name: 'OneProject',
