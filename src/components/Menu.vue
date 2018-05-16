@@ -11,8 +11,8 @@
           :class="{ 'is-active': this.$store.state.isOpenMenu}"
         >
             <div class="change-languages">
-                <!--<div class="one-languages">en.</div>-->
-                <div class="one-languages is-active">pl</div>
+                <p class="one-languages" @click="switchLocaleEn">en.</p>
+                <p class="one-languages is-active" @click="switchLocalePl">pl.</p>
             </div>
             <ul class="slideout-menu">
                 <router-link
@@ -99,6 +99,12 @@ export default {
         TweenMax.staggerTo(menuLang, 0.4, { y: 100 }, 0.2)
         TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
+    },
+    switchLocalePl () {
+      this.$i18n.locale = 'pl'
+    },
+    switchLocaleEn () {
+      this.$i18n.locale = 'en'
     }
   }
 }
