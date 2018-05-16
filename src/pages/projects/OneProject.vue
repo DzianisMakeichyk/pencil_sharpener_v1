@@ -1,7 +1,6 @@
 <template>
     <div>
         <section class="container">
-            <div class="reveal-me"></div>
             <div class="photo-container" :class="currentProject.classImage"></div>
             <div class="content-container">
                 <div class="bg-gray relative">
@@ -476,7 +475,7 @@ export default {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: $darkviolet;
+                background: $darkviolet;
             }
         }
     }

@@ -142,7 +142,7 @@ export default {
   //
   },
   mounted () {
-    let slide = $('.one-techno-row')
+    let slide = $('.one-techno-row1')
     let slideUl = slide.find('.techno-list')
     let slideUlLi = slideUl.find('.one-tech')
     let slideTime = 2000
@@ -277,7 +277,7 @@ export default {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: $darkviolet;
+                background: $darkviolet;
             }
         }
     }

@@ -190,7 +190,7 @@ export default {
             }
 
             &:hover {
-                color: $darkviolet;
+                color: $darkviolet-color;
                 background-color: $white;
 
                 &::after {
@@ -319,7 +319,7 @@ export default {
 
             &:hover {
                 svg {
-                    fill: $darkviolet;
+                    fill: $darkviolet-color;
                 }
             }
         }

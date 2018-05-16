@@ -176,7 +176,7 @@ export default {
                 padding: 2px 0 0 7px;
                 font-family: 'Montserrat', sans-serif;
                 color: $white;
-                background-color: $darkviolet;
+                background: $darkviolet;
                 border-radius: 50%;
                 font-size: 11px;
                 font-weight: 500;

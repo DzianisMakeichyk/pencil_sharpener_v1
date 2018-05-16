@@ -287,7 +287,7 @@ export default {
              width: 120%;
              /*height: 100%;*/
              height: 0;
-             background-color: $darkviolet;
+             background: $darkviolet-color;
              opacity: .4;
              transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
              transform: translateY(100px) rotate(15deg);

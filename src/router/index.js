@@ -8,7 +8,7 @@ import Contact from '@/pages/Contact'
 import NotFound from '@/pages/NotFound'
 import OneProject from '@/pages/projects/OneProject'
 import OneProjectWrapper from '@/pages/projects/OneProjectWrapper'
-import OneProjectWrapperNew from '@/pages/projects/OneProjectWrapperNew'
+// import OneProjectWrapperNew from '@/pages/projects/OneProjectWrapperNew'
 
 Vue.use(Router)
 
@@ -54,11 +54,6 @@ export default new Router({
       path: '*',
       name: 'NotFound',
       component: NotFound
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: OneProjectWrapperNew
     }
   ]
 })

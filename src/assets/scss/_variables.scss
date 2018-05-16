@@ -20,7 +20,8 @@ $gray-hard: #4e4e4e;
 $blue-sea: #e8eef3;
 $black: #151515;
 
-$darkviolet: #7c26cc;
+$darkviolet-color: #7c26cc;
+$darkviolet: linear-gradient(45deg, #3a3d98, #6f22b9);
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|PT+Serif:400,700');
 
