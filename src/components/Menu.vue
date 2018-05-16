@@ -11,7 +11,7 @@
           :class="{ 'is-active': this.$store.state.isOpenMenu}"
         >
             <div class="change-languages">
-                <p class="one-languages" @click="switchLocaleEn">en.</p>
+                <!--<p class="one-languages" @click="switchLocaleEn">en.</p>-->
                 <p class="one-languages is-active" @click="switchLocalePl">pl.</p>
             </div>
             <ul class="slideout-menu">
@@ -21,7 +21,7 @@
                   :class="{'is-active': this.$route.path == '/portfolio'}"
                 >
                     <span class="menu-item">
-                        Portfolio
+                        {{ $t("message.menu.portfolio") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
@@ -31,7 +31,7 @@
                   :class="{'is-active': this.$route.path == '/about'}"
                 >
                     <span class="menu-item">
-                        O mnie
+                        {{ $t("message.menu.about") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
@@ -47,7 +47,7 @@
                   :class="{'is-active': this.$route.path == '/partners'}"
                 >
                     <span class="menu-item">
-                        Współpraca
+                        {{ $t("message.menu.partners") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
@@ -57,7 +57,7 @@
                   :class="{'is-active': this.$route.path == '/contact'}"
                 >
                     <span class="menu-item">
-                        Kontakt
+                        {{ $t("message.menu.contact") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>

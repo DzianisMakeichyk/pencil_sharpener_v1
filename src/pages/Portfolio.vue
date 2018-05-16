@@ -7,7 +7,6 @@
                     <div class="bg-gray">
                         <div class="portfolio-top">
                             <p class="portfolio-heading heading-text">
-                            <!--<span>{{ $t("message.hello") }}</span>-->
                                 Są tu 6 projektów,
                                 wybrahych dla prezentacji
                             </p>

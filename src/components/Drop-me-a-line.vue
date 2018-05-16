@@ -11,7 +11,9 @@
                </div>
                <div class="drop-me-one" v-if="this.$props.section === 'first'">
                    <div class="drop-me-one-contact">
-                       <p class="drop-contact-me">Polska, Warszawa</p>
+                       <p class="drop-contact-me">
+                           {{ $t("message.drop-me-a-line.city") }}
+                       </p>
                        <br/>
                        <a href="tel:+48797657075" class="drop-contact-me">
                             <span class="select-text">
@@ -29,13 +31,7 @@
 
                <div class="drop-me-one" v-if="this.$props.section === 'second'">
                    <div class="drop-me-one-contact">
-                       <p class="drop-contact-me">
-                           If you want to start a new project
-                           <br/>
-                           or just say hello feel free to
-                           <br/>
-                           contact me.
-                       </p>
+                       <p class="drop-contact-me" v-html="$t('message.drop-me-a-line.description')"></p>
                    </div>
                </div>
                <div class="drop-me-one">

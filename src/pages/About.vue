@@ -8,7 +8,7 @@
                     <div class="about-me">
                         <div class="sub-header-wrapper">
                             <p class="about-title">
-                                FRONTEND DEVELOPER AT CAPE MORRIS
+                                {{ $t("message.about.work") }}
                             </p>
 
                             <h1 class="sub-header">
@@ -23,15 +23,14 @@
                                 <p class="about-title">
                                     O mnie
                                 </p>
-                                <p class="about-description">
-                                    Nazywam się <b>Dzianis Makeichyk</b> i jestem <b>Front-End Developerem</b>. Zajmuję się tworzeniem stron internetowych, blogów, od responsywnego mailingu, banera, do layout wykonany na podstawie <b>ReactJS</b> i <b>VueJs</b>.
+                                <p class="about-description" v-html="$t('message.about.description')">
                                 </p>
                             </div>
                             <div class="about-right">
                                 <div class="about-technologies">
                                     <div class="one-techno-row">
                                         <p class="about-title">
-                                            Technologie
+                                            {{ $t("message.about.technologie") }}
                                         </p>
                                         <ul class="techno-list">
                                            <li class="one-tech" v-for="skill in skills" :key="skill">
@@ -41,7 +40,7 @@
                                     </div>
                                     <div class="one-techno-row">
                                         <p class="about-title">
-                                            Umiejętności
+                                            {{ $t("message.about.skill") }}
                                         </p>
                                         <ul class="techno-list">
                                             <li class="one-tech" v-for="ability in abilities" :key="ability">
@@ -68,7 +67,7 @@
                         <div class="about-right">
                             <div class="about-me-text-wrapper">
                                 <h6 class="about-me-text">
-                                    Zawsze dążę do tego, żeby każdy zbudowany przez mnie projekt był całkowicie optymalny od strony użytkowej oraz graficznej. Dzięki latom doświadczenia przy tworzeniu projektów internetowych oraz graficznych przyjąłem i trzymam się politykę, że właściwa, intuicyjna nawigacja, inteligentna i przejrzysta grafika, sprawne działanie wszystkich elementów strony pomoga w maksynalnym dotarciu do potrzebnych informacji. Wszystkie te elementy dobrze zgrane sprawią, że odbiorcy szybciej dokonają zakupu, zamówią usługę, dopiszą się do newslettera czy wypełnią formularz kontaktowy. Dzięki temu strona skutecznie zareklamuje się jako godnego zaufania, wydajnego przedsiębiorcę i zwiększy Twoje zyski.
+                                    {{ $t("message.about.second-description") }}
                                 </h6>
                             </div>
                         </div>
@@ -77,9 +76,11 @@
                     <!-- 3 -->
                     <div class="about-section available">
                         <p class="about-quotation">
-                            Available for freelance
+                            {{ $t("message.about.available_1") }}
                             <br/>
-                            <span class="about-quotation-small">And for a beer.</span>
+                            <span class="about-quotation-small">
+                                {{ $t("message.about.available_2") }}
+                            </span>
                         </p>
                     </div>
                     <!-- END 3 -->

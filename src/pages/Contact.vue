@@ -6,13 +6,13 @@
                 <div class="full-height-content relative">
                     <div class="sub-header-wrapper top-position">
                         <h2 class="sub-header">
-                            Kontakt
+                            {{ $t("message.menu.contact") }}
                         </h2>
                     </div>
                     <div class="contact-box-wrapper bg-gray">
                         <div class="contact-box">
                             <p class="contact-title">
-                                Masz pytania?
+                                {{ $t("message.contact.any-question") }}
                             </p>
                             <p class="drop-me-one-contact">
                                 <a href="tel:+48797657075" class="drop-contact-me">
@@ -30,7 +30,7 @@
                         </div>
                         <div class="contact-box">
                         <p class="contact-title">
-                            Adres
+                            {{ $t("message.contact.adres") }}
                         </p>
                         <div class="drop-me-one-contact">
                             <p class="drop-contact-me">
@@ -38,7 +38,7 @@
                             </p>
                             <br/>
                             <p class="drop-contact-me">
-                                01-210 Warszawa, Polska
+                                {{ $t("message.contact.index") }}
                             </p>
                         </div>
                     </div>

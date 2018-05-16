@@ -16,7 +16,7 @@
                             <div class="project-section project-top">
                                 <div class="project-left">
                                     <p class="project-title">
-                                        opis
+                                        {{ $t("message.project.description-name") }}
                                     </p>
                                     <p class="project-description" v-html="currentProject.description">
                                     </p>
@@ -25,7 +25,7 @@
                                         <div class="drop-me-one">
                                             <a :href="currentProject.see_project" class="button-wrapper" target="_blank">
                                                <span class="button primary">
-                                                   Zobacz projekt
+                                                   {{ $t("message.project.see-project") }}
                                                </span>
                                             </a>
                                         </div>
@@ -33,7 +33,7 @@
                                         <div class="drop-me-one" v-if="currentProject.repo_project">
                                             <a :href="currentProject.repo_project" class="button-wrapper" target="_blank">
                                                <span class="button primary">
-                                                   Zobacz repozytorium
+                                                   {{ $t("message.project.see-repo") }}
                                                </span>
                                             </a>
                                         </div>
@@ -43,7 +43,7 @@
                                     <div class="project-technologies">
                                         <div class="one-techno-row">
                                             <p class="project-title">
-                                                Technologie
+                                                {{ $t("message.about.technologie") }}
                                             </p>
                                             <ul class="techno-list techno-box">
                                                 <li class="one-tech" v-for="technology in currentProject.technologies" :key="technology">
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="one-techno-row">
                                             <p class="project-title">
-                                                klient
+                                                {{ $t("message.project.client") }}
                                             </p>
                                             <ul class="techno-list">
                                                 <li class="one-tech">{{ currentProject.client }}</li>
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="one-techno-row">
                                             <p class="project-title">
-                                                rok
+                                                {{ $t("message.project.year") }}
                                             </p>
                                             <ul class="techno-list">
                                                 <li class="one-tech">{{ currentProject.year }}</li>
@@ -90,7 +90,7 @@
                           }
                         }"
                 >
-                    Poprzedni project
+                    {{ $t("message.project.next-project") }}
                 </router-link>
             </div>
             <!-- Right-->
@@ -105,7 +105,7 @@
                       }
                     }"
                 >
-                    Następny projekt
+                    {{ $t("message.project.prev-project") }}
                 </router-link>
             </div>
             <!-- Bottom-->

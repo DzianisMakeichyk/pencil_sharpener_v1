@@ -1,3 +1,38 @@
 {
-  "hello": "hello world"
+  "header": {
+    "cookies" : "Our website uses cookies for statistical, advertising and functional purposes. Thanks to them, we can customize the site to your needs. Anyone can accept cookies or have the option of disabling them in the browser so that no information will be collected <a href='https://en.wikipedia.org/wiki/HTTP_cookienotes' target='_blank'> Learn more turn them off. </a>"
+  },
+  "drop-me-a-line": {
+    "city": "Poland, Warsaw",
+    "description": "If you want to start a new project<br/>or just say hello feel free to<br/>contact me."
+  },
+  "menu": {
+    "portfolio" : "Portfolio",
+    "about" : "About",
+    "partners" : "Partners",
+    "contact" : "Contact"
+  },
+  "about": {
+    "work": "FRONTEND DEVELOPER AT CAPE MORRIS",
+    "description": "My name is <b> Dzianis Makeichyk </b> and I am a <b> Front-End Developer </ b>. I create websites, blogs, responsive mailing, banner, layout based on <b> ReactJS </b> and <b> VueJs </ b>.",
+    "technologie": "Technologie",
+    "skill": "Skills",
+    "second-description": "I always strive to make every project I create is completely optimal from the usable and graphic side. Thanks to years of experience in creating internet and graphic projects, I have adopted and stick to the policy that proper, intuitive navigation, intelligent and clear graphics, efficient operation of all elements of the website will help in reaching the necessary information in the maximum. All these elements well-coordinated will make the recipients buy faster, order a service, sign up for the newsletter or fill out the contact form. Thanks to this, the website is effectively advertised as a trustworthy, efficient entrepreneur and will increase your profits.",
+    "available_1": "Available for freelance",
+    "available_2": "And for a beer."
+  },
+  "contact": {
+    "any-question": "Any questions?",
+    "index": "01-210 Warsaw, Poland",
+    "adres": "Address"
+  },
+  "project": {
+    "description-name": "description",
+    "see-project": "See project",
+    "see-repo": "See repository",
+    "client": "client",
+    "year": "year",
+    "next-project": "Next project",
+    "prev-project": "Previous project"
+  }
 }

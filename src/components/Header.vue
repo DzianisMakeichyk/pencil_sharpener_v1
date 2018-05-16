@@ -118,9 +118,7 @@
         <!-- Bottom-->
         <div class="sub-menu bottom"></div>
         <cookie-law>
-            <div slot="message">
-                Nasza strona internetowa używa plików cookies (tzw. ciasteczka) w celach statystycznych, reklamowych oraz funkcjonalnych. Dzięki nim możemy indywidualnie dostosować stronę do twoich potrzeb. Każdy może zaakceptować pliki cookies albo ma możliwość wyłączenia ich w przeglądarce, dzięki czemu nie będą zbierane żadne informacje.<a href="https://pl.wikipedia.org/wiki/HTTP_cookienotes" target="_blank"> Dowiedz się więcej jak je wyłączyć.</a>
-            </div>
+            <div slot="message" v-html="$t('message.header.cookies')"></div>
         </cookie-law>
     </div>
 </template>

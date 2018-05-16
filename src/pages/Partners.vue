@@ -7,7 +7,7 @@
                     <div class="full-height-content">
                         <div class="sub-header-wrapper top-position">
                             <h2 class="sub-header">
-                                Współpraca
+                                {{ $t("message.menu.partners") }}
                             </h2>
                         </div>
                         <div class="partners-container bg-gray">
