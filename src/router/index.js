@@ -9,51 +9,63 @@ import NotFound from '@/pages/NotFound'
 import OneProject from '@/pages/projects/OneProject'
 import OneProjectWrapper from '@/pages/projects/OneProjectWrapper'
 // import OneProjectWrapperNew from '@/pages/projects/OneProjectWrapperNew'
-
+import { defaultLocale } from '../config/i18n'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      redirect: `/${defaultLocale}`
     },
     {
-      path: '/portfolio',
-      name: 'Portfolio',
-      component: Portfolio
-    },
-    {
-      path: '/portfolio/:slug',
-      component: OneProjectWrapper,
+      path: '/:locale',
+      component: {
+        template: '<router-view />'
+      },
       children: [
         {
-          component: OneProject,
-          name: 'OneProject',
-          path: ''
+          path: '',
+          name: 'Index',
+          component: Index
+        },
+        {
+          path: '/portfolio',
+          name: 'Portfolio',
+          component: Portfolio
+        },
+        {
+          path: '/portfolio/:slug',
+          component: OneProjectWrapper,
+          children: [
+            {
+              component: OneProject,
+              name: 'OneProject',
+              path: ''
+            }
+          ]
+        },
+        {
+          path: '/partners',
+          name: 'Partners',
+          component: Partners
+        },
+        {
+          path: '/about',
+          name: 'About',
+          component: About
+        },
+        {
+          path: '/contact',
+          name: 'Contact',
+          component: Contact
+        },
+        {
+          path: '*',
+          name: 'NotFound',
+          component: NotFound
         }
       ]
-    },
-    {
-      path: '/partners',
-      name: 'Partners',
-      component: Partners
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: About
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: Contact
-    },
-    {
-      path: '*',
-      name: 'NotFound',
-      component: NotFound
     }
   ]
 })

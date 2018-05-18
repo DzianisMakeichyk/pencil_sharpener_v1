@@ -11,8 +11,17 @@
           :class="{ 'is-active': this.$store.state.isOpenMenu}"
         >
             <div class="change-languages">
+                <router-link
+                        v-for="locale in locales"
+                        :key="locale.code"
+                        :to="`/${locale.code}`"
+                        class="one-languages is-active"
+                >
+                    {{locale.name}}
+                </router-link>
+
                 <!--<p class="one-languages" @click="switchLocaleEn">en.</p>-->
-                <p class="one-languages is-active" @click="switchLocalePl">pl.</p>
+                <!--<p class="one-languages is-active" @click="switchLocalePl">pl.</p>-->
             </div>
             <ul class="slideout-menu">
                 <router-link
@@ -80,9 +89,21 @@
 
 <script>
 import TweenMax from 'gsap'
+import { locales } from '../config/i18n'
 
 export default {
   name: 'Menu',
+  data () {
+    return {
+      locales
+    }
+  },
+
+  computed: {
+    currentLocale () {
+      return this.$route.params.locale
+    }
+  },
   methods: {
     MenuToggle () { this.$store.commit('MenuToggle') },
     animationMenuItems () {
@@ -99,12 +120,6 @@ export default {
         TweenMax.staggerTo(menuLang, 0.4, { y: 100 }, 0.2)
         TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
-    },
-    switchLocalePl () {
-      this.$i18n.locale = 'pl'
-    },
-    switchLocaleEn () {
-      this.$i18n.locale = 'en'
     }
   }
 }
