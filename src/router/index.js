@@ -26,17 +26,15 @@ export default new Router({
       },
       children: [
         {
-          path: '/',
-          name: 'Index',
+          path: '',
           component: Index
         },
         {
-          path: '/portfolio',
-          name: 'Portfolio',
+          path: 'portfolio',
           component: Portfolio
         },
         {
-          path: '/portfolio/:slug',
+          path: 'portfolio/:slug',
           component: OneProjectWrapper,
           children: [
             {
@@ -47,18 +45,15 @@ export default new Router({
           ]
         },
         {
-          path: '/partners',
-          name: 'Partners',
+          path: 'partners',
           component: Partners
         },
         {
-          path: '/about',
-          name: 'About',
+          path: 'about',
           component: About
         },
         {
-          path: '/contact',
-          name: 'Contact',
+          path: 'contact',
           component: Contact
         },
         {

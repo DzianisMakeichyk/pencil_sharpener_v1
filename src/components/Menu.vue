@@ -24,18 +24,19 @@
                 <!--<p class="one-languages is-active">pl.</p>-->
             </div>
             <ul class="slideout-menu">
-                <router-link
-                  :to="{name: 'Portfolio'}"
+                <localized-link
+                  to="portfolio"
                   class="one-menu-item"
+                  active-class="is-active"
                   :class="{'is-active': this.$route.path == '/portfolio'}"
                 >
                     <span class="menu-item">
                         {{ $t("menu.portfolio") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
-                </router-link>
-                <router-link
-                  :to="{name: 'About'}"
+                </localized-link>
+                <localized-link
+                  to="about"
                   class="one-menu-item"
                   :class="{'is-active': this.$route.path == '/about'}"
                 >
@@ -43,33 +44,35 @@
                         {{ $t("menu.about") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
-                </router-link>
+                </localized-link>
                 <a href="https://medium.com/@dzianismakeichyk" target="_blank" class="one-menu-item">
                     <span class="menu-item">
                         Blog
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </a>
-                <router-link
-                  :to="{name: 'Partners'}"
+                <localized-link
+                  to="Partners"
                   class="one-menu-item"
+                  active-class="is-active"
                   :class="{'is-active': this.$route.path == '/partners'}"
                 >
                     <span class="menu-item">
                         {{ $t("menu.partners") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
-                </router-link>
-                <router-link
-                  :to="{name: 'Contact'}"
+                </localized-link>
+                <localized-link
+                  to="Contact"
                   class="one-menu-item"
+                  active-class="is-active"
                   :class="{'is-active': this.$route.path == '/contact'}"
                 >
                     <span class="menu-item">
                         {{ $t("menu.contact") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
-                </router-link>
+                </localized-link>
             </ul>
             <div class="menu-contact">
                 <a href="tel:+48797657075" class="menu-contact-me">
@@ -89,6 +92,7 @@
 
 <script>
 import TweenMax from 'gsap'
+import LocalizedLink from './Locale/LocalizedLink'
 import { locales } from '../config/i18n'
 
 export default {
@@ -97,6 +101,9 @@ export default {
     return {
       locales
     }
+  },
+  components: {
+    LocalizedLink
   },
   methods: {
     MenuToggle () { this.$store.commit('MenuToggle') },

@@ -12,7 +12,7 @@
                <div class="drop-me-one" v-if="this.$props.section === 'first'">
                    <div class="drop-me-one-contact">
                        <p class="drop-contact-me">
-                           {{ $t("message.drop-me-a-line.city") }}
+                           {{ $t("drop-me-a-line.city") }}
                        </p>
                        <br/>
                        <a href="tel:+48797657075" class="drop-contact-me">
@@ -31,7 +31,7 @@
 
                <div class="drop-me-one" v-if="this.$props.section === 'second'">
                    <div class="drop-me-one-contact">
-                       <p class="drop-contact-me" v-html="$t('message.drop-me-a-line.description')"></p>
+                       <p class="drop-contact-me" v-html="$t('drop-me-a-line.description')"></p>
                    </div>
                </div>
                <div class="drop-me-one">

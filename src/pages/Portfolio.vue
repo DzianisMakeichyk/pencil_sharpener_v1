@@ -7,13 +7,9 @@
                     <div class="bg-gray">
                         <div class="portfolio-top">
                             <p class="portfolio-heading heading-text">
-                                Są tu 6 projektów,
-                                wybrahych dla prezentacji
+                                {{ $t("project.description_1") }}
                             </p>
-                            <p class="portfolio-desc description">
-                                Akurat jest ich ponad 30 dla ponad 10 klientów, nie mogę pokazać Ci wszystkiego ;) I dlatego wybrałem kilka najciekawszych.
-                                <br/>
-                                Enjou!
+                            <p class="portfolio-desc description" v-html="$t('project.description_2')">
                             </p>
                         </div>
                         <!-- Projects -->

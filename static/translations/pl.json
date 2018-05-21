@@ -28,6 +28,8 @@
             "adres": "Adres"
         },
         "project": {
+            "description_1" : "Są tu 6 projektów, wybrahych dla prezentacji",
+            "description_2" : "Akurat jest ich ponad 30 dla ponad 10 klientów, nie mogę pokazać Ci wszystkiego ;) I dlatego wybrałem kilka najciekawszych.<br/>Enjou!",
             "description-name": "opis",
             "see-project": "Zobacz projekt",
             "see-repo": "Zobacz repozytorium",

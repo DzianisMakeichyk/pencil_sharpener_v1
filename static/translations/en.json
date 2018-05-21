@@ -15,7 +15,7 @@
         },
         "about": {
             "work": "FRONTEND DEVELOPER AT CAPE MORRIS",
-            "description": "My name is <b> Dzianis Makeichyk </b> and I am a <b> Front-End Developer </ b>. I create websites, blogs, responsive mailing, banner, layout based on <b> ReactJS </b> and <b> VueJs </ b>.",
+            "description": "My name is <b> Dzianis Makeichyk </b> and I am a <b> Front-End Developer </b>. I create websites, blogs, responsive mailing, banner, layout based on <b> ReactJS </b> and <b> VueJs </b>.",
             "technologie": "Technologie",
             "skill": "Skills",
             "second-description": "I always strive to make every project I create is completely optimal from the usable and graphic side. Thanks to years of experience in creating internet and graphic projects, I have adopted and stick to the policy that proper, intuitive navigation, intelligent and clear graphics, efficient operation of all elements of the website will help in reaching the necessary information in the maximum. All these elements well-coordinated will make the recipients buy faster, order a service, sign up for the newsletter or fill out the contact form. Thanks to this, the website is effectively advertised as a trustworthy, efficient entrepreneur and will increase your profits.",
@@ -28,6 +28,8 @@
             "adres": "Address"
         },
         "project": {
+            "description_1" : "Są tu 6 projektów, wybrahych dla prezentacji",
+            "description_2" : "Akurat jest ich ponad 30 dla ponad 10 klientów, nie mogę pokazać Ci wszystkiego ;) I dlatego wybrałem kilka najciekawszych.<br/>Enjou!",
             "description-name": "description",
             "see-project": "See project",
             "see-repo": "See repository",

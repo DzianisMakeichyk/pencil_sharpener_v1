@@ -6,7 +6,7 @@
                     <b-col mg="5" v-if="this.$store.state.windowWidth >= 767">
                         <h1 class="header-name">
                             <router-link
-                                :to="{name: 'Index'}"
+                              to="/"
                             >
                                 dzianis makeichyk
                             </router-link>
@@ -14,7 +14,7 @@
                     </b-col>
                     <b-col mg="2">
                         <router-link
-                          :to="{name: 'Index'}"
+                          to="/"
                           class="logo-wrapper"
                         >
                             <img src="~@/assets/images/svg/logo.svg" alt="Logo" class="logo" />
@@ -118,7 +118,7 @@
         <!-- Bottom-->
         <div class="sub-menu bottom"></div>
         <cookie-law>
-            <div slot="message" v-html="$t('message.header.cookies')"></div>
+            <div slot="message" v-html="$t('header.cookies')"></div>
         </cookie-law>
     </div>
 </template>
@@ -126,12 +126,14 @@
 <script>
 import Menu from './Menu'
 import CookieLaw from 'vue-cookie-law'
+import LocalizedLink from './Locale/LocalizedLink'
 
 export default {
   name: 'Header',
 
   components: {
     Menu,
+    LocalizedLink,
     CookieLaw
   }
 }

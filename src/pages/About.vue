@@ -67,7 +67,7 @@
                         <div class="about-right">
                             <div class="about-me-text-wrapper">
                                 <h6 class="about-me-text">
-                                    {{ $t("message.about.second-description") }}
+                                    {{ $t("about.second-description") }}
                                 </h6>
                             </div>
                         </div>
@@ -76,10 +76,10 @@
                     <!-- 3 -->
                     <div class="about-section available">
                         <p class="about-quotation">
-                            {{ $t("message.about.available_1") }}
+                            {{ $t("about.available_1") }}
                             <br/>
                             <span class="about-quotation-small">
-                                {{ $t("message.about.available_2") }}
+                                {{ $t("about.available_2") }}
                             </span>
                         </p>
                     </div>
