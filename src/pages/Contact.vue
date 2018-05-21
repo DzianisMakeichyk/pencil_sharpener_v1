@@ -6,13 +6,13 @@
                 <div class="full-height-content relative">
                     <div class="sub-header-wrapper top-position">
                         <h2 class="sub-header">
-                            {{ $t("message.menu.contact") }}
+                            {{ $t("contact") }}
                         </h2>
                     </div>
                     <div class="contact-box-wrapper bg-gray">
                         <div class="contact-box">
                             <p class="contact-title">
-                                {{ $t("message.contact.any-question") }}
+                                {{ $t("any-question") }}
                             </p>
                             <p class="drop-me-one-contact">
                                 <a href="tel:+48797657075" class="drop-contact-me">
@@ -30,7 +30,7 @@
                         </div>
                         <div class="contact-box">
                         <p class="contact-title">
-                            {{ $t("message.contact.adres") }}
+                            {{ $t("contact.adres") }}
                         </p>
                         <div class="drop-me-one-contact">
                             <p class="drop-contact-me">
@@ -38,7 +38,7 @@
                             </p>
                             <br/>
                             <p class="drop-contact-me">
-                                {{ $t("message.contact.index") }}
+                                {{ $t("contact.index") }}
                             </p>
                         </div>
                     </div>

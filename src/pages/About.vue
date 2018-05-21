@@ -8,7 +8,7 @@
                     <div class="about-me">
                         <div class="sub-header-wrapper">
                             <p class="about-title">
-                                {{ $t("message.about.work") }}
+                                {{ $t("about.work") }}
                             </p>
 
                             <h1 class="sub-header">
@@ -23,14 +23,14 @@
                                 <p class="about-title">
                                     O mnie
                                 </p>
-                                <p class="about-description" v-html="$t('message.about.description')">
+                                <p class="about-description" v-html="$t('about.description')">
                                 </p>
                             </div>
                             <div class="about-right">
                                 <div class="about-technologies">
                                     <div class="one-techno-row">
                                         <p class="about-title">
-                                            {{ $t("message.about.technologie") }}
+                                            {{ $t("about.technologie") }}
                                         </p>
                                         <ul class="techno-list">
                                            <li class="one-tech" v-for="skill in skills" :key="skill">
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="one-techno-row">
                                         <p class="about-title">
-                                            {{ $t("message.about.skill") }}
+                                            {{ $t("about.skill") }}
                                         </p>
                                         <ul class="techno-list">
                                             <li class="one-tech" v-for="ability in abilities" :key="ability">

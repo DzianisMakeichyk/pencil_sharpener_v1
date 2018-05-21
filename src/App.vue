@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <Header />
-    <Transitions></Transitions>
+    <localizer>
+      <Header />
+      <Transitions></Transitions>
+    </localizer>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import Transitions from './components/Transitions'
+import Localizer from './components/Locale/Localizer'
 // Styles
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -16,7 +19,8 @@ export default {
   name: 'app',
   components: {
     Header,
-    Transitions
+    Transitions,
+    Localizer
   },
   methods: {
     handleWindowResize (event) {

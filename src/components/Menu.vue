@@ -12,7 +12,7 @@
         >
             <div class="change-languages">
                 <!--<p class="one-languages" @click="switchLocaleEn">en.</p>-->
-                <p class="one-languages is-active" @click="switchLocalePl">pl.</p>
+                <p class="one-languages is-active">pl.</p>
             </div>
             <ul class="slideout-menu">
                 <router-link
@@ -21,7 +21,7 @@
                   :class="{'is-active': this.$route.path == '/portfolio'}"
                 >
                     <span class="menu-item">
-                        {{ $t("message.menu.portfolio") }}
+                        {{ $t("menu.portfolio") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
@@ -31,7 +31,7 @@
                   :class="{'is-active': this.$route.path == '/about'}"
                 >
                     <span class="menu-item">
-                        {{ $t("message.menu.about") }}
+                        {{ $t("menu.about") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
@@ -47,7 +47,7 @@
                   :class="{'is-active': this.$route.path == '/partners'}"
                 >
                     <span class="menu-item">
-                        {{ $t("message.menu.partners") }}
+                        {{ $t("menu.partners") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
@@ -57,7 +57,7 @@
                   :class="{'is-active': this.$route.path == '/contact'}"
                 >
                     <span class="menu-item">
-                        {{ $t("message.menu.contact") }}
+                        {{ $t("menu.contact") }}
                         <svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>
                     </span>
                 </router-link>
@@ -99,12 +99,6 @@ export default {
         TweenMax.staggerTo(menuLang, 0.4, { y: 100 }, 0.2)
         TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
-    },
-    switchLocalePl () {
-      this.$i18n.locale = 'pl'
-    },
-    switchLocaleEn () {
-      this.$i18n.locale = 'en'
     }
   }
 }
