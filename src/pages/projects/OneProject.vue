@@ -172,7 +172,7 @@ export default {
           slug: 'cateringoo',
           name: 'Cateringoo',
           image: 'image',
-          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem. <br/>(<b>W REALIZACJI</b>)',
+          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem.',
           technologies: [
             {name: 'HTML'},
             {name: 'SCSS/SASS'},
@@ -182,7 +182,7 @@ export default {
             {name: 'Laravel'}
           ],
           year: '2018',
-          client: 'Still secret ;)',
+          client: 'Code&Pepper',
           see_project: 'https://www.cateringoo.pl/',
           repo_project: '',
           classImage: 'five-project',
