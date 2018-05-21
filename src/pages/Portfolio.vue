@@ -15,24 +15,29 @@
                         <!-- Projects -->
                         <div class="projects-wrapper">
                             <div class="projects">
-                                <div class="project-shot" v-for="project in projects" :key="project">
+                                <div
+                                    class="project-shot"
+                                    v-for="product in products"
+                                    :key="product.id"
+                                    :product="product"
+                                >
                                     <div class="project-link">
                                         <div class="reveal-me-small"></div>
                                         <router-link
                                             :to="{
                                                   name: 'OneProject',
                                                   params: {
-                                                    slug: project.url
+                                                    slug: product.url
                                                   }
                                                 }"
                                         >
-                                            <div class="one-project-bg" v-bind:class="project.classImage"></div>
+                                            <div class="one-project-bg" :class="product.image"></div>
                                             <div class="one-project-body">
                                                 <h4 class="one-project-title">
-                                                    {{project.name}}
+                                                    {{product.name}}
                                                 </h4>
                                                 <h5 class="one-project-description description">
-                                                    {{project.description}}
+                                                    {{product.description}}
                                                 </h5>
                                             </div>
                                         </router-link>
@@ -67,41 +72,41 @@ export default {
   },
   data () {
     return {
-      projects: [
-        {name: 'Stypendium z wyboru', description: 'Projekt firmy Absolvent.pl', classImage: 'first-project', url: 'stypendium-z-wyboru'},
-        {name: 'Nova Dolna', description: 'Nova Dolna to inwestycja w dolnej części Mokotowa', classImage: 'second-project', url: 'nova-dolna'},
-        {name: 'VG Capital', description: 'VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski.', classImage: 'third-project', url: 'vg-capital'},
-        {name: 'Can I Use Bot', description: ' As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this', classImage: 'four-project', url: 'telegram'},
-        {name: 'Cateringoo', description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce.', classImage: 'five-project', url: 'cateringoo'},
-        {name: 'Fest Makabra', description: 'FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii.', classImage: 'six-project', url: 'makabra'}
-      ]
+      products: []
     }
   },
   mounted () {
-    let controller = new ScrollMagic.Controller()
-    $('.project-shot').each(function () {
-      let bg = $(this).find('.project-link')
-      let parallax = TweenMax.from(bg, 1, {
-        y: '50%',
-        ease: Power0.easeNone
+    fetch(`/static/api/${this.$route.params.locale}/products.json`)
+      .then(response => response.json())
+      .then((products) => {
+        this.products = products.filter(p => p.featured)
       })
-      new ScrollMagic.Scene({
-        triggerElement: this,
-        triggerHook: 1,
-        duration: '100%'
+      .then(() => {
+        let controller = new ScrollMagic.Controller()
+        $('.project-shot').each(function () {
+          let bg = $(this).find('.project-link')
+          let parallax = TweenMax.from(bg, 1, {
+            y: '50%',
+            ease: Power0.easeNone
+          })
+          new ScrollMagic.Scene({
+            triggerElement: this,
+            triggerHook: 1,
+            duration: '100%'
+          })
+            .setTween(parallax)
+            .addTo(controller)
+        })
+        $('.project-shot').each(function () {
+          let revealMe = $(this).find('.reveal-me-small')
+          let enterReveal = TweenMax.fromTo(revealMe, 0.45, { scaleX: 1 }, {scaleX: 0})
+          new ScrollMagic.Scene({
+            triggerElement: this
+          })
+            .setTween(enterReveal)
+            .addTo(controller)
+        })
       })
-        .setTween(parallax)
-        .addTo(controller)
-    })
-    $('.project-shot').each(function () {
-      let revealMe = $(this).find('.reveal-me-small')
-      let enterReveal = TweenMax.fromTo(revealMe, 0.45, { scaleX: 1 }, {scaleX: 0})
-      new ScrollMagic.Scene({
-        triggerElement: this
-      })
-        .setTween(enterReveal)
-        .addTo(controller)
-    })
   }
 }
 </script>

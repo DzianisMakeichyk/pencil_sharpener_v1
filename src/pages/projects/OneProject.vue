@@ -8,6 +8,7 @@
                         <div class="project-me">
                             <div class="sub-header-wrapper">
                                 <h1 class="sub-header">
+                                    {{product.title}}
                                     {{ currentProject.name }}
                                 </h1>
                             </div>
@@ -123,6 +124,7 @@ import find from 'lodash/find'
 
 export default {
   name: 'OneProject',
+  props: ['product'],
   metaInfo: {
     title: 'Portfolio | Dzianis Makeichyk'
   },
