@@ -19,12 +19,12 @@
                                     class="project-shot"
                                     v-for="product in products"
                                     :key="product.id"
-                                    :product="product"
                                 >
                                     <div class="project-link">
                                         <div class="reveal-me-small"></div>
                                         <localized-link
                                                 :to="`portfolio/${product.slug}`"
+                                                :product="product"
                                         >
                                             <div class="one-project-bg" :class="product.image"></div>
                                             <div class="one-project-body">
