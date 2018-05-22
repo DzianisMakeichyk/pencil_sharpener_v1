@@ -6,7 +6,8 @@
         "description": "Projekt firmy Absolvent.pl",
         "image": "first-project",
         "url": "stypendium-z-wyboru",
-        "featured": true
+        "featured": true,
+        "slug": "stypendium-z-wyboru"
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "description": "Nova Dolna to inwestycja w dolnej części Mokotowa",
         "image": "second-project",
         "url": "nova-dolna",
-        "featured": true
+        "featured": true,
+        "slug": "nova-dolna"
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "description": "VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski.",
         "image": "third-project",
         "url": "vg-capital",
-        "featured": true
+        "featured": true,
+        "slug": "vg-capital"
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "description": "As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this",
         "image": "four-project",
         "url": "telegram",
-        "featured": true
+        "featured": true,
+        "slug": "telegram"
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "description": "Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce.",
         "image": "five-project",
         "url": "cateringoo",
-        "featured": true
+        "featured": true,
+        "slug": "cateringoo"
     },
     {
         "id": 6,
@@ -51,6 +56,7 @@
         "description": "FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii.",
         "image": "six-project",
         "url": "makabra",
-        "featured": true
+        "featured": true,
+        "slug": "makabra"
     }
 ]

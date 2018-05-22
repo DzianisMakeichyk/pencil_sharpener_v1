@@ -23,13 +23,8 @@
                                 >
                                     <div class="project-link">
                                         <div class="reveal-me-small"></div>
-                                        <router-link
-                                            :to="{
-                                                  name: 'OneProject',
-                                                  params: {
-                                                    slug: product.url
-                                                  }
-                                                }"
+                                        <localized-link
+                                                :to="`portfolio/${product.slug}`"
                                         >
                                             <div class="one-project-bg" :class="product.image"></div>
                                             <div class="one-project-body">
@@ -40,7 +35,7 @@
                                                     {{product.description}}
                                                 </h5>
                                             </div>
-                                        </router-link>
+                                        </localized-link>
                                     </div>
                                 </div>
                             </div>
@@ -56,6 +51,7 @@
 
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
+import LocalizedLink from '../components/Locale/LocalizedLink'
 import $ from 'jquery'
 import { TweenMax, Power0 } from 'gsap'
 import ScrollMagic from 'scrollmagic'
@@ -68,7 +64,8 @@ export default {
     title: 'Portfolio | Dzianis Makeichyk'
   },
   components: {
-    DropMeALine
+    DropMeALine,
+    LocalizedLink
   },
   data () {
     return {
@@ -78,9 +75,7 @@ export default {
   mounted () {
     fetch(`/static/api/${this.$route.params.locale}/products.json`)
       .then(response => response.json())
-      .then((products) => {
-        this.products = products.filter(p => p.featured)
-      })
+      .then((products) => { this.products = products })
       .then(() => {
         let controller = new ScrollMagic.Controller()
         $('.project-shot').each(function () {
