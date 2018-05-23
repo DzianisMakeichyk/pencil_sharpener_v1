@@ -8,8 +8,7 @@
                         <div class="project-me">
                             <div class="sub-header-wrapper">
                                 <h1 class="sub-header">
-                                    {{product.title}}
-                                    {{ currentProject.name }}
+                                    {{ product.name }}
                                 </h1>
                             </div>
                         </div>
@@ -19,20 +18,20 @@
                                     <p class="project-title">
                                         {{ $t("project.description-name") }}
                                     </p>
-                                    <p class="project-description" v-html="currentProject.description">
+                                    <p class="project-description" v-html="product.description">
                                     </p>
 
                                     <div class="project-buttons">
                                         <div class="drop-me-one">
-                                            <a :href="currentProject.see_project" class="button-wrapper" target="_blank">
+                                            <a :href="product.see_project" class="button-wrapper" target="_blank">
                                                <span class="button primary">
                                                    {{ $t("project.see-project") }}
                                                </span>
                                             </a>
                                         </div>
 
-                                        <div class="drop-me-one" v-if="currentProject.repo_project">
-                                            <a :href="currentProject.repo_project" class="button-wrapper" target="_blank">
+                                        <div class="drop-me-one" v-if="product.repo_project">
+                                            <a :href="product.repo_project" class="button-wrapper" target="_blank">
                                                <span class="button primary">
                                                    {{ $t("project.see-repo") }}
                                                </span>
@@ -47,7 +46,7 @@
                                                 {{ $t("about.technologie") }}
                                             </p>
                                             <ul class="techno-list techno-box">
-                                                <li class="one-tech" v-for="technology in currentProject.technologies" :key="technology">
+                                                <li class="one-tech" v-for="technology in product.technologies" :key="technology">
                                                     <span class="select-text">
                                                         {{technology.name}}
                                                     </span>
@@ -59,7 +58,7 @@
                                                 {{ $t("project.client") }}
                                             </p>
                                             <ul class="techno-list">
-                                                <li class="one-tech">{{ currentProject.client }}</li>
+                                                <li class="one-tech">{{ product.client }}</li>
                                             </ul>
                                         </div>
                                         <div class="one-techno-row">
@@ -67,7 +66,7 @@
                                                 {{ $t("project.year") }}
                                             </p>
                                             <ul class="techno-list">
-                                                <li class="one-tech">{{ currentProject.year }}</li>
+                                                <li class="one-tech">{{ product.year }}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -87,7 +86,7 @@
                     :to="{
                           name: 'OneProject',
                           params: {
-                            slug: currentProject.prev
+                            slug: product.prev
                           }
                         }"
                 >
@@ -102,7 +101,7 @@
                     :to="{
                       name: 'OneProject',
                       params: {
-                        slug: currentProject.next
+                        slug: product.next
                       }
                     }"
                 >
@@ -124,139 +123,23 @@ import find from 'lodash/find'
 
 export default {
   name: 'OneProject',
-  props: ['product'],
   metaInfo: {
     title: 'Portfolio | Dzianis Makeichyk'
   },
   data () {
     return {
-      dates: [
-        {
-          slug: 'stypendium-z-wyboru',
-          name: 'Stypendium z wyboru',
-          image: 'image',
-          description: 'Projekt firmy <b>Absolvent.pl</b>. <b>Stypendium z Wyboru</b> to ogólnopolski program stypendialny stworzony po to, by pomagać zdolnym, kreatywnym i ambitnym studentom i młodym absolwentom w realizowaniu swoich marzeń edukacyjnych i zawodowych.',
-          technologies: [
-            {name: 'ReactJs'},
-            {name: 'JavaScript/ES6'},
-            {name: 'SCSS/SASS'},
-            {name: 'GSAP'}
-          ],
-          year: '2015',
-          client: 'Absolvent.pl',
-          see_project: 'https://stypendiumzwyboru.pl/',
-          classImage: 'first-project',
-          repo_project: '',
-          prev: 'makabra',
-          next: 'nova-dolna'
-        },
-        {
-          slug: 'makabra',
-          name: 'Fest Makabra',
-          image: 'image',
-          description: '<b>FEST MAKABRA</b> to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii. Większość filmów z programu zostanie wyświetlona w Polsce premierowo i będzie to jedyna okazja do obejrzenia ich na wielkim ekranie. Pierwsza edycja przeglądu filmowego <b>FEST MAKABRA</b> odbędzie się w kinach studyjnych i niezależnych w całej Polsce w lutym i marcu 2017 roku. Organizatorem wydarzenia jest dystrybutor filmów Kino Świat.',
-          technologies: [
-            {name: 'HTML'},
-            {name: 'SCSS/SASS'},
-            {name: 'Handlebars'},
-            {name: 'JavaScript'},
-            {name: 'JQuery'}
-          ],
-          year: '2017',
-          client: 'Open Gate',
-          see_project: 'http://www.festmakabra.pl/',
-          repo_project: 'https://github.com/DzianisMakeichyk/film',
-          classImage: 'six-project',
-          prev: 'cateringoo',
-          next: 'stypendium-z-wyboru'
-        },
-        {
-          slug: 'cateringoo',
-          name: 'Cateringoo',
-          image: 'image',
-          description: 'Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce. Czy to Łódź, czy Warszawa, nasze usługi cateringowe cieszą się dużym powodzeniem i nienaganną opinią w zakresie jakości dostarczonego jedzenia oraz całokształtu współpracy z klientem.',
-          technologies: [
-            {name: 'HTML'},
-            {name: 'SCSS/SASS'},
-            {name: 'Handlebars'},
-            {name: 'JavaScript/ES6'},
-            {name: 'GSAP'},
-            {name: 'Laravel'}
-          ],
-          year: '2018',
-          client: 'Code&Pepper',
-          see_project: 'https://www.cateringoo.pl/',
-          repo_project: '',
-          classImage: 'five-project',
-          prev: 'telegram',
-          next: 'makabra'
-        },
-        {
-          slug: 'nova-dolna',
-          name: 'Nova Dolna',
-          image: 'image',
-          description: '<b>Nova Dolna</b> to inwestycja w dolnej części Mokotowa. W sąsiedztwie z Parkiem Promenada oraz Morskim Okiem. Dobra lokalizacja dla ludzi ceniących sobie spokój, ale pragnących mieszkać w centrum miasta.',
-          technologies: [
-            {name: 'HTML'},
-            {name: 'SCSS/SASS'},
-            {name: 'JavaScript/ES6'},
-            {name: 'GSAP'},
-            {name: 'WordPress'}
-          ],
-          year: '2017',
-          client: 'Cape Morris',
-          see_project: 'http://novadolna.pl/',
-          repo_project: '',
-          classImage: 'second-project',
-          prev: 'stypendium-z-wyboru',
-          next: 'vg-capital'
-        },
-        {
-          slug: 'vg-capital',
-          name: 'VG Capital',
-          image: 'image',
-          description: '<b>VG Capital</b> od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski. Kluczowym aspektem naszych projektów jest ich dopasowanie do oczekiwań i możliwości naszych Klientów.',
-          technologies: [
-            {name: 'HTML'},
-            {name: 'SCSS/SASS'},
-            {name: 'JavaScript/ES6'},
-            {name: 'GSAP'},
-            {name: 'WordPress'}
-          ],
-          year: '2017',
-          client: 'Cape Morris',
-          see_project: 'http://vgcapital.pl/',
-          repo_project: '',
-          classImage: 'third-project',
-          prev: 'nova-dolna',
-          next: 'telegram'
-        },
-        {
-          slug: 'telegram',
-          name: 'Can I Use',
-          image: 'image',
-          description: 'As we know telegram can give us almost full feeds what we will need during a day. News channels, education channels, wether bots, google bots, cat gif channels, chatting with friends and etc. And as I’am front end developer I often must checking supporting new technologies or suport old technologies for older browsers as IE10(yes, somebody still use it) for current project. As I using telegram for every day I thought to my self what I should code a <b>Telegram bot</b> that can help me shorten the path to do this.',
-          technologies: [
-            {name: 'REST API'},
-            {name: 'Node Js'}
-          ],
-          year: '2017',
-          client: 'Pencil Sharpener',
-          see_project: 'https://t.me/caniusecombot',
-          repo_project: 'https://medium.com/@dzianismakeichyk/telegram-bot-can-i-use-2fcda4610897',
-          prev: 'vg-capital',
-          classImage: 'four-project',
-          next: 'cateringoo'
-        }
-      ]
+      product: []
     }
   },
-  computed: {
-    currentProject: function () {
-      return find(this.dates, (project) => (
-        project.slug === this.$route.params.slug
-      ))
-    }
+  mounted () {
+    fetch(`/static/api/${this.$route.params.locale}/products.json`)
+      .then(response => response.json())
+      .then((products) => { this.product = products })
+      .then(() => {
+        find(this.product, (project) => (
+          project.slug === this.$route.params.slug
+        ))
+      })
   }
 }
 </script>

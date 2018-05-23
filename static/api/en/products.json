@@ -4,59 +4,145 @@
         "title": "Hello",
         "name": "Stypendium z wyboru",
         "description": "Projekt firmy Absolvent.pl",
+        "description-large": "Projekt firmy <b>Absolvent.pl</b>. <b>Stypendium z Wyboru</b> to ogólnopolski program stypendialny stworzony po to, by pomagać zdolnym, kreatywnym i ambitnym studentom i młodym absolwentom w realizowaniu swoich marzeń edukacyjnych i zawodowych.",
         "image": "first-project",
         "url": "stypendium-z-wyboru",
         "featured": true,
-        "slug": "stypendium-z-wyboru"
+        "slug": "stypendium-z-wyboru",
+        "technologies": [
+            {"name": "ReactJs"},
+            {"name": "JavaScript/ES6"},
+            {"name": "SCSS/SASS"},
+            {"name": "GSAP"}
+        ],
+        "year": "2015",
+        "client": "Absolvent.pl",
+        "see_project": "https://stypendiumzwyboru.pl/",
+        "classImage": "first-project",
+        "repo_project": "",
+        "prev": "makabra",
+        "next": "nova-dolna"
     },
     {
         "id": 2,
         "title": "Hello",
         "name": "Nova Dolna",
         "description": "Nova Dolna to inwestycja w dolnej części Mokotowa",
+        "description-large": "<b>Nova Dolna</b> to inwestycja w dolnej części Mokotowa. W sąsiedztwie z Parkiem Promenada oraz Morskim Okiem. Dobra lokalizacja dla ludzi ceniących sobie spokój, ale pragnących mieszkać w centrum miasta.",
         "image": "second-project",
         "url": "nova-dolna",
         "featured": true,
-        "slug": "nova-dolna"
+        "slug": "nova-dolna",
+        "technologies": [
+            {"name": "HTML"},
+            {"name": "SCSS/SASS"},
+            {"name": "JavaScript/ES6"},
+            {"name": "GSAP"},
+            {"name": "WordPress"}
+        ],
+        "year": "2017",
+        "client": "Cape Morris",
+        "see_project": "https://novadolna.pl/",
+        "classImage": "second-project",
+        "repo_project": "",
+        "prev": "stypendium-z-wyboru",
+        "next": "vg-capital"
     },
     {
         "id": 3,
         "title": "Hello",
         "name": "VG Capital",
         "description": "VG Capital od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski.",
+        "description-large": "<b>VG Capital</b> od 10 lat realizuje inwestycje deweloperskie w Kołobrzegu, Warszawie oraz w pozostałych regionach Polski. Kluczowym aspektem naszych projektów jest ich dopasowanie do oczekiwań i możliwości naszych Klientów.",
         "image": "third-project",
         "url": "vg-capital",
         "featured": true,
-        "slug": "vg-capital"
+        "slug": "vg-capital",
+        "technologies": [
+            {"name": "HTML"},
+            {"name": "SCSS/SASS"},
+            {"name": "JavaScript/ES6"},
+            {"name": "GSAP"},
+            {"name": "WordPress"}
+        ],
+        "year": "2017",
+        "client": "Cape Morris",
+        "see_project": "https://vgcapital.pl/",
+        "classImage": "third-project",
+        "repo_project": "",
+        "prev": "nova-dolna",
+        "next": "telegram"
     },
     {
         "id": 4,
         "title": "Hello",
         "name": "Can I Use Bot",
         "description": "As I using telegram for every day I thought to my self what I should code a Telegram bot that can help me shorten the path to do this",
+        "description-large": "As we know telegram can give us almost full feeds what we will need during a day. News channels, education channels, wether bots, google bots, cat gif channels, chatting with friends and etc. And as I’am front end developer I often must checking supporting new technologies or suport old technologies for older browsers as IE10(yes, somebody still use it) for current project. As I using telegram for every day I thought to my self what I should code a <b>Telegram bot</b> that can help me shorten the path to do this.",
         "image": "four-project",
         "url": "telegram",
         "featured": true,
-        "slug": "telegram"
+        "slug": "telegram",
+        "technologies": [
+            {"name": "REST API"},
+            {"name": "Node Js"}
+        ],
+        "year": "2017",
+        "client": "Pencil Sharpener",
+        "see_project": "https://t.me/caniusecombot",
+        "classImage": "four-project",
+        "repo_project": "https://medium.com/@dzianismakeichyk/telegram-bot-can-i-use-2fcda4610897",
+        "prev": "vg-capital",
+        "next": "cateringoo"
     },
     {
         "id": 5,
         "title": "Hello",
         "name": "Cateringoo",
         "description": "Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce.",
+        "description-large": "Nasza firma cateringowa jest rozpoznawalna w całej środkowej Polsce.",
         "image": "five-project",
         "url": "cateringoo",
         "featured": true,
-        "slug": "cateringoo"
+        "slug": "cateringoo",
+        "technologies": [
+            {"name": "HTML"},
+            {"name": "SCSS/SASS"},
+            {"name": "Handlebars"},
+            {"name": "JavaScript/ES6"},
+            {"name": "GSAP"},
+            {"name": "Laravel"}
+        ],
+        "year": "2018",
+        "client": "Code&Pepper",
+        "see_project": "https://cateringoo.pl/",
+        "classImage": "five-project",
+        "repo_project": "",
+        "prev": "telegram",
+        "next": "makabra"
     },
     {
         "id": 6,
         "title": "Hello",
         "name": "Fest Makabra",
         "description": "FEST MAKABRA to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii.",
+        "description-large": "<b>FEST MAKABRA</b> to nowy, ogólnopolski przegląd filmowy, prezentujący zagraniczne filmy z pogranicza horroru, thrillera, mrocznego fantasy i czarnej komedii. Większość filmów z programu zostanie wyświetlona w Polsce premierowo i będzie to jedyna okazja do obejrzenia ich na wielkim ekranie. Pierwsza edycja przeglądu filmowego <b>FEST MAKABRA</b> odbędzie się w kinach studyjnych i niezależnych w całej Polsce w lutym i marcu 2017 roku. Organizatorem wydarzenia jest dystrybutor filmów Kino Świat.",
         "image": "six-project",
         "url": "makabra",
         "featured": true,
-        "slug": "makabra"
+        "slug": "makabra",
+        "technologies": [
+            {"name": "HTML"},
+            {"name": "SCSS/SASS"},
+            {"name": "Handlebars"},
+            {"name": "JavaScript"}
+        ],
+        "year": "2017",
+        "client": "Open Gate",
+        "see_project": "https://festmakabra.pl/",
+        "classImage": "six-project",
+        "repo_project": "https://github.com/DzianisMakeichyk/film",
+        "prev": "cateringoo",
+        "next": "stypendium-z-wyboru"
     }
 ]
