@@ -18,7 +18,7 @@
                                     <p class="project-title">
                                         {{ $t("project.description-name") }}
                                     </p>
-                                    <p class="project-description" v-html="product.description">
+                                    <p class="project-description" v-html="product.description_large">
                                     </p>
 
                                     <div class="project-buttons">
@@ -85,7 +85,7 @@
                     <!--:to="{-->
                           <!--name: 'OneProject',-->
                           <!--params: {-->
-                            <!--slug: product.prev-->
+                            <!--url: product.prev-->
                           <!--}-->
                         <!--}"-->
                 <!--&gt;-->
@@ -99,7 +99,7 @@
                     <!--:to="{-->
                       <!--name: 'OneProject',-->
                       <!--params: {-->
-                        <!--slug: product.next-->
+                        <!--url: product.next-->
                       <!--}-->
                     <!--}"-->
                 <!--&gt;-->
@@ -134,10 +134,12 @@ export default {
       .then(response => response.json())
       .then((products) => { this.product = products })
       .then(() => {
-        find(this.product, (project) => (
+        find(this.product, (project) => {
           // project.slug === this.$route.params.slug
-          console.log(project.slug === this.$route.params.slug ? this.product[project.id] : '')
-        ))
+          if (project.url === this.$route.params.slug) {
+            this.product = project
+          }
+        })
       })
   }
 }
