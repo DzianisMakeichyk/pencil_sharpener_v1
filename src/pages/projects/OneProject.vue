@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="container">
-            <div class="photo-container" :class="currentProject.classImage"></div>
+            <div class="photo-container" :class="product.classImage"></div>
             <div class="content-container">
                 <div class="bg-gray relative">
                     <div class="project-me-wrapper">
@@ -79,35 +79,33 @@
             <!-- Arrows -->
 
             <!-- Left-->
-            <!--<div class="sub-menu left" @click="isProject">-->
-            <div class="sub-menu left">
-                <router-link
-                    class="sub-title-left"
-                    :to="{
-                          name: 'OneProject',
-                          params: {
-                            slug: product.prev
-                          }
-                        }"
-                >
-                    {{ $t("project.next-project") }}
-                </router-link>
-            </div>
+            <!--<div class="sub-menu left">-->
+                <!--<router-link-->
+                    <!--class="sub-title-left"-->
+                    <!--:to="{-->
+                          <!--name: 'OneProject',-->
+                          <!--params: {-->
+                            <!--slug: product.prev-->
+                          <!--}-->
+                        <!--}"-->
+                <!--&gt;-->
+                    <!--{{ $t("project.next-project") }}-->
+                <!--</router-link>-->
+            <!--</div>-->
             <!-- Right-->
-            <!--<div class="sub-menu right" @click="isProject">-->
-            <div class="sub-menu right">
-                <router-link
-                    class="sub-title-right"
-                    :to="{
-                      name: 'OneProject',
-                      params: {
-                        slug: product.next
-                      }
-                    }"
-                >
-                    {{ $t("project.prev-project") }}
-                </router-link>
-            </div>
+            <!--<div class="sub-menu right">-->
+                <!--<router-link-->
+                    <!--class="sub-title-right"-->
+                    <!--:to="{-->
+                      <!--name: 'OneProject',-->
+                      <!--params: {-->
+                        <!--slug: product.next-->
+                      <!--}-->
+                    <!--}"-->
+                <!--&gt;-->
+                    <!--{{ $t("project.prev-project") }}-->
+                <!--</router-link>-->
+            <!--</div>-->
             <!-- Bottom-->
             <!--<div class="sub-menu bottom">-->
                 <!--<div class="sub-title-right">-->
@@ -137,7 +135,8 @@ export default {
       .then((products) => { this.product = products })
       .then(() => {
         find(this.product, (project) => (
-          project.slug === this.$route.params.slug
+          // project.slug === this.$route.params.slug
+          console.log(project.slug === this.$route.params.slug ? this.product[project.id] : '')
         ))
       })
   }
