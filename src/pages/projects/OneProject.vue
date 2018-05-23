@@ -46,7 +46,7 @@
                                                 {{ $t("about.technologie") }}
                                             </p>
                                             <ul class="techno-list techno-box">
-                                                <li class="one-tech" v-for="technology in product.technologies" :key="technology">
+                                                <li class="one-tech" v-for="technology in product.technologies" :key="technology.name">
                                                     <span class="select-text">
                                                         {{technology.name}}
                                                     </span>
@@ -79,33 +79,23 @@
             <!-- Arrows -->
 
             <!-- Left-->
-            <!--<div class="sub-menu left">-->
-                <!--<router-link-->
-                    <!--class="sub-title-left"-->
-                    <!--:to="{-->
-                          <!--name: 'OneProject',-->
-                          <!--params: {-->
-                            <!--url: product.prev-->
-                          <!--}-->
-                        <!--}"-->
-                <!--&gt;-->
-                    <!--{{ $t("project.next-project") }}-->
-                <!--</router-link>-->
-            <!--</div>-->
+            <div class="sub-menu left">
+                <localized-link
+                    class="sub-title-left"
+                    :to=product.prev
+                >
+                    {{ $t("project.prev-project") }}
+                </localized-link>
+            </div>
             <!-- Right-->
-            <!--<div class="sub-menu right">-->
-                <!--<router-link-->
-                    <!--class="sub-title-right"-->
-                    <!--:to="{-->
-                      <!--name: 'OneProject',-->
-                      <!--params: {-->
-                        <!--url: product.next-->
-                      <!--}-->
-                    <!--}"-->
-                <!--&gt;-->
-                    <!--{{ $t("project.prev-project") }}-->
-                <!--</router-link>-->
-            <!--</div>-->
+            <div class="sub-menu right">
+                <localized-link
+                    class="sub-title-right"
+                    :to=product.next
+                >
+                    {{ $t("project.next-project") }}
+                </localized-link>
+            </div>
             <!-- Bottom-->
             <!--<div class="sub-menu bottom">-->
                 <!--<div class="sub-title-right">-->
@@ -118,11 +108,15 @@
 
 <script>
 import find from 'lodash/find'
+import LocalizedLink from '../../components/Locale/LocalizedLink'
 
 export default {
   name: 'OneProject',
   metaInfo: {
     title: 'Portfolio | Dzianis Makeichyk'
+  },
+  components: {
+    LocalizedLink
   },
   data () {
     return {
@@ -135,7 +129,6 @@ export default {
       .then((products) => { this.product = products })
       .then(() => {
         find(this.product, (project) => {
-          // project.slug === this.$route.params.slug
           if (project.url === this.$route.params.slug) {
             this.product = project
           }

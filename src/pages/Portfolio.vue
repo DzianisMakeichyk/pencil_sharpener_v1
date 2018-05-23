@@ -23,7 +23,7 @@
                                     <div class="project-link">
                                         <div class="reveal-me-small"></div>
                                         <localized-link
-                                                :to="`portfolio/${product.slug}`"
+                                                :to="`portfolio/${product.url}`"
                                                 :product="product"
                                         >
                                             <div class="one-project-bg" :class="product.image"></div>

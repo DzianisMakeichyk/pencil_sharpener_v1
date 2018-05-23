@@ -18,8 +18,8 @@
         "see_project": "https://stypendiumzwyboru.pl/",
         "classImage": "first-project",
         "repo_project": "",
-        "prev": "makabra",
-        "next": "nova-dolna"
+        "prev": "portfolio/makabra",
+        "next": "portfolio/nova-dolna"
     },
     {
         "id": 2,
@@ -41,8 +41,8 @@
         "see_project": "https://novadolna.pl/",
         "classImage": "second-project",
         "repo_project": "",
-        "prev": "stypendium-z-wyboru",
-        "next": "vg-capital"
+        "prev": "portfolio/stypendium-z-wyboru",
+        "next": "portfolio/vg-capital"
     },
     {
         "id": 3,
@@ -64,8 +64,8 @@
         "see_project": "https://vgcapital.pl/",
         "classImage": "third-project",
         "repo_project": "",
-        "prev": "nova-dolna",
-        "next": "telegram"
+        "prev": "portfolio/nova-dolna",
+        "next": "portfolio/telegram"
     },
     {
         "id": 4,
@@ -84,8 +84,8 @@
         "see_project": "https://t.me/caniusecombot",
         "classImage": "four-project",
         "repo_project": "https://medium.com/@dzianismakeichyk/telegram-bot-can-i-use-2fcda4610897",
-        "prev": "vg-capital",
-        "next": "cateringoo"
+        "prev": "portfolio/vg-capital",
+        "next": "portfolio/cateringoo"
     },
     {
         "id": 5,
@@ -108,8 +108,8 @@
         "see_project": "https://cateringoo.pl/",
         "classImage": "five-project",
         "repo_project": "",
-        "prev": "telegram",
-        "next": "makabra"
+        "prev": "portfolio/telegram",
+        "next": "portfolio/makabra"
     },
     {
         "id": 6,
@@ -130,7 +130,7 @@
         "see_project": "https://festmakabra.pl/",
         "classImage": "six-project",
         "repo_project": "https://github.com/DzianisMakeichyk/film",
-        "prev": "cateringoo",
-        "next": "stypendium-z-wyboru"
+        "prev": "portfolio/cateringoo",
+        "next": "portfolio/stypendium-z-wyboru"
     }
 ]
