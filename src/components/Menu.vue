@@ -16,6 +16,7 @@
                         :key="locale.code"
                         :to="`/${locale.code}`"
                         class="one-languages"
+                        :class="{'is-active': $route.params.locale == locale.code}"
                 >
                     {{ locale.code }}
                 </router-link>
@@ -120,6 +121,9 @@ export default {
         TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
     }
+  },
+  mounted () {
+    console.log(this.$route.params.locale)
   }
 }
 </script>
