@@ -2,6 +2,8 @@
   <div id="app">
     <localizer>
       <Header />
+    </localizer>
+    <localizer>
       <Transitions></Transitions>
     </localizer>
   </div>

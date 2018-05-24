@@ -42,6 +42,7 @@ export default {
         // reveal-me
         TweenMax.to(revealMe, 0.04, { onComplete: done })
       }
+      console.log('enter project')
     },
     leave: function leave (el, done) {
       let revealMe = el.getElementsByClassName('reveal-me')
@@ -50,6 +51,7 @@ export default {
       TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
       // sub-header
       TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
+      console.log('leave project')
     },
     afterEnter: function leave (el, done) {
       console.log(el)
@@ -59,6 +61,7 @@ export default {
       TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
       // sub-header
       TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
+      console.log('afterEnter project')
     }
   }
 }

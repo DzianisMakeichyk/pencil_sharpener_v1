@@ -121,9 +121,6 @@ export default {
         TweenMax.staggerTo(menuContact, 0.4, { y: 100 }, 0.2)
       }
     }
-  },
-  mounted () {
-    console.log(this.$route.params.locale)
   }
 }
 </script>

@@ -3,6 +3,7 @@
         <section class="container">
             <div class="photo-container" :class="product.classImage"></div>
             <div class="content-container">
+                <div class="reveal-me"></div>
                 <div class="bg-gray relative">
                     <div class="project-me-wrapper">
                         <div class="project-me">
