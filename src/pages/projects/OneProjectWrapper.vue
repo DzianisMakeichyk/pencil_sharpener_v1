@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import find from 'lodash/find'
 import TweenMax from 'gsap'
 let firstEnter = false
 
@@ -26,13 +25,6 @@ export default {
   data () {
     return {
       loading: false
-    }
-  },
-  computed: {
-    currentProject: function () {
-      return find(this.dates, (project) => (
-        project.slug === this.$route.params.slug
-      ))
     }
   },
   methods: {
