@@ -11,7 +11,6 @@
           :class="{ 'is-active': this.$store.state.isOpenMenu}"
         >
             <div class="change-languages">
-
                 <router-link
                         v-for="locale in locales"
                         :key="locale.code"
@@ -20,8 +19,6 @@
                 >
                     {{ locale.code }}
                 </router-link>
-                <!--<p class="one-languages" @click="switchLocaleEn">en.</p>-->
-                <!--<p class="one-languages is-active">pl.</p>-->
             </div>
             <ul class="slideout-menu">
                 <localized-link
@@ -38,6 +35,7 @@
                 <localized-link
                   to="about"
                   class="one-menu-item"
+                  active-class="is-active"
                   :class="{'is-active': this.$route.path == '/about'}"
                 >
                     <span class="menu-item">
