@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="`locale-${this.$route.params.locale}`">
     <localizer>
       <Header />
       <Transitions></Transitions>

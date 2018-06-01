@@ -80,23 +80,27 @@
             <!-- Arrows -->
 
             <!-- Left-->
-            <div class="sub-menu left">
-                <localized-link
-                    class="sub-title-left"
-                    :to=product.prev
-                >
-                    {{ $t("project.prev-project") }}
-                </localized-link>
-            </div>
+            <localized-link
+                class="sub-menu left"
+                :to=product.prev
+            >
+                <div class="sub-title-left">
+                    <span>
+                        {{ $t("project.prev-project") }}
+                    </span>
+                </div>
+            </localized-link>
             <!-- Right-->
-            <div class="sub-menu right">
                 <localized-link
-                    class="sub-title-right"
+                    class=" sub-menu right"
                     :to=product.next
                 >
-                    {{ $t("project.next-project") }}
+                    <div class="sub-title-right">
+                        <span>
+                            {{ $t("project.next-project") }}
+                        </span>
+                    </div>
                 </localized-link>
-            </div>
             <!-- Bottom-->
             <!--<div class="sub-menu bottom">-->
                 <!--<div class="sub-title-right">-->
@@ -201,22 +205,12 @@ export default {
             z-index: 200;
             color: #b1b1b1;
             font-size: 10px;
-            font-family: 'GT-Haptik-Thin';
+            font-family: 'GT-Haptik-Thin', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
-            left: -45px;
-
-            @include breakpoint(medium) {
-                left: -43px;
-            }
 
             @include breakpoint(large) {
-                left: -33px;
                 font-size: 11px;
-            }
-
-            @include breakpoint(extralarge) {
-                left: -25px;
             }
         }
 
@@ -227,9 +221,33 @@ export default {
             z-index: 200;
             color: #b1b1b1;
             font-size: 10px;
-            font-family: 'GT-Haptik-Thin';
+            font-family: 'GT-Haptik-Thin', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
+
+            @include breakpoint(large) {
+                font-size: 11px;
+            }
+        }
+    }
+    .locale-pl {
+        .sub-title-left {
+            left: -45px;
+
+            @include breakpoint(medium) {
+                left: -43px;
+            }
+
+            @include breakpoint(large) {
+                left: -33px;
+            }
+
+            @include breakpoint(extralarge) {
+                left: -25px;
+            }
+        }
+
+        .sub-title-right {
             right: -44px;
 
             @include breakpoint(medium) {
@@ -238,11 +256,42 @@ export default {
 
             @include breakpoint(large) {
                 right: -33px;
-                font-size: 11px;
             }
 
             @include breakpoint(extralarge) {
                 right: -25px;
+            }
+        }
+    }
+    .locale-en {
+        .sub-title-left {
+            left: -41px;
+            @include breakpoint(medium) {
+                left: -39px;
+            }
+
+            @include breakpoint(large) {
+                left: -30px;
+            }
+
+            @include breakpoint(extralarge) {
+                left: -17px;
+            }
+        }
+
+        .sub-title-right {
+            right: -30px;
+
+            @include breakpoint(medium) {
+                right: -28px;
+            }
+
+            @include breakpoint(large) {
+                right: -19px;
+            }
+
+            @include breakpoint(extralarge) {
+                right: -11px;
             }
         }
     }

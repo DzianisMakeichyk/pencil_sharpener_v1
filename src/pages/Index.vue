@@ -51,7 +51,7 @@ export default {
           /*width: 140px;*/
           margin: 0 auto 0 0;
           font-size: 30px;
-          font-family: 'GT-Haptik-Thin';
+          font-family: 'GT-Haptik-Thin', sans-serif;
 
           @include breakpoint(medium) {
               left: 54px;

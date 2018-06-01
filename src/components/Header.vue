@@ -280,7 +280,7 @@ export default {
     .header-name {
       text-transform: uppercase;
       white-space: nowrap;
-      font-family: 'GT-Haptik-Thin';
+      font-family: 'GT-Haptik-Thin', sans-serif;
       font-size: 13px;
       margin: 0 auto 0 0;
       letter-spacing: 1px;
@@ -339,7 +339,7 @@ export default {
         right: -47px;
         color: $gray;
         font-size: 10px;
-        font-family: 'GT-Haptik-Thin';
+        font-family: 'GT-Haptik-Thin', sans-serif;
         text-transform: uppercase;
         transform: rotate(90deg);
         letter-spacing: 1px;
