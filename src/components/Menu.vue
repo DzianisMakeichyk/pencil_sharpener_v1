@@ -51,7 +51,7 @@
                     </span>
                 </a>
                 <localized-link
-                  to="Partners"
+                  to="partners"
                   class="one-menu-item"
                   active-class="is-active"
                   :class="{'is-active': this.$route.path == '/partners'}"
@@ -62,7 +62,7 @@
                     </span>
                 </localized-link>
                 <localized-link
-                  to="Contact"
+                  to="contact"
                   class="one-menu-item"
                   active-class="is-active"
                   :class="{'is-active': this.$route.path == '/contact'}"
