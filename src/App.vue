@@ -37,17 +37,3 @@ export default {
   }
 }
 </script>
-
-<!--scoped-->
-<style lang="scss">
-  @import 'assets/scss/functions';
-  @import 'assets/scss/helpers';
-  @import 'assets/scss/typography';
-
-  // No Hover
-  .disable-hover,
-  .disable-hover * {
-    pointer-events: none !important;
-  }
-
-</style>
