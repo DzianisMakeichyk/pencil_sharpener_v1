@@ -33,7 +33,7 @@
                                             {{ $t("about.technologie") }}
                                         </p>
                                         <ul class="techno-list">
-                                           <li class="one-tech" v-for="skill in skills" :key="skill">
+                                           <li class="one-tech" v-for="skill in skills" :key="skill.name">
                                                {{skill.name}}
                                            </li>
                                         </ul>
@@ -43,7 +43,7 @@
                                             {{ $t("about.skill") }}
                                         </p>
                                         <ul class="techno-list">
-                                            <li class="one-tech" v-for="ability in abilities" :key="ability">
+                                            <li class="one-tech" v-for="ability in abilities" :key="ability.name">
                                                 {{ability.name}}
                                             </li>
                                         </ul>
