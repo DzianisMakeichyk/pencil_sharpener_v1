@@ -14,15 +14,12 @@
 </template>
 
 <script>
-import Localizer from '../components/Locale/Localizer'
 import TweenMax from 'gsap'
 let firstEnter = false
 
 export default {
   name: 'transitionTM',
-  components: {
-    Localizer
-  },
+
   methods: {
     enter: function enter (el, done) {
       let revealMe = el.getElementsByClassName('reveal-me')
