@@ -91,16 +91,16 @@
                 </div>
             </localized-link>
             <!-- Right-->
-                <localized-link
-                    class=" sub-menu right"
-                    :to=product.next
-                >
-                    <div class="sub-title-right">
-                        <span>
-                            {{ $t("project.next-project") }}
-                        </span>
-                    </div>
-                </localized-link>
+            <localized-link
+                class=" sub-menu right"
+                :to=product.next
+            >
+                <div class="sub-title-right">
+                    <span>
+                        {{ $t("project.next-project") }}
+                    </span>
+                </div>
+            </localized-link>
             <!-- Bottom-->
             <!--<div class="sub-menu bottom">-->
                 <!--<div class="sub-title-right">-->

@@ -23,7 +23,7 @@ export default new Router({
     {
       path: '/:locale',
       component: {
-        template: '<router-view/>'
+        template: '<router-view></router-view>'
       },
       children: [
         {

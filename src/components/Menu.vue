@@ -26,7 +26,6 @@
                   to="portfolio"
                   class="one-menu-item"
                   active-class="is-active"
-                  :class="{'is-active': this.$route.path == '/portfolio'}"
                 >
                     <span class="menu-item">
                         {{ $t("menu.portfolio") }}
@@ -37,7 +36,6 @@
                   to="about"
                   class="one-menu-item"
                   active-class="is-active"
-                  :class="{'is-active': this.$route.path == '/about'}"
                 >
                     <span class="menu-item">
                         {{ $t("menu.about") }}
@@ -54,7 +52,6 @@
                   to="partners"
                   class="one-menu-item"
                   active-class="is-active"
-                  :class="{'is-active': this.$route.path == '/partners'}"
                 >
                     <span class="menu-item">
                         {{ $t("menu.partners") }}
@@ -65,7 +62,6 @@
                   to="contact"
                   class="one-menu-item"
                   active-class="is-active"
-                  :class="{'is-active': this.$route.path == '/contact'}"
                 >
                     <span class="menu-item">
                         {{ $t("menu.contact") }}
