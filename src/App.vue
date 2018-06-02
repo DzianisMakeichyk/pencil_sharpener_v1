@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="`locale-${this.$route.params.locale}`">
     <localizer>
-      <Header />
+      <Header/>
       <Transitions></Transitions>
     </localizer>
   </div>
@@ -18,9 +18,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
   name: 'app',
   components: {
-    Header,
     Transitions,
-    Localizer
+    Localizer,
+    Header
   },
   methods: {
     handleWindowResize (event) {

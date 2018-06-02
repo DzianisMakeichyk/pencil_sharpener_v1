@@ -303,6 +303,10 @@ export default {
               transform: translateY(50px) rotate(15deg);
               transition: 0.3s ease;
               z-index: -1;
+
+              @include breakpoint(extralarge) {
+                  top: 66%;
+              }
           }
 
           .menu-item {

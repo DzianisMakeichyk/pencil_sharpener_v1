@@ -143,6 +143,18 @@ export default {
     .Cookie.Cookie--base {
         background: $white;
         padding: 10px 25px;
+
+        @include breakpoint(medium) {
+            padding: 10px 30px;
+        }
+
+        @include breakpoint(large) {
+            padding: 10px 55px;
+        }
+
+        @include breakpoint(extralarge) {
+            padding: 10px 70px;
+        }
         .Cookie__content {
             font-size: 9px;
             color: $gray-medium;
@@ -166,7 +178,6 @@ export default {
             border: 1px solid $darkviolet;
             margin: 0 auto;
             padding: 15px 35px;
-            color: $white;
             text-align: center;
             white-space: nowrap;
 
@@ -354,7 +365,7 @@ export default {
         }
 
         @include breakpoint(extralarge) {
-            right: -29px;
+            right: -32px;
         }
     }
 </style>
