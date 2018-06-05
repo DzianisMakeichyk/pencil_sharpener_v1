@@ -17,7 +17,6 @@ export default {
   name: 'transitionTM',
   methods: {
     enter: function enter (el, done) {
-      console.log('enter')
       let revealMe = el.getElementsByClassName('reveal-me')
       let subHeader = el.getElementsByClassName('sub-header')
       if (firstEnter) {
@@ -32,7 +31,6 @@ export default {
       }
     },
     leave: function leave (el, done) {
-      console.log('leave')
       let revealMe = el.getElementsByClassName('reveal-me')
       let subHeader = el.getElementsByClassName('sub-header')
       // reveal-me
@@ -41,7 +39,6 @@ export default {
       TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
     },
     afterEnter: function leave (el, done) {
-      console.log('afterEnter')
       let revealMe = el.getElementsByClassName('reveal-me')
       let subHeader = el.getElementsByClassName('sub-header')
       // reveal-me

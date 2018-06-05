@@ -4,7 +4,6 @@ import i18next from 'i18next'
 import { locales } from '../../config/i18n'
 
 export const setUiLocale = (locale) => {
-  console.log(locale)
   if (!_.find(locales, supported => supported.code === locale)) {
     return Promise.reject(new Error(`Locale ${locale} is not supported.`))
   }
