@@ -1,49 +1,56 @@
 <template>
-    <section class="container">
-        <div class="reveal-me"></div>
+    <section class="container ">
         <div class="photo-container"></div>
         <div class="content-container">
             <div class="bg-gray relative">
-                <div class="about-me-wrapper">
+                <div class="about-me-wrapper animation">
                     <div class="about-me">
                         <div class="sub-header-wrapper">
-                            <p class="about-title">
-                                {{ $t("about.work") }}
-                            </p>
-
-                            <h1 class="sub-header">
-                                Dzianis Makeichyk
-                            </h1>
+                            <div class="sub-header-box">
+                                <p class="about-title">
+                                    {{ $t("about.work") }}
+                                </p>
+                                <h1 class="sub-header">
+                                    Dzianis Makeichyk
+                                </h1>
+                            </div>
                         </div>
                     </div>
                     <!-- 1 -->
                     <div class="about-section-wrapper">
                         <div class="about-section about-top">
                             <div class="about-left">
-                                <p class="about-title">
+                                <div class="about-title relative">
+                                    <div class="box-reveal"></div>
                                     O mnie
-                                </p>
-                                <p class="about-description" v-html="$t('about.description')">
-                                </p>
+                                </div>
+                                <div class="about-description relative">
+                                    <div class="box-reveal-small"></div>
+                                    <span v-html="$t('about.description')"></span>
+                                </div>
                             </div>
                             <div class="about-right">
                                 <div class="about-technologies">
                                     <div class="one-techno-row">
-                                        <p class="about-title">
+                                        <div class="about-title relative">
+                                            <div class="box-reveal"></div>
                                             {{ $t("about.technologie") }}
-                                        </p>
+                                        </div>
                                         <ul class="techno-list">
-                                           <li class="one-tech" v-for="skill in skills" :key="skill.name">
+                                           <li class="one-tech relative" v-for="skill in skills" :key="skill.name">
+                                               <div class="box-reveal-small"></div>
                                                {{skill.name}}
                                            </li>
                                         </ul>
                                     </div>
                                     <div class="one-techno-row">
-                                        <p class="about-title">
+                                        <div class="about-title relative">
+                                            <div class="box-reveal-small"></div>
                                             {{ $t("about.skill") }}
-                                        </p>
+                                        </div>
                                         <ul class="techno-list">
-                                            <li class="one-tech" v-for="ability in abilities" :key="ability.name">
+                                            <li class="one-tech relative" v-for="ability in abilities" :key="ability.name">
+                                                <div class="box-reveal-small"></div>
                                                 {{ability.name}}
                                             </li>
                                         </ul>
@@ -56,19 +63,21 @@
                     <!-- 2 -->
                     <div class="about-section about-description-me">
                         <div class="about-left">
-                            <p class="about-quotation">
+                            <div class="about-quotation relative">
+                                <div class="box-reveal-small"></div>
                                 What we
                                 <br/>
                                 know how
                                 <br/>
                                 to do <span class="select-text">well.</span>
-                            </p>
+                            </div>
                         </div>
                         <div class="about-right">
                             <div class="about-me-text-wrapper">
-                                <h6 class="about-me-text">
+                                <div class="about-me-text relative">
+                                    <div class="box-reveal-small"></div>
                                     {{ $t("about.second-description") }}
-                                </h6>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -94,6 +103,10 @@
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
 import $ from 'jquery'
+import TweenMax from 'gsap'
+import ScrollMagic from 'scrollmagic'
+import 'animation.gsap'
+import 'debug.addIndicators'
 
 export default {
   name: 'About',
@@ -147,6 +160,16 @@ export default {
     let slideUl = slide.find('.techno-list')
     let slideUlLi = slideUl.find('.one-tech')
     let slideTime = 2000
+    let controller = new ScrollMagic.Controller()
+    $('.about-section').each(function () {
+      let revealMe = $(this).find('.box-reveal-small')
+      let enterReveal = TweenMax.staggerTo(revealMe, 0.65, {scaleX: 0}, 0.2)
+      new ScrollMagic.Scene({
+        triggerElement: this
+      })
+        .setTween(enterReveal)
+        .addTo(controller)
+    })
 
     function runSlide () {
       if (slideUlLi.hasClass('slide-active')) {
@@ -178,6 +201,9 @@ export default {
 
 <!--scoped-->
 <style lang="scss" scoped >
+    .container {
+        background-color: $gray-light;
+    }
     .photo-container {
       background-image: url('~@/assets/images/dzianis_makeichyk.jpg');
       background-size: cover;
@@ -207,7 +233,8 @@ export default {
         }
 
         @include breakpoint(large) {
-            padding: 140px 0 108px;
+            /*padding: 140px 0 108px;*/
+            padding: 100px 0 108px;
         }
 
         .sub-header-wrapper {
@@ -252,8 +279,29 @@ export default {
             position: absolute;
             top: -70px;
             left: 3%;
+        }
+
+        &.box-shadow {
+            @include breakpoint(medium) {
+                box-shadow: 0 2px 16px 0 rgba(20, 20, 20, 0.5);
+            }
+        }
+
+        .sub-header-box {
+            position: relative;
             padding: 0 35px 7px 30px;
-            box-shadow: 0 2px 16px 0 rgba(20, 20, 20, 0.5);
+            z-index: 1001;
+            &:before {
+                @include breakpoint(medium) {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $darkviolet;
+                }
+            }
         }
 
         .sub-header,
@@ -267,18 +315,6 @@ export default {
         .about-title {
             @include breakpoint(medium) {
                 padding: 12px 0 5px;
-            }
-        }
-
-        &:before {
-            @include breakpoint(medium) {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: $darkviolet;
             }
         }
     }
@@ -442,6 +478,10 @@ export default {
 
             @include breakpoint(medium-lg) {
                 line-height: 1.7;
+            }
+
+            .box-reveal-small {
+                background: $blue-sea;
             }
         }
     }

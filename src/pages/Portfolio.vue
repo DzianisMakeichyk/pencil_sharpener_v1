@@ -2,16 +2,17 @@
     <div class="container">
         <div class="full-height portfolio-page">
             <div class="content-container">
-                <div class="reveal-me"></div>
-                <div class="full-height-content relative">
-                    <div class="bg-gray">
+                <div class="full-height-content relative animation">
+                    <div class="bg-gray relative">
                         <div class="portfolio-top">
-                            <p class="portfolio-heading heading-text">
+                            <div class="portfolio-heading heading-text">
                                 {{ $t("project.description_1") }}
-                            </p>
-                            <p class="portfolio-desc description" v-html="$t('project.description_2')">
-                            </p>
+                            </div>
+                            <div class="portfolio-desc description">
+                                <p v-html="$t('project.description_2')"></p>
+                            </div>
                         </div>
+                        <ScrollDownArrow/>
                         <!-- Projects -->
                         <div class="projects-wrapper">
                             <div class="projects">
@@ -96,7 +97,7 @@ export default {
         })
         $('.project-shot').each(function () {
           let revealMe = $(this).find('.reveal-me-small')
-          let enterReveal = TweenMax.fromTo(revealMe, 0.45, { scaleX: 1 }, {scaleX: 0})
+          let enterReveal = TweenMax.staggerTo(revealMe, 0.65, {delay: 0.55, scaleX: 0}, 0.2)
           new ScrollMagic.Scene({
             triggerElement: this
           })

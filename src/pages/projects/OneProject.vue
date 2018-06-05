@@ -3,24 +3,28 @@
         <section class="container">
             <div class="photo-container" :class="product.classImage"></div>
             <div class="content-container">
-                <div class="reveal-me"></div>
                 <div class="bg-gray relative">
                     <div class="project-me-wrapper">
                         <div class="project-me">
                             <div class="sub-header-wrapper">
-                                <h1 class="sub-header">
-                                    {{ product.name }}
-                                </h1>
+                                <div class="sub-header-box">
+                                    <h1 class="sub-header">
+                                        {{ product.name }}
+                                    </h1>
+                                </div>
                             </div>
                         </div>
                         <div class="project-section-wrapper">
                             <div class="project-section project-top">
                                 <div class="project-left">
-                                    <p class="project-title">
+                                    <div class="project-title relative">
+                                        <div class="box-reveal"></div>
                                         {{ $t("project.description-name") }}
-                                    </p>
-                                    <p class="project-description" v-html="product.description_large">
-                                    </p>
+                                    </div>
+                                    <div class="project-description relative">
+                                        <div class="box-reveal"></div>
+                                        <p v-html="product.description_large"></p>
+                                    </div>
 
                                     <div class="project-buttons">
                                         <div class="drop-me-one">
@@ -43,31 +47,41 @@
                                 <div class="project-right">
                                     <div class="project-technologies">
                                         <div class="one-techno-row">
-                                            <p class="project-title">
+                                            <div class="project-title relative">
+                                                <div class="box-reveal"></div>
                                                 {{ $t("about.technologie") }}
-                                            </p>
-                                            <ul class="techno-list techno-box">
+                                            </div>
+                                            <ul class="techno-list techno-box relative">
+                                                <div class="box-reveal"></div>
                                                 <li class="one-tech" v-for="technology in product.technologies" :key="technology.name">
-                                                    <span class="select-text">
+                                                    <div class="select-text">
                                                         {{technology.name}}
-                                                    </span>
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="one-techno-row">
-                                            <p class="project-title">
+                                            <div class="project-title relative">
+                                                <div class="box-reveal"></div>
                                                 {{ $t("project.client") }}
-                                            </p>
+                                            </div>
                                             <ul class="techno-list">
-                                                <li class="one-tech">{{ product.client }}</li>
+                                                <li class="one-tech relative">
+                                                    <div class="box-reveal"></div>
+                                                    {{ product.client }}
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="one-techno-row">
-                                            <p class="project-title">
+                                            <div class="project-title relative">
+                                                <div class="box-reveal"></div>
                                                 {{ $t("project.year") }}
-                                            </p>
+                                            </div>
                                             <ul class="techno-list">
-                                                <li class="one-tech">{{ product.year }}</li>
+                                                <li class="one-tech relative">
+                                                    <div class="box-reveal"></div>
+                                                    {{ product.year }}
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -275,7 +289,7 @@ export default {
             }
 
             @include breakpoint(extralarge) {
-                left: -17px;
+                left: -21px;
             }
         }
 
@@ -386,25 +400,37 @@ export default {
             position: absolute;
             top: -40px;
             left: 3%;
-            padding: 0 35px 5px;
-            box-shadow: 0 2px 16px 0 rgba(20, 20, 20, 0.5);
+        }
+
+        &.box-shadow {
+            @include breakpoint(medium) {
+                box-shadow: 0 2px 16px 0 rgba(20, 20, 20, 0.5);
+            }
+        }
+
+        .sub-header-box {
+            @include breakpoint(medium) {
+                position: relative;
+                padding: 0 35px 5px;
+            }
+
+            &:before {
+                @include breakpoint(medium) {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $darkviolet;
+                }
+            }
         }
 
         .sub-header {
             @include breakpoint(medium) {
                 color: $white;
-            }
-        }
-
-        &:before {
-            @include breakpoint(medium) {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: $darkviolet;
             }
         }
     }

@@ -2,18 +2,18 @@
     <section class="container">
         <div class="full-height">
             <div class="content-container with-top">
-                <div class="reveal-me"></div>
                 <div class="relative">
                     <div class="full-height-content">
-                        <div class="sub-header-wrapper top-position">
+                        <div class="sub-header-wrapper top-position animation">
                             <h2 class="sub-header">
                                 {{ $t("menu.partners") }}
                             </h2>
                         </div>
-                        <div class="partners-container bg-gray">
+                        <div class="partners-container bg-gray animation">
                             <!-- One partner -->
                             <div class="partner-box" v-for="partner in partners" :key="partner.src">
                                 <div class="partner">
+                                    <div class="box-reveal"></div>
                                     <img :src="partner.src" :alt="partner.alt" />
                                     <!--<svg width="400px" height="22px" viewBox="0 0 400 22" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="navigation-line"><g stroke="#9B30FF" stroke-width="22"><path d="M0,11 L400,11" id="line" style=""></path></g></svg>-->
                                 </div>
