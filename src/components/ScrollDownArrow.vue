@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="arrow-container">
+        <div class="arrow-container" v-scroll-to="`#${this.$props.scrollTo}`">
             <p class="arrow-text">
                 scroll
             </p>
@@ -16,7 +16,8 @@
 
 <script>
 export default {
-  name: 'ScrollDownArrow'
+  name: 'ScrollDownArrow',
+  props: ['scrollTo']
 }
 </script>
 

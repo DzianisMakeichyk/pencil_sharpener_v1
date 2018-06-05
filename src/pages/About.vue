@@ -156,45 +156,17 @@ export default {
   //
   },
   mounted () {
-    let slide = $('.one-techno-row1')
-    let slideUl = slide.find('.techno-list')
-    let slideUlLi = slideUl.find('.one-tech')
-    let slideTime = 2000
     let controller = new ScrollMagic.Controller()
     $('.about-section').each(function () {
       let revealMe = $(this).find('.box-reveal-small')
       let enterReveal = TweenMax.staggerTo(revealMe, 0.65, {scaleX: 0}, 0.2)
       new ScrollMagic.Scene({
-        triggerElement: this
+        triggerElement: this,
+        offset: '-120%'
       })
         .setTween(enterReveal)
         .addTo(controller)
     })
-
-    function runSlide () {
-      if (slideUlLi.hasClass('slide-active')) {
-        $('.slide-active').slideDown().siblings().slideUp()
-      }
-    }
-
-    function startSlide () {
-      slideUlLi.first().addClass('slide-active').siblings().removeClass('slide-active')
-      runSlide()
-    }
-    startSlide()
-
-    function autoSlide () {
-      if ($('.slide-active').is(':last-of-type')) {
-        setTimeout(startSlide, slideTime / 100)
-      } else {
-        $('.slide-active').next().addClass('slide-active').siblings().removeClass('slide-active')
-        runSlide()
-      }
-    }
-    slideUlLi.each(function () {
-      runSlide()
-    })
-    setInterval(autoSlide, slideTime)
   }
 }
 </script>
@@ -289,8 +261,11 @@ export default {
 
         .sub-header-box {
             position: relative;
-            padding: 0 35px 7px 30px;
+            /*padding: 0 15px 7px 10px;*/
             z-index: 1001;
+            @include breakpoint(medium) {
+                padding: 0 35px 7px 30px;
+            }
             &:before {
                 @include breakpoint(medium) {
                     content: '';
@@ -440,7 +415,7 @@ export default {
             }
 
             &:hover {
-                color: $white;
+                // color: $white;
             }
         }
 

@@ -12,9 +12,9 @@
                                 <p v-html="$t('project.description_2')"></p>
                             </div>
                         </div>
-                        <ScrollDownArrow/>
+                        <ScrollDownArrow scrollTo="portfolio-start"/>
                         <!-- Projects -->
-                        <div class="projects-wrapper">
+                        <div class="projects-wrapper" id="portfolio-start">
                             <div class="projects">
                                 <div
                                     class="project-shot"
