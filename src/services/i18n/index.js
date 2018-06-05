@@ -14,7 +14,7 @@ export const setUiLocale = (locale) => {
       new Promise((resolve, reject) => {
         i18next.init({
           lng: locale,
-          debug: true,
+          debug: false,
           resources: { [locale]: loadedResources },
           interpolation: {
             format (value) {
