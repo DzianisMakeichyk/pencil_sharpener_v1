@@ -51,6 +51,7 @@
 
 <script>
 import DropMeALine from '../components/Drop-me-a-line'
+import ScrollDownArrow from '../components/ScrollDownArrow'
 import LocalizedLink from '../components/Locale/LocalizedLink'
 import $ from 'jquery'
 import { TweenMax, Power0 } from 'gsap'
@@ -65,7 +66,8 @@ export default {
   },
   components: {
     DropMeALine,
-    LocalizedLink
+    LocalizedLink,
+    ScrollDownArrow
   },
   data () {
     return {

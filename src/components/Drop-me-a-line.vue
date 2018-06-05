@@ -64,7 +64,8 @@ export default {
         }
         @include breakpoint(large) {
           /*padding: 100px 0 110px;*/
-            padding: 80px 0 15px;
+            /*padding: 80px 0 15px;*/
+            padding: 80px 0 30px;
         }
     }
 
