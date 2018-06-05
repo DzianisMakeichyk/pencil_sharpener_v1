@@ -1,9 +1,13 @@
 <template>
   <transition
     v-on:enter="enter"
-    v-on:leave="leave"
     v-on:after-enter="afterEnter"
   >
+  <!--<transition-->
+    <!--v-on:enter="leave"-->
+    <!--v-on:leave="enter"-->
+    <!--v-on:after-enter="afterEnter"-->
+  <!--&gt;-->
     <router-view/>
   </transition>
 
@@ -11,43 +15,40 @@
 
 <script>
 import TweenMax from 'gsap'
-let firstEnter = true
+let firstEnter = false
 
 export default {
   name: 'transitionTM',
   methods: {
     enter: function enter (el, done) {
-      console.log('enter')
-      let revealMe = el.getElementsByClassName('reveal-me')
+      let mainAnia = el.getElementsByClassName('animation')
+      // Sub Header
+      let subHeaderBox = el.getElementsByClassName('sub-header-box')
+      let subHeaderWrapper = el.getElementsByClassName('sub-header-wrapper')
+      // Photo Container
+      // About Page
+      let photoContainer = el.getElementsByClassName('photo-container')
+      // Partner Box
+      let boxReveal = el.getElementsByClassName('box-reveal')
       let subHeader = el.getElementsByClassName('sub-header')
       if (firstEnter) {
-        // reveal-me
-        TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, {scaleX: 1, onComplete: done})
-        // sub-header
-        TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
+        TweenMax.fromTo(mainAnia, 0.5, { opacity: 1, y: 0 }, {opacity: 0, y: -50, onComplete: done})
         firstEnter = false
       } else {
-        // reveal-me
-        TweenMax.to(revealMe, 0.04, { onComplete: done })
+        TweenMax.to(mainAnia, 0.04, { onComplete: done })
+        // About Page
+        TweenMax.fromTo(photoContainer, 0.65, { x: '110%', y: 0 }, {delay: 0.5, x: '0%'})
+        TweenMax.fromTo(subHeaderBox, 0.65, { x: '-110%', y: 0 }, {delay: 0.8, x: '0%', className: '+=box-shadow'})
+        TweenMax.to(subHeaderWrapper, 0.65, {delay: 1.5, className: '+=box-shadow', onComplete: done})
+        // Partner Box
+        TweenMax.staggerTo(boxReveal, 0.65, {delay: 0.55, scaleX: 0}, 0.2)
+        TweenMax.fromTo(subHeader, 0.65, { x: '-110%', y: 0 }, {delay: 0.8, x: '0%'})
+        // One Project
       }
     },
-    leave: function leave (el, done) {
-      console.log('leave')
-      let revealMe = el.getElementsByClassName('reveal-me')
-      let subHeader = el.getElementsByClassName('sub-header')
-      // reveal-me
-      TweenMax.fromTo(revealMe, 0.65, { scaleX: 0 }, { scaleX: 1, onComplete: done })
-      // sub-header
-      TweenMax.fromTo(subHeader, 0.65, { y: 0 }, { y: 100, onComplete: done })
-    },
     afterEnter: function leave (el, done) {
-      console.log('afterEnter')
-      let revealMe = el.getElementsByClassName('reveal-me')
-      let subHeader = el.getElementsByClassName('sub-header')
-      // reveal-me
-      TweenMax.fromTo(revealMe, 0.65, { scaleX: 1 }, {scaleX: 0, onComplete: done})
-      // sub-header
-      TweenMax.fromTo(subHeader, 0.65, { y: 100 }, {y: 0, onComplete: done}, 0.7)
+      let mainAnia = el.getElementsByClassName('animation')
+      TweenMax.fromTo(mainAnia, 0.65, { opacity: 0, y: -50 }, {opacity: 1, y: 0, onComplete: done})
     }
   }
 }

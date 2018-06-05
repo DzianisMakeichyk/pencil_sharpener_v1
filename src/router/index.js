@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/Index'
 import Portfolio from '@/pages/Portfolio'
-import Transitions from '@/components/Transitions'
+// import Transitions from '@/components/Transitions'
 import Partners from '@/pages/Partners'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
@@ -22,7 +22,9 @@ export default new Router({
     },
     {
       path: '/:locale',
-      component: Transitions,
+      component: {
+        template: '<router-view/>'
+      },
       children: [
         {
           path: '',

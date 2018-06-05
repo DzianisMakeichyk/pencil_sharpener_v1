@@ -2,19 +2,20 @@
     <section class="container">
         <div class="full-height">
             <div class="content-container with-top">
-                <div class="reveal-me"></div>
                 <div class="full-height-content relative">
-                    <div class="sub-header-wrapper top-position">
+                    <div class="sub-header-wrapper top-position animation">
                         <h2 class="sub-header">
-                            {{ $t("contact") }}
+                            {{ $t("menu.contact") }}
                         </h2>
                     </div>
-                    <div class="contact-box-wrapper bg-gray">
+                    <div class="contact-box-wrapper bg-gray animation">
                         <div class="contact-box">
+                            <div class="box-reveal"></div>
                             <p class="contact-title">
-                                {{ $t("any-question") }}
+                                {{ $t("contact.any-question") }}
                             </p>
-                            <p class="drop-me-one-contact">
+                            <div class="drop-me-one-contact">
+                                <div class="box-reveal"></div>
                                 <a href="tel:+48797657075" class="drop-contact-me">
                                     <span class="select-text">
                                         +48 797657075
@@ -26,13 +27,15 @@
                                         dzianis@pencilsharpener.pl
                                     </span>
                                 </a>
-                            </p>
+                            </div>
                         </div>
                         <div class="contact-box">
-                        <p class="contact-title">
-                            {{ $t("contact.adres") }}
-                        </p>
+                            <div class="box-reveal"></div>
+                            <p class="contact-title">
+                                {{ $t("contact.adres") }}
+                            </p>
                         <div class="drop-me-one-contact">
+                            <div class="box-reveal"></div>
                             <p class="drop-contact-me">
                                 Ul.Kolejowa 47c
                             </p>
@@ -43,6 +46,7 @@
                         </div>
                     </div>
                         <div class="contact-box">
+                            <div class="box-reveal"></div>
                             <div class="drop-me-one-contact">
                                 <p class="drop-contact-me">
                                     NIP: 527-27-73-256
@@ -120,6 +124,7 @@ export default {
         }
 
         .contact-box {
+            position: relative;
             padding: 30px 25px;
 
             @media only screen and (min-width: 380px) {
