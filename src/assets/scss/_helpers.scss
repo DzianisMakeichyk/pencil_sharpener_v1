@@ -47,7 +47,7 @@
   display: inline-block;
   z-index: 100;
   transition-delay: .1s;
-  overflow-y: hidden;
+  //overflow-y: hidden;
 
   &:before {
     content: '';
@@ -64,6 +64,8 @@
   }
 
   &:hover {
+    color: $white;
+
     &:before {
       transform: translateX(0);
     }

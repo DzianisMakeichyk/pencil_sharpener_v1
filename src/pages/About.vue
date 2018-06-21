@@ -162,7 +162,7 @@ export default {
       let enterReveal = TweenMax.staggerTo(revealMe, 0.65, {scaleX: 0}, 0.2)
       new ScrollMagic.Scene({
         triggerElement: this,
-        offset: '-120%'
+        offset: '-220%'
       })
         .setTween(enterReveal)
         .addTo(controller)
