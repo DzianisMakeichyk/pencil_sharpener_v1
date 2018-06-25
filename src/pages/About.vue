@@ -121,11 +121,12 @@ export default {
       skills: [
         { name: 'HTML/Jade' },
         { name: 'SCSS/SASS' },
-        { name: 'Handlebars' },
         { name: 'JavaScript/ES6' },
         { name: 'VueJS/Vuex' },
         { name: 'ReactJs' },
+        { name: 'REST API' },
         { name: 'PWA' },
+        { name: 'Handlebars' },
         { name: 'WordPress' }
       ],
       abilities: [

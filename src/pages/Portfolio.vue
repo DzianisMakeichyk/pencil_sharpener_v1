@@ -99,7 +99,8 @@ export default {
           let revealMe = $(this).find('.reveal-me-small')
           let enterReveal = TweenMax.staggerTo(revealMe, 0.65, {delay: 0.55, scaleX: 0}, 0.2)
           new ScrollMagic.Scene({
-            triggerElement: this
+            triggerElement: this,
+            offset: '-220%'
           })
             .setTween(enterReveal)
             .addTo(controller)
