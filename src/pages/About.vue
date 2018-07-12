@@ -123,7 +123,7 @@ export default {
         { name: 'SCSS/SASS' },
         { name: 'JavaScript/ES6' },
         { name: 'VueJS/Vuex' },
-        { name: 'ReactJs' },
+        { name: 'ReactJs/Redux' },
         { name: 'REST API' },
         { name: 'PWA' },
         { name: 'Handlebars' },
@@ -407,7 +407,7 @@ export default {
 
         span {
             display: inline-flex;
-            overflow-x: hidden;
+            overflow: hidden;
             color: $gray-medium-1;
             transition: 0.3s ease;
 
